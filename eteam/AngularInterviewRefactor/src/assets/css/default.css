@@ -1,0 +1,8 @@
+.custom-img {
+  width: 420px;
+  height: 100vh;
+  background-color: #2b2b2b;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.4);
+}

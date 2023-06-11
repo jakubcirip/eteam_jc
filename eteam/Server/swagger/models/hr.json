@@ -1,0 +1,439 @@
+{
+  "PublicInterviewResponse": {
+    "type": "object",
+    "required": ["pairs", "prelog", "color", "image", "dark"],
+    "properties": {
+      "dark": {
+        "type": "boolean"
+      },
+      "prelog": {
+        "type": "string"
+      },
+      "color": {
+        "type": "string"
+      },
+      "image": {
+        "type": "string"
+      },
+      "pairs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["uuid", "answerTime", "q", "a", "response"],
+          "properties": {
+            "answerTime": {
+              "type": "number"
+            },
+            "uuid": {
+              "type": "string"
+            },
+            "q": {
+              "type": "object"
+            },
+            "a": {
+              "type": "object"
+            },
+            "response": {
+              "type": "object",
+              "required": ["rating", "data"],
+              "properties": {
+                "rating": {
+                  "type": "number"
+                },
+                "data": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "HrSettings": {
+    "type": "object",
+    "required": [
+      "name",
+      "email",
+      "company",
+      "plan",
+      "tokens",
+      "domain",
+      "divName",
+      "divMail"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "company": {
+        "type": "string"
+      },
+      "plan": {
+        "type": "string"
+      },
+      "tokens": {
+        "type": "number"
+      },
+      "domain": {
+        "type": "string"
+      },
+      "divName": {
+        "type": "string"
+      },
+      "divMail": {
+        "type": "string"
+      }
+    }
+  },
+  "JobPositionForms": {
+    "type": "object",
+    "required": ["name", "forms"],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "forms": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["id", "name", "questions", "defaultLanguage"],
+          "properties": {
+            "defaultLanguage": {
+              "type": "string"
+            },
+            "id": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "questions": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "JobPositionForm": {
+    "type": "object",
+    "required": ["name", "data", "medalCategories", "defaultLanguage"],
+    "properties": {
+      "defaultLanguage": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "data": {
+        "type": "string"
+      },
+      "medalCategories": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["name", "medals"],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "medals": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["tag", "name", "weight", "medalId", "qpUuid"],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "tag": {
+                    "type": "string"
+                  },
+                  "weight": {
+                    "type": "number"
+                  },
+                  "medalId": {
+                    "type": "number"
+                  },
+                  "qpUuid": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "JobPositions": {
+    "type": "object",
+    "required": ["positions"],
+    "properties": {
+      "positions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["id", "name", "forms"],
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "forms": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "MeInfoHr": {
+    "type": "object",
+    "required": ["name"],
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "PreconfirmHr": {
+    "type": "object",
+    "required": ["email"],
+    "properties": {
+      "email": {
+        "type": "string"
+      }
+    }
+  },
+  "HrGetCalendarResponse": {
+    "type": "object",
+    "required": ["events"],
+    "properties": {
+      "events": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["title", "start", "end", "color"],
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "start": {
+              "type": "string"
+            },
+            "end": {
+              "type": "string"
+            },
+            "color": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "HrCanEditPersonParamPersonId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "HrCanEditPersonResponse": {
+    "type": "object",
+    "required": ["canEdit", "canDelete"],
+    "properties": {
+      "canEdit": {
+        "type": "boolean"
+      },
+      "canDelete": {
+        "type": "boolean"
+      }
+    }
+  },
+  "HrCanEditEmailParamEmailId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "HrCanEditEmailResponse": {
+    "type": "object",
+    "required": ["canEdit", "canDelete"],
+    "properties": {
+      "canEdit": {
+        "type": "boolean"
+      },
+      "canDelete": {
+        "type": "boolean"
+      }
+    }
+  },
+  "HrCanEditJobPositionParamPositionId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "HrCanEditJobPositionResponse": {
+    "type": "object",
+    "required": ["canEdit", "canDelete"],
+    "properties": {
+      "canEdit": {
+        "type": "boolean"
+      },
+      "canDelete": {
+        "type": "boolean"
+      }
+    }
+  },
+  "HrCanEditJobFormularParamPositionId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "HrCanEditJobFormularParamFormId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "HrCanEditJobFormularResponse": {
+    "type": "object",
+    "required": ["canEdit", "canDelete"],
+    "properties": {
+      "canEdit": {
+        "type": "boolean"
+      },
+      "canDelete": {
+        "type": "boolean"
+      }
+    }
+  },
+  "HrCanEditMp3ParamMp3Id": {
+    "type": "string"
+  },
+  "HrCanEditMp3Response": {
+    "type": "object",
+    "required": ["canEdit", "canDelete"],
+    "properties": {
+      "canEdit": {
+        "type": "boolean"
+      },
+      "canDelete": {
+        "type": "boolean"
+      }
+    }
+  },
+  "HrCanEditMp4ParamMp4Id": {
+    "type": "string"
+  },
+  "HrCanEditMp4Response": {
+    "type": "object",
+    "required": ["canEdit", "canDelete"],
+    "properties": {
+      "canEdit": {
+        "type": "boolean"
+      },
+      "canDelete": {
+        "type": "boolean"
+      }
+    }
+  },
+  "EditHrInterviewPrelogParamIntId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "EditHrInterviewPrelogParamBody": {
+    "type": "object",
+    "required": ["prelog"],
+    "properties": {
+      "prelog": {
+        "type": "string"
+      }
+    }
+  },
+  "UpdateHrJobPositiomFormMedalsParamPositionId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "UpdateHrJobPositiomFormMedalsParamFormId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "UpdateHrJobPositiomFormMedalsParamBody": {
+    "type": "object",
+    "required": ["medals"],
+    "properties": {
+      "medals": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["medalId", "weight"],
+          "properties": {
+            "medalId": {
+              "type": "number"
+            },
+            "qpUuid": {
+              "type": "string"
+            },
+            "weight": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "TestHrInterviewParamIntId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "SetHrInterviewBackgroundColorParamIntId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "SetHrInterviewBackgroundColorParamBody": {
+    "type": "object",
+    "required": ["isDark"],
+    "properties": {
+      "isDark": {
+        "type": "boolean"
+      }
+    }
+  },
+  "GetSharedVideoTutorialsResponse": {
+    "type": "object",
+    "required": ["paths"],
+    "properties": {
+      "paths": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["pth", "video", "title", "text"],
+          "properties": {
+            "pth": {
+              "type": "string"
+            },
+            "video": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

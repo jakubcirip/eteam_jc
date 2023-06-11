@@ -1,0 +1,41 @@
+{
+  "tags": ["Division"],
+  "summary": "Delete HR",
+  "operationId": "deletePerson",
+  "x-swagger-router-controller": "divisionCtrl",
+  "security": [
+    {
+      "CompanyAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "hrId",
+      "in": "path",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "required": true
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "401": {
+      "$ref": "~/defaults/errors.json#/401"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

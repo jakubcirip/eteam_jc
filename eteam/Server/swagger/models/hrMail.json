@@ -1,0 +1,116 @@
+{
+  "MailPlaceholderRes": {
+    "type": "object",
+    "required": ["placeholders"],
+    "properties": {
+      "placeholders": {
+        "type": "array",
+        "items": {
+          "$ref": "#/MailPlaceholder"
+        }
+      }
+    }
+  },
+  "MailPlaceholder": {
+    "type": "object",
+    "required": ["name", "title"],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      }
+    }
+  },
+  "MailTypes": {
+    "type": "object",
+    "required": ["types"],
+    "properties": {
+      "types": {
+        "$ref": "#/MailTypeArray"
+      }
+    }
+  },
+  "MailTypeArray": {
+    "type": "array",
+    "items": {
+      "$ref": "#/MailType"
+    }
+  },
+  "MailType": {
+    "type": "object",
+    "required": ["name", "title", "usages", "staticDate"],
+    "properties": {
+      "usages": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "staticDate": {
+        "type": "boolean"
+      },
+      "name": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      }
+    }
+  },
+  "MailsResponse": {
+    "type": "object",
+    "required": ["mails"],
+    "properties": {
+      "mails": {
+        "$ref": "#/MailArray"
+      }
+    }
+  },
+  "MailArray": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Mail"
+    }
+  },
+  "Mail": {
+    "type": "object",
+    "required": ["id", "name", "type", "content", "subject", "attachments"],
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "name": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "content": {
+        "type": "string"
+      },
+      "subject": {
+        "type": "string"
+      },
+      "attachments": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "MailPreview": {
+    "type": "object",
+    "required": ["content", "subject"],
+    "properties": {
+      "content": {
+        "type": "string"
+      },
+      "subject": {
+        "type": "string"
+      }
+    }
+  }
+}

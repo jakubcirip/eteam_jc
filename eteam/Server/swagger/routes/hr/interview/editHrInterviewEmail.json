@@ -1,0 +1,56 @@
+{
+  "tags": ["Interview"],
+  "summary": "Update email information about interview",
+  "operationId": "editHrInterviewEmail",
+  "x-swagger-router-controller": "hrCtrl",
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "intId",
+      "in": "path",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "required": true
+    },
+    {
+      "name": "emailData",
+      "in": "body",
+      "description": "New email data",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": ["emailId", "type"],
+        "properties": {
+          "emailId": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

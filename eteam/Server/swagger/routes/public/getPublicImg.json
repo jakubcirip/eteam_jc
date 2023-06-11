@@ -1,0 +1,38 @@
+{
+  "tags": ["Public"],
+  "summary": "Get public img file",
+  "operationId": "getPublicImg",
+  "x-swagger-router-controller": "publicCtrl",
+  "produces": ["audio/mpeg"],
+  "parameters": [
+    {
+      "name": "imgId",
+      "in": "path",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "intTag",
+      "in": "path",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success"
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "401": {
+      "$ref": "~/defaults/errors.json#/401"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

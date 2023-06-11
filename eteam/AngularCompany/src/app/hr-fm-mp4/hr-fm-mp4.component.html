@@ -1,0 +1,184 @@
+<div class="page-content page-container" id="page-content">
+  <div class="padding">
+    <div class="page-title">
+      <h2 class="text-md text-highlight">
+        <svg
+          style="cursor: pointer;"
+          (click)="goBack()"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f54394"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevrons-left mx-2"
+        >
+          <polyline points="11 17 6 12 11 7"></polyline>
+          <polyline points="18 17 13 12 18 7"></polyline></svg
+        >File Manager - MP4
+      </h2>
+      <small class="text-muted">Manage your video question resources</small>
+    </div>
+
+    <br /><br /><br />
+
+    <div class="col-sm-12">
+      <div
+        (click)="newFile()"
+        class="newbtn white"
+        style="background-color: #448bff; text-align: center;"
+      >
+        <a class="btn btn-md text-muted btn-rounded">
+          <span class="d-sm-inline mx-1 addbtn" style="color: white !important;"
+            >Add new MP4 file</span
+          >
+        </a>
+      </div>
+      <br />
+
+      <table
+        id="datatable"
+        class="table table-theme table-row v-middle dataTable no-footer"
+        role="grid"
+        aria-describedby="datatable_info"
+        *ngIf="files !== null"
+      >
+        <thead>
+          <tr role="row">
+            <th
+              class="sorting_disabled"
+              tabindex="0"
+              rowspan="1"
+              colspan="1"
+              style="width: 26px;"
+            >
+              <span class="text-muted">ID</span>
+            </th>
+            <th
+              class="sorting_disabled"
+              tabindex="0"
+              rowspan="1"
+              colspan="1"
+              style="width: 250px;"
+            >
+              <span class="text-muted">File</span>
+            </th>
+            <th
+              class="sorting_disabled"
+              tabindex="0"
+              rowspan="1"
+              colspan="1"
+              style="width: auto;"
+            >
+              <span class="text-muted">Content</span>
+            </th>
+            <th
+              class="sorting_disabled"
+              rowspan="1"
+              colspan="1"
+              style="width: 100px;"
+            >
+              <span class="text-muted d-sm-block">Operations</span>
+            </th>
+            <th
+              class="sorting_disabled"
+              rowspan="1"
+              colspan="1"
+              aria-label="Finish"
+              style="width: 30px;"
+            >
+              <span class="text-muted d-sm-block"></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="table">
+          <tr class="odd" data-id="1" role="row" *ngFor="let file of files">
+            <td class="sorting_2">
+              <span class="item-amount d-sm-block text-sm">{{ file.id }}</span>
+            </td>
+            <td class="sorting_2 flex">
+              <span
+                style="
+                  display: flex;
+                  height: auto;
+                  align-items: center;
+                  padding: 15px;
+                "
+              >
+                <span style="margin-right: 50px;">{{ file.name }}</span>
+              </span>
+            </td>
+            <td class="sorting_2">
+              <video width="320" height="240" controls>
+                <source [src]="file.src" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </td>
+            <td class="sorting_2">
+              <span
+                class="item-amount d-sm-block text-sm"
+                style="display: flex !important;"
+              >
+                <div
+                  class="tooltip-white"
+                  aria-label="Edit MP4 File Information"
+                  data-balloon-pos="up"
+                >
+                  <svg
+                    style="cursor: pointer;"
+                    (click)="beforeEditFile(file.id, file.name)"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#31c971"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-edit mx-2"
+                  >
+                    <path
+                      d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"
+                    ></path>
+                    <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+                  </svg>
+                </div>
+
+                <div
+                  class="tooltip-white"
+                  aria-label="Delete MP4 File"
+                  data-balloon-pos="up"
+                >
+                  <svg
+                    style="cursor: pointer;"
+                    (click)="beforeDeleteFile(file.id)"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#f54394"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-delete mx-2"
+                  >
+                    <path
+                      d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"
+                    ></path>
+                    <line x1="18" y1="9" x2="12" y2="15"></line>
+                    <line x1="12" y1="9" x2="18" y2="15"></line>
+                  </svg>
+                </div>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

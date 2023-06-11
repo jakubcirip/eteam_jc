@@ -1,0 +1,41 @@
+{
+  "IndexResponse": {
+    "type": "object",
+    "required": ["success"],
+    "properties": {
+      "success": {
+        "type": "boolean"
+      }
+    }
+  },
+  "GetSupportedLanguagesResponse": {
+    "type": "object",
+    "required": ["languages"],
+    "properties": {
+      "languages": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["code", "name"],
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "GenerateInterviewZipParamBody": {
+    "type": "object",
+    "required": ["data"],
+    "properties": {
+      "data": {
+        "type": "string"
+      }
+    }
+  }
+}

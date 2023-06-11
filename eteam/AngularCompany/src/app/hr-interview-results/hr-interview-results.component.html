@@ -1,0 +1,111 @@
+<div *ngIf="results.data !== null">
+  <div class="page-hero page-container">
+    <div class="padding d-flex">
+      <div class="page-title">
+        <h2 class="text-md text-highlight">
+          <svg
+            style="cursor: pointer;"
+            (click)="goBack()"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#f54394"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-chevrons-left mx-2"
+          >
+            <polyline points="11 17 6 12 11 7"></polyline>
+            <polyline points="18 17 13 12 18 7"></polyline>
+          </svg>
+          Candidates {{ results.data.intName }}
+        </h2>
+        <small style="margin-left: 45px;" class="text-muted"
+          >List of all candidates in this interview</small
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+      <div class="col-sm-12">
+        <app-interview-candidates-list
+          [candidates]="results.data.candidates"
+          [intId]="intId"
+        ></app-interview-candidates-list>
+      </div>
+
+      <div class="col-sm-12" style="margin-top: 30px;">
+        <h4>Candidates that didnt submit results</h4>
+
+        <table
+          id="datatable"
+          class="table table-theme table-row v-middle dataTable no-footer"
+          role="grid"
+          aria-describedby="datatable_info"
+        >
+          <thead>
+            <tr role="row">
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 150px;"
+              >
+                <span class="text-muted">ID</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 150px;"
+              >
+                <span class="text-muted">Name</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: auto;"
+              >
+                <span class="text-muted">Email</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table">
+            <tr
+              class="odd"
+              data-id="1"
+              role="row"
+              *ngFor="let can of results.data.failedCandidates"
+            >
+              <td class="sorting_2">
+                <span
+                  class="pointer item-amount d-sm-block text-sm"
+                  (click)="results.orderBy(resultTypes.ID)"
+                  >{{ can.id }}</span
+                >
+              </td>
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm white">{{
+                  can.name
+                }}</span>
+              </td>
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">{{
+                  can.email
+                }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

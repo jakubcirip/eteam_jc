@@ -1,0 +1,227 @@
+{
+  "GetHrEmailCatalogResponse": {
+    "type": "object",
+    "required": ["catalogs"],
+    "properties": {
+      "catalogs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "name",
+            "catId",
+            "planId",
+            "desc",
+            "groups",
+            "likes",
+            "downloads",
+            "createdAt"
+          ],
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "catId": {
+              "type": "string"
+            },
+            "planId": {
+              "type": "string"
+            },
+            "likes": {
+              "type": "number"
+            },
+            "downloads": {
+              "type": "number"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "desc": {
+              "type": "string"
+            },
+            "groups": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["id", "title", "html", "subject", "attachments"],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "html": {
+                    "type": "string"
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "attachments": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ImportHrEmailCatalogParamBody": {
+    "type": "object",
+    "required": ["catalogId"],
+    "properties": {
+      "catalogId": {
+        "type": "number"
+      }
+    }
+  },
+  "LikeHrEmailCatalogParamEmailId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "GetHrFormCatalogResponse": {
+    "type": "object",
+    "required": ["catalogs"],
+    "properties": {
+      "catalogs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "name",
+            "catId",
+            "planId",
+            "desc",
+            "groups",
+            "likes",
+            "downloads",
+            "createdAt"
+          ],
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "catId": {
+              "type": "string"
+            },
+            "planId": {
+              "type": "string"
+            },
+            "likes": {
+              "type": "number"
+            },
+            "downloads": {
+              "type": "number"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "desc": {
+              "type": "string"
+            },
+            "groups": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["lang_code", "pairs", "name"],
+                "properties": {
+                  "lang_code": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "pairs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ImportHrFormCatalogParamBody": {
+    "type": "object",
+    "required": ["catalogId"],
+    "properties": {
+      "catalogId": {
+        "type": "number"
+      }
+    }
+  },
+  "LikeHrFormCatalogParamEmailId": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 2147483647
+  },
+  "CreateFastInterviewParamBody": {
+    "type": "object",
+    "required": [
+      "emailId",
+      "formId",
+      "imageType",
+      "imageData",
+      "name",
+      "color",
+      "isDark",
+      "prelog",
+      "startDate",
+      "endDate",
+      "remindDate"
+    ],
+    "properties": {
+      "emailId": {
+        "type": "number"
+      },
+      "formId": {
+        "type": "number"
+      },
+      "imageType": {
+        "type": "string"
+      },
+      "imageData": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "color": {
+        "type": "string"
+      },
+      "isDark": {
+        "type": "boolean"
+      },
+      "prelog": {
+        "type": "string"
+      },
+      "startDate": {
+        "type": "string"
+      },
+      "endDate": {
+        "type": "string"
+      },
+      "remindDate": {
+        "type": "string"
+      }
+    }
+  }
+}

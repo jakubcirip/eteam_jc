@@ -1,0 +1,36 @@
+{
+  "tags": ["Hr"],
+  "summary": "Check if HR can edit MP3 file",
+  "operationId": "hrCanEditMp3",
+  "x-swagger-router-controller": "hrCtrl",
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "in": "path",
+      "name": "mp3Id",
+      "required": true,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/models/hr.json#/HrCanEditMp3Response"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

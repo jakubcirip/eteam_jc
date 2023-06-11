@@ -1,0 +1,51 @@
+{
+  "tags": ["Interview"],
+  "summary": "Update job position + form interview data",
+  "operationId": "editHrInterviewPosition",
+  "x-swagger-router-controller": "hrCtrl",
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "intId",
+      "in": "path",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "required": true
+    },
+    {
+      "name": "posData",
+      "in": "body",
+      "description": "Postion + form data",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "posId": {},
+          "formId": {}
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

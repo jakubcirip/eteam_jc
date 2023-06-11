@@ -1,0 +1,26 @@
+{
+  "tags": ["Public"],
+  "summary": "Data used by Angluar Public (index page)",
+  "operationId": "getIndexData",
+  "x-swagger-router-controller": "publicCtrl",
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/models/public.json#/IndexResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "401": {
+      "$ref": "~/defaults/errors.json#/401"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

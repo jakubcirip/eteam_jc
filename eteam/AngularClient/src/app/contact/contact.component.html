@@ -1,0 +1,151 @@
+<!--Contact Start-->
+<section class="contact-us" id="contact">
+  <div class="container" id="contact-aos-anchor">
+    <div class="row align-items-top">
+      <div
+        class="col-lg-5 order-lg-2"
+        data-aos="fade-left"
+        data-aos-delay="400"
+        data-aos-anchor="#contact-aos-anchor"
+      >
+        <div class="contact-detail">
+          <div class="contact-dots" data-dots=""></div>
+          <!--Heading-->
+          <div class="heading-area pb-5">
+            <h2 class="title mt-0 pb-1">
+              {{ 'contact.info.title' | translate }}
+            </h2>
+            <p class="para">
+              {{ 'contact.info.description' | translate }}
+            </p>
+          </div>
+
+          <!--Address-->
+          <ul class="address list-unstyled">
+            <!-- <li>
+              <span class="address-icon gradient-text2"
+                ><i aria-hidden="true" class="fas fa-map-marker-alt"></i
+              ></span>
+              <span class="address-text">Address</span>
+            </li> -->
+            <li>
+              <span class="address-icon gradient-text2"
+                ><i aria-hidden="true" class="fas fa-phone-volume"></i
+              ></span>
+              <span class="address-text"
+                ><a class="mr-3" href="javascript:void(0)">{{
+                  'shared.contact.phoneNumber' | translate
+                }}</a></span
+              >
+            </li>
+            <li>
+              <span class="address-icon gradient-text2"
+                ><i aria-hidden="true" class="fas fa-paper-plane"></i
+              ></span>
+              <span class="address-text"
+                ><a class="mr-3 alt-color" href="javascript:void(0)">{{
+                  'shared.contact.email' | translate
+                }}</a></span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="col-lg-7 mt-4 pt-3 mt-lg-0 pt-lg-0"
+        data-aos="fade-right"
+        data-aos-anchor="#contact-aos-anchor"
+      >
+        <!--Heading-->
+        <div class="heading-area pb-2">
+          <h2 class="title mt-0">{{ 'contact.form.title' | translate }}</h2>
+        </div>
+        <!--Contact Form-->
+        <form class="contact-form">
+          <div class="row">
+            <!--Result-->
+            <div class="col-12" id="result"></div>
+
+            <!--Left Column-->
+            <div class="col-md-5">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="your_name"
+                  name="your_name"
+                  #nameInput
+                  placeholder="{{ 'contact.form.name' | translate }}"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="your_email"
+                  name="your_email"
+                  #emailInput
+                  placeholder="{{ 'contact.form.email' | translate }}"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="subject"
+                  name="subject"
+                  #subjectInput
+                  placeholder="{{ 'contact.form.subject' | translate }}"
+                  required=""
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <!--Right Column-->
+            <div class="col-md-7">
+              <div class="form-group">
+                <textarea
+                  #textInput
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  placeholder="{{ 'contact.form.message' | translate }}"
+                ></textarea>
+              </div>
+            </div>
+
+            <!--Button-->
+            <div class="col-md-12">
+              <a
+                (click)="
+                  onSendMail(
+                    nameInput.value,
+                    emailInput.value,
+                    subjectInput.value,
+                    textInput.value
+                  )
+                "
+                class="btn btn-large btn-rounded btn-purple btn-hvr-blue d-block mt-4"
+                id="submit_btn"
+                style="color: white !important;"
+                >{{ 'contact.form.buttonText' | translate }}
+                <div class="btn-hvr-setting">
+                  <ul class="btn-hvr-setting-inner">
+                    <li class="btn-hvr-effect"></li>
+                    <li class="btn-hvr-effect"></li>
+                    <li class="btn-hvr-effect"></li>
+                    <li class="btn-hvr-effect"></li>
+                  </ul>
+                </div>
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Contact End-->

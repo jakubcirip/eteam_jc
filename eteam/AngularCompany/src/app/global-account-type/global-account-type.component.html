@@ -1,0 +1,216 @@
+<br /><br />
+<div class="padding">
+  <div class="text-center p-5" style="padding-top: 0px !important">
+    <h2 class="text-highlight">Account Plans</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="alert alert-info" role="alert">
+      <svg
+        class="feather feather-info"
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" x2="12" y1="16" y2="12"></line>
+        <line x1="12" x2="12" y1="8" y2="8"></line></svg
+      ><span class="mx-2"
+        >This website is still in beta testing, purchasing plan will give you
+        feaures immediately and wont require you to pay for it.</span
+      >
+    </div>
+  </div>
+  <div class="col-sm-4" *ngFor="let type of types">
+    <div class="card">
+      <div
+        class="media media-2x1"
+        [ngClass]="['gd-' + type.color]"
+        style="
+          height: 10px;
+          border-radius: 0px;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        "
+      ></div>
+      <div class="card-body" style="padding: 50px">
+        <h3 [ngClass]="['text-' + type.color]" class="card-title">
+          {{ type.name }}
+        </h3>
+        <h1 [ngClass]="['text-' + type.color]" class="card-title">
+          0 € / Lifetime
+        </h1>
+        <h3 class="text-hybrid card-title">
+          {{ type.price }}€ per minute of interview
+        </h3>
+
+        <hr />
+        <small>Included Features:</small>
+        <div
+          style="display: flex; margin: 15px 0"
+          *ngFor="let yes of type.points"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            [attr.stroke]="'#' + type.colorHex"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-check"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <h5 class="white" style="margin-left: 30px">{{ yes }}</h5>
+        </div>
+
+        <hr />
+        <small>Not Included Features:</small>
+        <div
+          style="display: flex; margin: 15px 0"
+          *ngFor="let no of type.pointsNo"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="grey"
+            [attr.stroke-width]="no ? '2' : '0'"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <h5 style="color: gray; margin-left: 30px">{{ no }}</h5>
+        </div>
+
+        <hr />
+        <small>Included Analysis:</small>
+        <div
+          style="display: flex; margin: 15px 0"
+          *ngFor="let yes of type.pointsAnalysis"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            [attr.stroke]="'#' + type.colorHex"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-check"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <h5 class="white" style="margin-left: 30px">{{ yes }}</h5>
+        </div>
+
+        <hr />
+        <small>Not Included Analysis:</small>
+        <div
+          style="display: flex; margin: 15px 0"
+          *ngFor="let no of type.pointsAnalysisNo"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="grey"
+            [attr.stroke-width]="no ? '2' : '0'"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <h5 style="color: gray; margin-left: 30px">{{ no }}</h5>
+        </div>
+
+        <hr />
+        <small>Plan Account Limits:</small>
+        <div
+          style="display: flex; margin: 15px 0"
+          *ngFor="let yes of type.pointsLimits"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            [attr.stroke]="'#' + type.colorHex"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-check"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <h5
+            class="white"
+            style="font-weight: 100; margin-left: 30px"
+            [innerHTML]="yes"
+          ></h5>
+        </div>
+
+        <hr />
+
+        <div
+          *ngIf="type.active === true"
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          <h3 [ngClass]="['text-' + type.color]" style="margin-top: 30px">
+            ACTIVE
+          </h3>
+        </div>
+
+        <div
+          *ngIf="type.active === false"
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          <a
+            (click)="clickUpgrade(type.id)"
+            style="width: 40%; margin-top: 30px"
+            class="btn btn-sm btn-rounded btn-primary btn-block text-white"
+            >{{ type.upgrade === true ? 'Upgrade' : 'Downgrade' }}</a
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      *ngIf="type.recommended"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        font-weight: bold;
+        font-size: 16px;
+        letter-spacing: 3px;
+      "
+      [ngClass]="['text-' + type.color]"
+    >
+      <p style="margin: 0; margin-bottom: 20px">RECOMMENDED</p>
+    </div>
+  </div>
+</div>

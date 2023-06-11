@@ -1,0 +1,383 @@
+<div class="page-hero page-container" *ngIf="data !== null">
+  <div class="padding d-flex">
+    <div class="page-title">
+      <h2 class="text-md text-highlight">
+        <svg
+          style="cursor: pointer;"
+          (click)="goBack()"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f54394"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevrons-left mx-2"
+        >
+          <polyline points="11 17 6 12 11 7"></polyline>
+          <polyline points="18 17 13 12 18 7"></polyline>
+        </svg>
+        Interview - {{ data.interviewName }}
+      </h2>
+      <small style="margin-left: 45px;" class="text-muted"
+        >Interview Summary & Publish</small
+      >
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="data !== null"
+  class="page-content page-container"
+  id="page-content"
+>
+  <div class="padding">
+    <div class="container" *ngIf="data.warnings.length > 0">
+      <div class="row">
+        <h6>Notices:</h6>
+        <div
+          [ngClass]="['alert-' + warn.type]"
+          class="alert col-12"
+          role="alert"
+          *ngFor="let warn of data.warnings"
+        >
+          <svg
+            *ngIf="warn.type === 'danger'"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-alert-circle"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12" y2="16"></line>
+          </svg>
+
+          <svg
+            *ngIf="warn.type !== 'danger'"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-info"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+          <span class="mx-2">{{ warn.text }}</span>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <strong> Information Summary </strong>
+      </div>
+      <div class="card-body">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3"
+              >Formular name</span
+            >
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="basic-addon3"
+            disabled="disabled"
+            [value]="data.formularName"
+          />
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3"
+              >Total questions in formular</span
+            >
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="basic-addon3"
+            disabled="disabled"
+            [value]="data.totalQuestions"
+          />
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3"
+              >Total candidates in interview</span
+            >
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="basic-addon3"
+            disabled="disabled"
+            [value]="data.totalCandidates"
+          />
+        </div>
+
+        <div class="col-md-4 offset-md-8" style="padding-right: 0;">
+
+          <button
+            class="btn btn-primary btn-block"
+            (click)="onGeneratePreview()"
+          >
+            Preview Interview
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row py-3">
+      <div class="col-md-4 py-2" *ngFor="let mail of data.emails">
+        <div class="text-muted">{{ mail.type }} email at:</div>
+        <div *ngIf="getDate(mail.date) !== null">
+          {{ getDate(mail.date) | date: 'd.M.yyyy' }} |
+          {{ getDate(mail.date) | date: 'H:mm:ss' }}
+        </div>
+        <div *ngIf="getDate(mail.date) == null">
+          {{ mail.date }}
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary btn-block"
+          style="margin-top: 20px;"
+          data-toggle="modal"
+          data-target="#mailModal"
+          (click)="showEmailPreview(mail.id)"
+        >
+          Preview {{ mail.type }} email
+        </button>
+      </div>
+    </div>
+
+    <table class="table table-theme table-rows v-middle">
+      <thead>
+        <tr>
+          <th class="text-muted">Items</th>
+          <th class="text-muted text-right">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Price per second of interview
+            <div class="text-sm text-muted">
+              Which is {{ data.pricePerSecond * 60 | number: '1.0-0' }} Token
+              per Minute
+            </div>
+          </td>
+          <td class="text-right">
+            <span class="text-success">{{ data.pricePerSecond }} Tokens </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Price per candidate in your interview
+            <div class="text-sm text-muted">
+              Your interview is {{ data.interviewSeconds }} seconds long
+            </div>
+          </td>
+          <td class="text-right">
+            {{ data.interviewSeconds }} * {{ data.pricePerSecond }} =
+            <span class="text-success"
+              >{{ data.interviewSeconds * data.pricePerSecond }} Tokens</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Price for whole interview
+            <div class="text-sm text-muted">
+              Your interview has {{ data.totalCandidates }} candidates
+            </div>
+          </td>
+          <td class="text-right">
+            {{ data.interviewSeconds * data.pricePerSecond }} *
+            {{ data.totalCandidates }} =
+            <span class="text-success"
+              >{{
+                data.interviewSeconds *
+                  data.pricePerSecond *
+                  data.totalCandidates
+              }}
+              Token</span
+            >
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="text-right no-border">
+            <small class="muted mx-2">Total: </small>
+            <strong class="text-success">{{ data.totalPrice }} Tokens</strong>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div class="row">
+      <div class="col-md-3 offset-md-5">
+        <div class="dropdown dropup">
+          <button
+            class="btn btn-info dropdown-toggle"
+            data-toggle="dropdown"
+            aria-expanded="false"
+            style="width: 100%;"
+            [disabled]="!isEndDateValid()"
+          >
+            Add To Calendar
+          </button>
+
+          <p
+            *ngIf="!isEndDateValid()"
+            style="
+              float: right;
+              text-align: right;
+              color: rgba(255, 255, 255, 0.4);
+              margin-top: 5px;
+            "
+          >
+            Please configure end email date<br />
+            before exporting to calendar.
+          </p>
+          <div
+            class="dropdown-menu bg-dark"
+            role="menu"
+            x-placement="top-start"
+            style="
+              position: absolute;
+              transform: translate3d(0px, -149px, 0px);
+              top: 0px;
+              left: 0px;
+              will-change: transform;
+            "
+          >
+            <small
+              style="
+                padding: 20px 10px;
+                color: rgba(255, 255, 255, 0.4);
+                font-weight: 100;
+              "
+              >ONLINE:</small
+            >
+            <a
+              class="dropdown-item"
+              [href]="getGogleCalendarUrl()"
+              target="_blank"
+              ><i class="fa fa-google" aria-hidden="true"></i> Google Calendar </a
+            ><a
+              class="dropdown-item"
+              [href]="getYahooCalendarUrl()"
+              target="_blank"
+              ><i class="fa fa-yahoo" aria-hidden="true"></i>
+              Yahoo Calendar
+            </a>
+            <a
+              class="dropdown-item"
+              [href]="getOutlookCalendarUrl()"
+              target="_blank"
+              ><i class="fa fa-calendar" aria-hidden="true"></i> Outlook
+              Calendar
+            </a>
+            <div class="dropdown-divider"></div>
+            <small
+              style="
+                padding: 20px 10px;
+                color: rgba(255, 255, 255, 0.4);
+                font-weight: 100;
+              "
+              >FILE:</small
+            >
+            <a class="dropdown-item" (click)="getFileCalendar()"
+              ><i class="fa fa-apple" aria-hidden="true"></i> Apple Calendar
+            </a>
+            <a class="dropdown-item" (click)="getFileCalendar()"
+              ><i class="fa fa-file" aria-hidden="true"></i> Calendar File
+              (.ics)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <button
+          (click)="onStartInterview()"
+          [disabled]="
+            data.warnings.length > 0 && data.warnings[0].type !== 'success'
+          "
+          class="btn btn-success btn-block"
+        >
+          Pay & Start Interview
+        </button>
+        <p
+          *ngIf="
+            data.warnings.length > 0 && data.warnings[0].type !== 'success'
+          "
+          style="
+            float: right;
+            text-align: right;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 5px;
+          "
+        >
+          Please resolve all errors and warning<br />
+          before starting interview.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="mailModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" *ngIf="selectedMail !== null">
+          {{ selectedMailSubject ? selectedMailSubject : '(no subject)' }}
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" *ngIf="selectedMail !== null">
+        <div id="fframe"></div>
+      </div>
+      <div class="modal-footer">
+        <button
+          (click)="sendPreviewMail()"
+          type="button"
+          class="btn btn-primary"
+        >
+          Send preview email
+        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

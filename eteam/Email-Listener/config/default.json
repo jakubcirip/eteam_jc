@@ -1,0 +1,10 @@
+{
+  "dev": {
+    "globalUrl": "https://localhost:4200",
+    "companyUrl": "http://localhost:4201"
+  },
+  "prod": {
+    "globalUrl": "https://hiroo.eu",
+    "companyUrl": "https://{{domain}}.hiroo.eu"
+  }
+}

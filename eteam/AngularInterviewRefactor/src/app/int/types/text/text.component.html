@@ -1,0 +1,21 @@
+<app-assistent [title]="step.data.title"></app-assistent>
+
+<br />
+
+<p *ngIf="step.data.text" [innerHTML]="parseText(step.data.text)"></p>
+
+<a
+  *ngIf="step.data.terms.text && step.data.terms.url"
+  [href]="step.data.terms.url"
+  class="text-primary"
+  target="_blank"
+>
+  {{ step.data.terms.text }}
+</a>
+
+<img
+  *ngIf="int.randomData.imgSrc"
+  [src]="int.randomData.imgSrc"
+  alt="Image Of Question"
+  style="max-width: 100%; margin-top: 15px"
+/>

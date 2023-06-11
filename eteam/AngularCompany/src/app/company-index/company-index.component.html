@@ -1,0 +1,148 @@
+<div class="page-hero page-container" id="page-hero">
+  <div class="padding d-flex">
+    <div class="page-title">
+      <h2 class="text-md text-highlight">Dashboard</h2>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="data">
+    <div class="col-md-4 d-flex">
+      <div
+        class="card flex"
+        data-sr-id="10"
+        style="
+          visibility: visible;
+          transform: none;
+          opacity: 1;
+          transition: none 0s ease 0s;
+        "
+      >
+        <div class="card-body">
+          <div class="d-flex align-items-center text-hover-success">
+            <div class="avatar w-56 m-2 no-shadow gd-success">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-dollar-sign"
+              >
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path
+                  d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                ></path>
+              </svg>
+            </div>
+            <div class="px-4 flex">
+              <div>You currently have</div>
+              <div class="text-success mt-2">
+                {{ data.tokens }} {{ data.tokens === 1 ? 'Token' : 'Tokens' }}
+              </div>
+            </div>
+            <a
+              [routerLink]="['/company', 'tokens']"
+              class="text-muted"
+              aria-label="Purchase more Tokens"
+              data-balloon-pos="up"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-arrow-right"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 d-flex">
+      <div class="card flex">
+        <div class="card-body">
+          <small
+            >Account plan:
+            <strong [ngClass]="['text-' + data.plan.color]">
+              {{ data.plan.name }}
+            </strong>
+          </small>
+          <div class="progress my-3 circle" style="height: 6px;">
+            <div
+              class="progress-bar circle"
+              [ngClass]="['gd-' + data.plan.color]"
+              [ngStyle]="{ width: calculateWidth() + '%' }"
+            ></div>
+          </div>
+
+          <div style="display: flex; justify-content: center;">
+            <a
+              [routerLink]="['/company', 'plan']"
+              style="width: 40%; margin-top: 0px;"
+              class="btn btn-sm btn-rounded btn-primary btn-block text-white"
+              >Upgrade</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5 d-flex">
+      <div
+        class="card"
+        style="
+          width: 100%;
+          visibility: visible;
+          transform: none;
+          opacity: 1;
+          transition: none 0s ease 0s;
+        "
+      >
+        <div class="card-body">
+          <div class="row row-sm">
+            <div class="col-4">
+              <small class="text-muted">Divisions</small>
+              <div
+                style="font-size: 32px;"
+                class="text-highlight mt-2 font-weight-500"
+              >
+                {{ data.divs }}
+              </div>
+            </div>
+            <div class="col-4">
+              <small class="text-muted">HRs</small>
+              <div
+                style="font-size: 32px;"
+                class="text-highlight mt-2 font-weight-500"
+              >
+                {{ data.hrs }}
+              </div>
+            </div>
+            <div class="col-4">
+              <small class="text-muted">Inactive HRs</small>
+              <div
+                style="font-size: 32px;"
+                class="text-highlight mt-2 font-weight-500"
+              >
+                {{ data.inactiveHrs }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

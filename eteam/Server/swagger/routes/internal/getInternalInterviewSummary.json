@@ -1,0 +1,41 @@
+{
+  "tags": ["Internal"],
+  "summary": "Get Interview summary (mustly used to calculate prices)",
+  "operationId": "getInternalInterviewSummary",
+  "x-swagger-router-controller": "internalCtrl",
+  "security": [
+    {
+      "InternalAuth": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "intId",
+      "in": "path",
+      "type": "number",
+      "minLength": 1,
+      "maxLength": 128,
+      "required": true
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/models/hr_interview.json#/InterviewSummary"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "401": {
+      "$ref": "~/defaults/errors.json#/401"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

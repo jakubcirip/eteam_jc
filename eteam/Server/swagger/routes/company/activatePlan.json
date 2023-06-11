@@ -1,0 +1,45 @@
+{
+  "tags": ["Company"],
+  "summary": "Activate specific plan",
+  "operationId": "activatePlan",
+  "x-swagger-router-controller": "companyCtrl",
+  "security": [
+    {
+      "CompanyAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "planData",
+      "in": "body",
+      "description": "What plan to activate",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": ["planId"],
+        "properties": {
+          "planId": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

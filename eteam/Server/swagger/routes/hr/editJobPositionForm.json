@@ -1,0 +1,61 @@
+{
+  "tags": ["Hr"],
+  "summary": "Edit job position form",
+  "operationId": "editJobPositionForm",
+  "x-swagger-router-controller": "hrCtrl",
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "positionId",
+      "in": "path",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "formData",
+      "in": "body",
+      "description": "Job position form data",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": ["id", "newName", "newLangCode"],
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "newName": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "newLangCode": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

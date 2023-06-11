@@ -1,0 +1,15 @@
+<mat-form-field class="example-full-width">
+  <input
+    type="text"
+    [placeholder]="placeholder"
+    matInput
+    [formControl]="myControl"
+    [matAutocomplete]="auto"
+    [readonly]="disabled ? true : false"
+  />
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredOptions" [value]="option">
+      {{ option }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

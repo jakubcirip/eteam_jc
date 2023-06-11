@@ -1,0 +1,63 @@
+{
+  "tags": ["Division"],
+  "summary": "Add new person into division",
+  "operationId": "addPerson",
+  "x-swagger-router-controller": "divisionCtrl",
+  "security": [
+    {
+      "CompanyAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "personData",
+      "in": "body",
+      "description": "Data about person",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": ["name", "email"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "email": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          }
+        }
+      }
+    },
+    {
+      "name": "divisionId",
+      "in": "path",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "required": true
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "401": {
+      "$ref": "~/defaults/errors.json#/401"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

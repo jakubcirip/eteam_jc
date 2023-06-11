@@ -1,0 +1,52 @@
+{
+  "tags": ["Public"],
+  "summary": "Send register mails",
+  "operationId": "registerInterest",
+  "x-swagger-router-controller": "publicCtrl",
+  "parameters": [
+    {
+      "name": "body",
+      "in": "body",
+      "description": "Refister Form Data",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": ["company", "city", "email", "canContact"],
+        "properties": {
+          "company": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "canContact": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "401": {
+      "$ref": "~/defaults/errors.json#/401"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

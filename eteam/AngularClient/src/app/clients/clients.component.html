@@ -1,0 +1,100 @@
+<!--Testimonial Start-->
+<section class="gradient-bg1 text-center" id="clients">
+  <div class="container" id="clients-aos-anchor">
+    <!--Row-->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading-area mx-570 mb-5">
+          <h2
+            class="title text-white m-0"
+            data-aos-anchor="#clients-aos-anchor"
+            data-aos="fade-up"
+          >
+            {{ 'clients.title.before' | translate }}
+            <span class="js-rotating">{{
+              'clients.title.words' | translate
+            }}</span>
+            {{ 'clients.title.after' | translate }}
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <!--Row-->
+    <div class="row">
+      <div
+        class="col-md-12"
+        data-aos-anchor="#clients-aos-anchor"
+        data-aos="fade-up"
+        data-aos-delay="800"
+      >
+        <div class="owl-carousel" id="testimonial-slider">
+          <div class="item" *ngFor="let client of data.clients">
+            <p class="para">
+              {{ client.text }}
+            </p>
+            <h5 class="name gradient-text1">{{ client.name }}</h5>
+            <span class="designation"> {{ client.companyName }} </span>
+            <ul class="ratings list-unstyled">
+              <li>
+                <i
+                  aria-hidden="true"
+                  class="fas fa-star"
+                  *ngFor="let star of client.rating"
+                ></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="owl-dots" id="testimonials-avatar">
+      <button
+        class="owl-dot active"
+        [attr.data-position]="client.pos"
+        *ngFor="let client of data.clients"
+        data-aos-anchor="#clients-aos-anchor"
+        data-aos="flip-left"
+        data-aos-delay="400"
+      >
+        <img alt="image" [src]="client.imgSrc" />
+      </button>
+    </div>
+    <!--Testimonial Thumbs-->
+    <!-- <div class="owl-dots" id="testimonials-avatar">
+      <button class="owl-dot active" data-position="22%,auto,auto,5%">
+        <img alt="image" src="/assets/agency/img/avatar-1.png" />
+      </button>
+
+      <button class="owl-dot active" data-position="30%,auto,auto,16%">
+        <img alt="image" src="/assets/agency/img/avatar-2.png" />
+      </button>
+
+      <button class="owl-dot active" data-position="auto,auto,38%,7%">
+        <img alt="image" src="/assets/agency/img/avatar-3.png" />
+      </button>
+
+      <button class="owl-dot active" data-position="auto,auto,23%,18%">
+        <img alt="image" src="/assets/agency/img/avatar-7.png" />
+      </button>
+
+      <button class="owl-dot active" data-position="20%,19%,auto,auto">
+        <img alt="image" src="/assets/agency/img/avatar-5.png" />
+      </button>
+
+      <button class="owl-dot active" data-position="28%,6%,auto,auto">
+        <img alt="image" src="/assets/agency/img/avatar-6.png" />
+      </button>
+
+      <button class="owl-dot active" data-position="40%,15%,auto,auto">
+        <img alt="image" src="/assets/agency/img/avatar-4.png" />
+      </button>
+
+      <button class="owl-dot active" data-position="auto,21%,22%,auto">
+        <img alt="image" src="/assets/agency/img/avatar-2.png" />
+      </button>
+    </div> -->
+  </div>
+</section>
+<!--Testimonial End-->

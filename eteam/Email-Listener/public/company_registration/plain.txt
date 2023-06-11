@@ -1,0 +1,2 @@
+Yeyyy, you  did it!
+To finish registartion go here: {{companyUrl}}/company-registration-finish/{{activationCode}}?domain={{domain}}

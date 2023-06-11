@@ -1,0 +1,73 @@
+<!--Parallax Start-->
+<section id="more">
+  <div class="container">
+    <div class="row">
+      <div
+        [id]="'more-n' + i + '-aos-anchor'"
+        class="col-lg-6"
+        style="margin-bottom: 50px;"
+        *ngFor="let feature of data.moreFeatures; let i = index"
+      >
+        <div
+          data-aos="fade-up"
+          [attr.data-aos-anchor]="'#more-n' + i + '-aos-anchor'"
+        >
+          <img
+            class="animated-img"
+            style="width: 50%;"
+            alt="image"
+            [src]="feature.img"
+          />
+        </div>
+
+        <div class="heading-area">
+          <h2
+            class="title"
+            [attr.data-aos-anchor]="'#more-n' + i + '-aos-anchor'"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            {{ feature.title }}
+          </h2>
+          <p
+            class="para"
+            [attr.data-aos-anchor]="'#more-n' + i + '-aos-anchor'"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
+            {{ feature.text }}
+          </p>
+          <div
+            [attr.data-aos-anchor]="'#more-n' + i + '-aos-anchor'"
+            data-aos="fade-up"
+            data-aos-delay="1200"
+          >
+            <!-- <a
+              class="btn btn-large btn-rounded btn-blue btn-hvr-pink mt-3"
+              href="javascript:void(0);"
+              data-toggle="modal"
+              [attr.data-target]="'#more_modal' + i"
+              >{{ 'shared.learnMore' | translate }}
+              <div class="btn-hvr-setting">
+                <ul class="btn-hvr-setting-inner">
+                  <li class="btn-hvr-effect"></li>
+                  <li class="btn-hvr-effect"></li>
+                  <li class="btn-hvr-effect"></li>
+                  <li class="btn-hvr-effect"></li>
+                </ul>
+              </div>
+            </a> -->
+          </div>
+        </div>
+
+        <!-- <app-modal
+          [title]="feature.modal.title"
+          [text]="feature.modal.text"
+          [image]="feature.modal.image"
+          [id]="'more_modal' + i"
+        ></app-modal> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!--Parallax End-->

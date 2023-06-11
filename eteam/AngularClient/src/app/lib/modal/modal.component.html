@@ -1,0 +1,65 @@
+<div nowrapper>
+  <!-- Modal -->
+  <div class="modal fade" [id]="id" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">
+            {{ title }}
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <img
+          *ngIf="image !== null"
+          [src]="image"
+          style="width: 100%; cursor: pointer;"
+          alt=""
+          data-toggle="modal"
+          [attr.data-target]="'#' + id + '_img'"
+        />
+        <div class="modal-body">
+          <p>
+            {{ text }}
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div
+    *ngIf="image !== null"
+    class="modal fade"
+    [id]="id + '_img'"
+    tabindex="-1"
+    role="dialog"
+  >
+    <div
+      class="modal-dialog modal-dialog-centered modal-lg"
+      role="document"
+      style="max-width: 80vw; width: 80vw;"
+    >
+      <div class="modal-content">
+        <img [src]="image" alt="" />
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

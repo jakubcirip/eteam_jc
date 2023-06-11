@@ -1,0 +1,3 @@
+Password successfully reset.
+
+You can now login <a href="{{companyUrl}}/company-login?domain={{domain}}">here</a>

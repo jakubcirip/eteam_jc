@@ -1,0 +1,42 @@
+<div *ngIf="results.data !== null">
+  <div class="page-hero page-container">
+    <div class="padding d-flex">
+      <div class="page-title">
+        <h2 class="text-md text-highlight">
+          <svg
+            style="cursor: pointer;"
+            (click)="goBack()"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#f54394"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-chevrons-left mx-2"
+          >
+            <polyline points="11 17 6 12 11 7"></polyline>
+            <polyline points="18 17 13 12 18 7"></polyline>
+          </svg>
+          [Slideshow] Candidates {{ results.data.intName }}
+        </h2>
+        <small style="margin-left: 45px;" class="text-muted"
+          >List of candidates in this interview that you selected</small
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+      <div class="col-sm-12">
+        <app-interview-candidates-list
+          [candidates]="candidates"
+          [intId]="intId"
+        ></app-interview-candidates-list>
+      </div>
+    </div>
+  </div>
+</div>

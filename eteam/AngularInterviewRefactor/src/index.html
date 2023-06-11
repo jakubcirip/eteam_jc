@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hiroo Interview</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css"
+    />
+    <link rel="stylesheet" href="/assets/css/animate.min.css" />
+    <link rel="stylesheet" href="/assets/css/fontawesome-all.css" />
+
+    <link rel="stylesheet" href="/assets/popup/css/style.css" />
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/default.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/colors/switch.css"
+    />
+    <!-- Color Alternatives -->
+    <link
+      href="/assets/css/colors/color-2.css"
+      rel="alternate stylesheet"
+      type="text/css"
+      title="color-2"
+    />
+    <link
+      href="/assets/css/colors/color-3.css"
+      rel="alternate stylesheet"
+      type="text/css"
+      title="color-3"
+    />
+    <link
+      href="/assets/css/colors/color-4.css"
+      rel="alternate stylesheet"
+      type="text/css"
+      title="color-4"
+    />
+    <link
+      href="/assets/css/colors/color-5.css"
+      rel="alternate stylesheet"
+      type="text/css"
+      title="color-5"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.2/plyr.css"
+      integrity="sha512-jrLDXl9jUPe5DT19ukacvpX39XiErIBZxiaVMDFRe+OAKoBVYO126Dt7cvhMJ3Fja963lboD9DH+ev/2vbEnMw=="
+      crossorigin="anonymous"
+    />
+
+    <!-- <script src="http://192.168.31.253:8080/target/target-script-min.js#anonymous"></script> -->
+  </head>
+  <body>
+    <app-root></app-root>
+
+    <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.all.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.2/plyr.min.js"
+      integrity="sha512-5HcOw3x/g3GAUpNNyvKYB2/f8ivVNBVebdqCxz3Mmdftx7vXOdbYvonB2Det6RVcA1IDxYeYWTAzxRg+c6uvYQ=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      jQuery.validator.addMethod(
+        'phonenumber',
+        function (value, element) {
+          if (this.optional(element)) {
+            return true;
+          }
+
+          var res = value.match(/\+[0-9 ]{12,15}/g);
+          if (res && res.length > 0) {
+            return true;
+          }
+
+          return false;
+        },
+        'Enter valid phone number please. For example: +421 919 482 205',
+      );
+
+      /*
+      $('#files').change(function() {
+        filename = this.files[0].name;
+        // console.log(filename);
+      });
+
+      function UploadFile() {
+        var reader = new FileReader();
+        var file = document.getElementById('attach').files[0];
+        reader.onload = function() {
+          document.getElementById('fileContent').value = reader.result;
+          document.getElementById('filename').value = file.name;
+          document.getElementById('wizard').submit();
+        };
+        reader.readAsDataURL(file);
+      }
+      */
+    </script>
+
+    <script>
+      function initGetUserMedia() {
+        navigator.mediaDevices = navigator.mediaDevices || {};
+        navigator.mediaDevices.getUserMedia =
+          navigator.mediaDevices.getUserMedia ||
+          function (constraints) {
+            let getUserMedia =
+              navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+            if (!getUserMedia) {
+              alert('This device does not support recording.');
+              return Promise.reject();
+            } else {
+              return new Promise((resolve, reject) => {
+                getUserMedia.call(navigator, constraints, resolve, reject);
+              });
+            }
+          };
+      }
+
+      initGetUserMedia();
+    </script>
+  </body>
+</html>

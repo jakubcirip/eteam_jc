@@ -1,0 +1,3 @@
+Welcome {{name}} :)
+<br>
+To finish registartion click <a href="{{companyUrl}}/hr-registration-finish/{{activationCode}}?domain={{domain}}">here!</a> 

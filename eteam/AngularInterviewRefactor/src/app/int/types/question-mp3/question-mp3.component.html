@@ -1,0 +1,26 @@
+<app-assistent [title]="title"></app-assistent>
+
+<br />
+
+<p *ngIf="step.data.text" [innerHTML]="step.data.text"></p>
+
+<a
+  *ngIf="step.data.terms.text && step.data.terms.url"
+  [href]="step.data.terms.url"
+  class="text-primary"
+  target="_blank"
+>
+  {{ step.data.terms.text }}
+</a>
+
+<div
+  *ngIf="
+    int.interviewState === InterviewState.QUESTION_MP3_STEP1 ||
+    int.interviewState === InterviewState.QUESTION_MP3_STEP2
+  "
+>
+  <audio [id]="id" controls>
+    <source [src]="int.randomData.src" type="audio/mp3" />
+    {{ 'error.noAudioSupport' | translate }}
+  </audio>
+</div>
