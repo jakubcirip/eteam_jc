@@ -1,0 +1,1422 @@
+{
+  "@@locale": "en-SK",
+  "snvGwvY": "improve you company",
+  "@snvGwvY": {
+    "description": "benefits_component - small subtitle",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "11",
+          "column": "8"
+        },
+        "end": {
+          "line": "12",
+          "column": "6"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "401",
+          "column": "8"
+        },
+        "end": {
+          "line": "402",
+          "column": "6"
+        }
+      }
+    ]
+  },
+  "snvGwOF": "We inovate your processes",
+  "@snvGwOF": {
+    "description": "benefits_component - title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "17",
+          "column": "8"
+        },
+        "end": {
+          "line": "18",
+          "column": "6"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "407",
+          "column": "8"
+        },
+        "end": {
+          "line": "408",
+          "column": "6"
+        }
+      }
+    ]
+  },
+  "snvGx6l": "Improve your image in front of your customers and candidates as well. Checkli brings following benefits:",
+  "@snvGx6l": {
+    "description": "benefits_component - description",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "23",
+          "column": "8"
+        },
+        "end": {
+          "line": "25",
+          "column": "6"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "413",
+          "column": "8"
+        },
+        "end": {
+          "line": "415",
+          "column": "6"
+        }
+      }
+    ]
+  },
+  "snvGDkz": "Benefits for",
+  "@snvGDkz": {
+    "description": "benefits_component - table header small subtitle",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "61",
+          "column": "19"
+        },
+        "end": {
+          "line": "61",
+          "column": "31"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "242",
+          "column": "19"
+        },
+        "end": {
+          "line": "242",
+          "column": "31"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "451",
+          "column": "19"
+        },
+        "end": {
+          "line": "451",
+          "column": "31"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "499",
+          "column": "19"
+        },
+        "end": {
+          "line": "499",
+          "column": "31"
+        }
+      }
+    ]
+  },
+  "snvGHBn": "your company",
+  "@snvGHBn": {
+    "description": "benefits_component - table header title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "66",
+          "column": "19"
+        },
+        "end": {
+          "line": "66",
+          "column": "31"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "456",
+          "column": "19"
+        },
+        "end": {
+          "line": "456",
+          "column": "31"
+        }
+      }
+    ]
+  },
+  "snvH4Uh": "Scalability",
+  "@snvH4Uh": {
+    "description": "benefits_component - benefit title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "100",
+          "column": "19"
+        },
+        "end": {
+          "line": "100",
+          "column": "30"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "538",
+          "column": "19"
+        },
+        "end": {
+          "line": "538",
+          "column": "30"
+        }
+      }
+    ]
+  },
+  "snvH5eO": "On our platform, you can process more job positions at the same time. Also, multiple HR specialists can work on the same interview at the same time.",
+  "@snvH5eO": {
+    "description": "benefits_component - benefit text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "109",
+          "column": "16"
+        },
+        "end": {
+          "line": "112",
+          "column": "14"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "547",
+          "column": "16"
+        },
+        "end": {
+          "line": "550",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvH7hC": "\"Just\" a tool",
+  "@snvH7hC": {
+    "description": "benefits_component - benefit title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "144",
+          "column": "19"
+        },
+        "end": {
+          "line": "144",
+          "column": "32"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "627",
+          "column": "19"
+        },
+        "end": {
+          "line": "627",
+          "column": "32"
+        }
+      }
+    ]
+  },
+  "snvH7Cd": "Let a technology analyse the content and you decide based on your human feelings. We are not trying to replace your human resources sector, we are trying to help them!",
+  "@snvH7Cd": {
+    "description": "benefits_component - benefit text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "153",
+          "column": "16"
+        },
+        "end": {
+          "line": "156",
+          "column": "14"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "636",
+          "column": "16"
+        },
+        "end": {
+          "line": "639",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvH9Kx": "Reduce the fluctuation",
+  "@snvH9Kx": {
+    "description": "benefits_component - benefit title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "188",
+          "column": "19"
+        },
+        "end": {
+          "line": "188",
+          "column": "41"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "715",
+          "column": "19"
+        },
+        "end": {
+          "line": "715",
+          "column": "41"
+        }
+      }
+    ]
+  },
+  "snvHa0Y": "Our platform can provide enough information for you to make sure the candidate understands a language on the level you require him. Also, you can test some of our example scenarios to see if the candidate can respond as you expect him to.",
+  "@snvHa0Y": {
+    "description": "benefits_component - benefit text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "197",
+          "column": "16"
+        },
+        "end": {
+          "line": "201",
+          "column": "14"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "724",
+          "column": "16"
+        },
+        "end": {
+          "line": "728",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvGJ8j": "the candidate",
+  "@snvGJ8j": {
+    "description": "benefits_component - table header title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "247",
+          "column": "19"
+        },
+        "end": {
+          "line": "247",
+          "column": "32"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "504",
+          "column": "19"
+        },
+        "end": {
+          "line": "504",
+          "column": "32"
+        }
+      }
+    ]
+  },
+  "snvH6aK": "Submit from anywhere",
+  "@snvH6aK": {
+    "description": "benefits_component - benefit title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "281",
+          "column": "19"
+        },
+        "end": {
+          "line": "281",
+          "column": "39"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "582",
+          "column": "19"
+        },
+        "end": {
+          "line": "582",
+          "column": "39"
+        }
+      }
+    ]
+  },
+  "snvH6ru": "Candidate can handle the interview from anywhere and anywhen they want. No matter if you submit the interview from home or on the train, no matter if you decide to use smartphone or laptop, eveerything will be working as expected.",
+  "@snvH6ru": {
+    "description": "benefits_component - benefit text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "290",
+          "column": "16"
+        },
+        "end": {
+          "line": "294",
+          "column": "14"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "591",
+          "column": "16"
+        },
+        "end": {
+          "line": "595",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvH8He": "Follow the technology",
+  "@snvH8He": {
+    "description": "benefits_component - benefit title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "326",
+          "column": "19"
+        },
+        "end": {
+          "line": "326",
+          "column": "40"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "671",
+          "column": "19"
+        },
+        "end": {
+          "line": "671",
+          "column": "40"
+        }
+      }
+    ]
+  },
+  "snvH96i": "Today's candidates are familiar with modern technologies and they will appreciate compaines that take advanged of the technology.",
+  "@snvH96i": {
+    "description": "benefits_component - benefit text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "335",
+          "column": "16"
+        },
+        "end": {
+          "line": "338",
+          "column": "14"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "680",
+          "column": "16"
+        },
+        "end": {
+          "line": "683",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvHaK1": "Video CV",
+  "@snvHaK1": {
+    "description": "benefits_component - benefit title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "370",
+          "column": "18"
+        },
+        "end": {
+          "line": "370",
+          "column": "26"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "760",
+          "column": "18"
+        },
+        "end": {
+          "line": "760",
+          "column": "26"
+        }
+      }
+    ]
+  },
+  "snvHbi0": "You can offer the candidates a video interview for submiting the interview results by exporting it from our platform. This may help you get interest from more candidates as they get a reward even if they won't get hired.",
+  "@snvHbi0": {
+    "description": "benefits_component - benefit text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "379",
+          "column": "16"
+        },
+        "end": {
+          "line": "383",
+          "column": "14"
+        }
+      },
+      {
+        "file": "src/app/components/home/benefits/benefits.component.html",
+        "start": {
+          "line": "769",
+          "column": "16"
+        },
+        "end": {
+          "line": "773",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvEXSc": "Contact us to get started",
+  "@snvEXSc": {
+    "description": "contact_component - title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/contact/contact.component.html",
+        "start": {
+          "line": "75",
+          "column": "8"
+        },
+        "end": {
+          "line": "76",
+          "column": "6"
+        }
+      }
+    ]
+  },
+  "snvEYaQ": "We prefer communication over limited demo version so please let us know and we will schedule a call to answer all of your questions and show you the platform.",
+  "@snvEYaQ": {
+    "description": "contact_component - description",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/contact/contact.component.html",
+        "start": {
+          "line": "81",
+          "column": "8"
+        },
+        "end": {
+          "line": "84",
+          "column": "6"
+        }
+      }
+    ]
+  },
+  "snvF81Z": "First name",
+  "@snvF81Z": {
+    "description": "contact_component - input label",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/contact/contact.component.html",
+        "start": {
+          "line": "97",
+          "column": "13"
+        },
+        "end": {
+          "line": "97",
+          "column": "23"
+        }
+      }
+    ]
+  },
+  "snvF8jn": "Last name",
+  "@snvF8jn": {
+    "description": "contact_component - input label",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/contact/contact.component.html",
+        "start": {
+          "line": "114",
+          "column": "13"
+        },
+        "end": {
+          "line": "114",
+          "column": "22"
+        }
+      }
+    ]
+  },
+  "snvF8C5": "Company",
+  "@snvF8C5": {
+    "description": "contact_component - input label",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/contact/contact.component.html",
+        "start": {
+          "line": "131",
+          "column": "13"
+        },
+        "end": {
+          "line": "131",
+          "column": "20"
+        }
+      }
+    ]
+  },
+  "snvF9dB": "Email",
+  "@snvF9dB": {
+    "description": "contact_component - input label",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/contact/contact.component.html",
+        "start": {
+          "line": "148",
+          "column": "13"
+        },
+        "end": {
+          "line": "148",
+          "column": "18"
+        }
+      }
+    ]
+  },
+  "snvF9Sv": "Phone Number",
+  "@snvF9Sv": {
+    "description": "contact_component - input label",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/contact/contact.component.html",
+        "start": {
+          "line": "165",
+          "column": "13"
+        },
+        "end": {
+          "line": "165",
+          "column": "25"
+        }
+      }
+    ]
+  },
+  "snvFb4S": "Message",
+  "@snvFb4S": {
+    "description": "contact_component - input label",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/contact/contact.component.html",
+        "start": {
+          "line": "182",
+          "column": "13"
+        },
+        "end": {
+          "line": "182",
+          "column": "20"
+        }
+      }
+    ]
+  },
+  "snvFbD0": "Let's talk",
+  "@snvFbD0": {
+    "description": "contact_component - submit button",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/contact/contact.component.html",
+        "start": {
+          "line": "199",
+          "column": "12"
+        },
+        "end": {
+          "line": "200",
+          "column": "10"
+        }
+      }
+    ]
+  },
+  "soCTirG": "By sending message, you agree to our {$START_LINK}Data Policy{$CLOSE_LINK} and {$START_LINK_1}Cookies Policy{$CLOSE_LINK}.",
+  "@soCTirG": {
+    "description": "contact_component - agreements text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/contact/contact.component.html",
+        "start": {
+          "line": "211",
+          "column": "14"
+        },
+        "end": {
+          "line": "225",
+          "column": "12"
+        }
+      },
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "226",
+          "column": "12"
+        },
+        "end": {
+          "line": "238",
+          "column": "10"
+        }
+      }
+    ]
+  },
+  "snvEt0c": "get to know us",
+  "@snvEt0c": {
+    "description": "features_component - small subtitle",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "10",
+          "column": "6"
+        },
+        "end": {
+          "line": "11",
+          "column": "4"
+        }
+      }
+    ]
+  },
+  "snvEvO3": "Features that makes our platform unique",
+  "@snvEvO3": {
+    "description": "features_component - title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "16",
+          "column": "6"
+        },
+        "end": {
+          "line": "17",
+          "column": "4"
+        }
+      }
+    ]
+  },
+  "snvEvss": "Whether you are a small company or a huge cooperation, you can anways benefit from simple pre-screening before inviting the candidate for an interview. Our platform has multiple features that makes this process as simple as possible.",
+  "@snvEvss": {
+    "description": "features_component - description",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "22",
+          "column": "6"
+        },
+        "end": {
+          "line": "26",
+          "column": "4"
+        }
+      }
+    ]
+  },
+  "snvEL5x": "User friendly",
+  "@snvEL5x": {
+    "description": "features_component - feature name",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "60",
+          "column": "16"
+        },
+        "end": {
+          "line": "61",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvELky": "You set up the interview within a few clicks or customize each question based on your preferences.",
+  "@snvELky": {
+    "description": "features_component - feature text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "66",
+          "column": "16"
+        },
+        "end": {
+          "line": "68",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvEM0b": "Automation",
+  "@snvEM0b": {
+    "description": "features_component - feature name",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "104",
+          "column": "16"
+        },
+        "end": {
+          "line": "105",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvEMD2": "Replace your first round calls with automated language pre-screening of your candidates.",
+  "@snvEMD2": {
+    "description": "features_component - feature text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "110",
+          "column": "16"
+        },
+        "end": {
+          "line": "112",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvENOB": "Comparative analytics",
+  "@snvENOB": {
+    "description": "features_component - feature name",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "148",
+          "column": "16"
+        },
+        "end": {
+          "line": "149",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvEOcl": "Our software is using advanced data analysing tools to get better results and recognize a talent.",
+  "@snvEOcl": {
+    "description": "features_component - feature text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "154",
+          "column": "16"
+        },
+        "end": {
+          "line": "156",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvEP8u": "Money saver",
+  "@snvEP8u": {
+    "description": "features_component - feature name",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "192",
+          "column": "16"
+        },
+        "end": {
+          "line": "193",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvEPvA": "Our service helps you innovate and reduce the time to conduct interviews by up to 70%.",
+  "@snvEPvA": {
+    "description": "features_component - feature text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "198",
+          "column": "16"
+        },
+        "end": {
+          "line": "200",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvEQtz": "Check any language",
+  "@snvEQtz": {
+    "description": "features_component - feature name",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "237",
+          "column": "16"
+        },
+        "end": {
+          "line": "238",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvEQM6": "Our platform support 28+ languages so you can test languages you dont even understand.",
+  "@snvEQM6": {
+    "description": "features_component - feature text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "243",
+          "column": "16"
+        },
+        "end": {
+          "line": "245",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvERti": "Privacy friendly",
+  "@snvERti": {
+    "description": "features_component - feature name",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "281",
+          "column": "16"
+        },
+        "end": {
+          "line": "282",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvERVM": "We respect candidate privacy and let them choose whether they want to use their camera or only microphone.",
+  "@snvERVM": {
+    "description": "features_component - feature text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/features/features.component.html",
+        "start": {
+          "line": "287",
+          "column": "16"
+        },
+        "end": {
+          "line": "289",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvEjDB": "Ready to dive in?",
+  "@snvEjDB": {
+    "description": "interested_banner_component - title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/interested-banner/interested-banner.component.html",
+        "start": {
+          "line": "9",
+          "column": "9"
+        },
+        "end": {
+          "line": "9",
+          "column": "26"
+        }
+      }
+    ]
+  },
+  "snvEjhT": "Contact us and schedule a call.",
+  "@snvEjhT": {
+    "description": "interested_banner_component - subtitle",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/interested-banner/interested-banner.component.html",
+        "start": {
+          "line": "14",
+          "column": "9"
+        },
+        "end": {
+          "line": "14",
+          "column": "40"
+        }
+      }
+    ]
+  },
+  "snvEjXF": "Get a quote",
+  "@snvEjXF": {
+    "description": "interested_banner_component - button",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/interested-banner/interested-banner.component.html",
+        "start": {
+          "line": "25",
+          "column": "10"
+        },
+        "end": {
+          "line": "26",
+          "column": "8"
+        }
+      }
+    ]
+  },
+  "snvFDDx": "read our articles",
+  "@snvFDDx": {
+    "description": "intro_component - article info action",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "14",
+          "column": "13"
+        },
+        "end": {
+          "line": "14",
+          "column": "30"
+        }
+      }
+    ]
+  },
+  "snvFDY7": "Visit our blog website",
+  "@snvFDY7": {
+    "description": "intro_component - article info text",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "19",
+          "column": "13"
+        },
+        "end": {
+          "line": "19",
+          "column": "35"
+        }
+      }
+    ]
+  },
+  "snvFPFd": "Hire the right candidate",
+  "@snvFPFd": {
+    "description": "intro_component - main sentence start",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "42",
+          "column": "13"
+        },
+        "end": {
+          "line": "42",
+          "column": "37"
+        }
+      }
+    ]
+  },
+  "snvFP1g": "based on his language.",
+  "@snvFP1g": {
+    "description": "intro_component - main sentence end 1/3",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "62",
+          "column": "15"
+        },
+        "end": {
+          "line": "63",
+          "column": "12"
+        }
+      }
+    ]
+  },
+  "snvFO64": "based on his communication.",
+  "@snvFO64": {
+    "description": "intro_component - main sentence end 2/3",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "84",
+          "column": "15"
+        },
+        "end": {
+          "line": "84",
+          "column": "42"
+        }
+      }
+    ]
+  },
+  "snvFNc6": "while reducing your cost.",
+  "@snvFNc6": {
+    "description": "intro_component - main sentence end 3/3",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "105",
+          "column": "15"
+        },
+        "end": {
+          "line": "106",
+          "column": "12"
+        }
+      }
+    ]
+  },
+  "snvFSe6": "Automated audio-screening tool designed for recruitment agencies focusing on language skilled employees.",
+  "@snvFSe6": {
+    "description": "intro_component - main description",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "114",
+          "column": "12"
+        },
+        "end": {
+          "line": "116",
+          "column": "10"
+        }
+      }
+    ]
+  },
+  "snvFVgb": "Trusted and used by",
+  "@snvFVgb": {
+    "description": "intro_component - trusted title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "123",
+          "column": "10"
+        },
+        "end": {
+          "line": "124",
+          "column": "8"
+        }
+      }
+    ]
+  },
+  "snvFZjM": "Interested already?",
+  "@snvFZjM": {
+    "description": "intro_component - right panel title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "157",
+          "column": "16"
+        },
+        "end": {
+          "line": "158",
+          "column": "14"
+        }
+      }
+    ]
+  },
+  "snvG3i5": "Mobile number or email",
+  "@snvG3i5": {
+    "description": "intro_component - right panel input label",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "173",
+          "column": "19"
+        },
+        "end": {
+          "line": "173",
+          "column": "41"
+        }
+      },
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "180",
+          "column": "31"
+        },
+        "end": {
+          "line": "180",
+          "column": "53"
+        }
+      }
+    ]
+  },
+  "snvG6T3": "Your message",
+  "@snvG6T3": {
+    "description": "intro_component - right panel input label",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "193",
+          "column": "19"
+        },
+        "end": {
+          "line": "193",
+          "column": "31"
+        }
+      },
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "198",
+          "column": "31"
+        },
+        "end": {
+          "line": "198",
+          "column": "43"
+        }
+      }
+    ]
+  },
+  "snvGaIu": "Send message",
+  "@snvGaIu": {
+    "description": "intro_component - right panel submit button",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/intro/intro.component.html",
+        "start": {
+          "line": "213",
+          "column": "18"
+        },
+        "end": {
+          "line": "214",
+          "column": "16"
+        }
+      }
+    ]
+  },
+  "snvE9Es": "Trusted by multiple world-changing companies",
+  "@snvE9Es": {
+    "description": "trusted_list_component - title",
+    "x-locations": [
+      {
+        "file": "src/app/components/home/trusted-list/trusted-list.component.html",
+        "start": {
+          "line": "6",
+          "column": "6"
+        },
+        "end": {
+          "line": "7",
+          "column": "4"
+        }
+      }
+    ]
+  },
+  "snvDAER": "Workflow",
+  "@snvDAER": {
+    "description": "menu_component - screen reader logo text",
+    "x-locations": [
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "39",
+          "column": "15"
+        },
+        "end": {
+          "line": "39",
+          "column": "23"
+        }
+      }
+    ]
+  },
+  "snvDDMa": "Open main menu",
+  "@snvDDMa": {
+    "description": "menu_component - screen reader menu icon text",
+    "x-locations": [
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "123",
+          "column": "17"
+        },
+        "end": {
+          "line": "123",
+          "column": "31"
+        }
+      }
+    ]
+  },
+  "snvDI6x": "Features",
+  "@snvDI6x": {
+    "description": "menu_component - menu item",
+    "x-locations": [
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "150",
+          "column": "13"
+        },
+        "end": {
+          "line": "150",
+          "column": "21"
+        }
+      },
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "324",
+          "column": "15"
+        },
+        "end": {
+          "line": "324",
+          "column": "23"
+        }
+      }
+    ]
+  },
+  "snvDKbE": "Benefits",
+  "@snvDKbE": {
+    "description": "menu_component - menu item",
+    "x-locations": [
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "158",
+          "column": "13"
+        },
+        "end": {
+          "line": "158",
+          "column": "21"
+        }
+      },
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "333",
+          "column": "15"
+        },
+        "end": {
+          "line": "333",
+          "column": "23"
+        }
+      }
+    ]
+  },
+  "snvDKsl": "Contact",
+  "@snvDKsl": {
+    "description": "menu_component - menu item",
+    "x-locations": [
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "166",
+          "column": "13"
+        },
+        "end": {
+          "line": "166",
+          "column": "20"
+        }
+      },
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "342",
+          "column": "15"
+        },
+        "end": {
+          "line": "342",
+          "column": "22"
+        }
+      }
+    ]
+  },
+  "snvDNiH": "Get a quote",
+  "@snvDNiH": {
+    "description": "menu_component - menu right button",
+    "x-locations": [
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "242",
+          "column": "10"
+        },
+        "end": {
+          "line": "243",
+          "column": "8"
+        }
+      },
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "353",
+          "column": "14"
+        },
+        "end": {
+          "line": "354",
+          "column": "12"
+        }
+      }
+    ]
+  },
+  "snvDTOC": "Close menu",
+  "@snvDTOC": {
+    "description": "menu_component - screen reader close menu icon text",
+    "x-locations": [
+      {
+        "file": "src/app/components/shared/menu/menu.component.html",
+        "start": {
+          "line": "291",
+          "column": "17"
+        },
+        "end": {
+          "line": "291",
+          "column": "27"
+        }
+      }
+    ]
+  }
+}
