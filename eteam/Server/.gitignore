@@ -1,7 +1,0 @@
-node_modules
-build
-public/small-compressed/
-.env
-temp/*
-!temp/.gitkeep
-google.json

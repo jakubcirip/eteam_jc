@@ -1,2 +1,0 @@
-Welcome {{name}} :)
-To finish registartion go here: {{companyUrl}}/hr-registration-finish/{{activationCode}}?domain={{domain}}

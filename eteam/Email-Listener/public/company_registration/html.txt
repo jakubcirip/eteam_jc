@@ -1,2 +1,0 @@
-Yeyyy, you  did it!
-To finish registartion click <a href="{{companyUrl}}/company-registration-finish/{{activationCode}}?domain={{domain}}">here!</a> 

@@ -1,2 +1,0 @@
-Yeyy, finished.
-You can login <a href="{{companyUrl}}/hr-login?domain={{domain}}">here</a>

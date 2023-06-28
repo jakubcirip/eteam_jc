@@ -1,3 +1,0 @@
-Company successfully registered.
-
-You can now login here: {{companyUrl}}/company-login?domain={{domain}}

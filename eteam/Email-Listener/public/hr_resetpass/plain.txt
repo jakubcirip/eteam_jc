@@ -1,1 +1,0 @@
-To set new password follow this link: {{companyUrl}}/hr-forgot-password/{{resetPassKey}}?domain={{domain}}

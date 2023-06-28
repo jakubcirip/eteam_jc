@@ -1,1 +1,0 @@
-To set new password <a href="{{companyUrl}}/company-forgot-password/{{resetPassKey}}?domain={{domain}}">click here!</a>

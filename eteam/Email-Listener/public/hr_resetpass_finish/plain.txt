@@ -1,3 +1,0 @@
-Password successfully reset.
-
-You can now login here: {{companyUrl}}/hr-login?domain={{domain}}
