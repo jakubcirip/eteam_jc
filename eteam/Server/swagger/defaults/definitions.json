@@ -1,0 +1,308 @@
+{
+    "GetHrEmailCatalogResponse": {
+        "$ref": "~/models/catalog.json#/GetHrEmailCatalogResponse"
+    },
+    "ImportHrEmailCatalogParamBody": {
+        "$ref": "~/models/catalog.json#/ImportHrEmailCatalogParamBody"
+    },
+    "LikeHrEmailCatalogParamEmailId": {
+        "$ref": "~/models/catalog.json#/LikeHrEmailCatalogParamEmailId"
+    },
+    "GetHrFormCatalogResponse": {
+        "$ref": "~/models/catalog.json#/GetHrFormCatalogResponse"
+    },
+    "ImportHrFormCatalogParamBody": {
+        "$ref": "~/models/catalog.json#/ImportHrFormCatalogParamBody"
+    },
+    "LikeHrFormCatalogParamEmailId": {
+        "$ref": "~/models/catalog.json#/LikeHrFormCatalogParamEmailId"
+    },
+    "CreateFastInterviewParamBody": {
+        "$ref": "~/models/catalog.json#/CreateFastInterviewParamBody"
+    },
+    "DivisionList": {
+        "$ref": "~/models/division.json#/DivisionList"
+    },
+    "Division": {
+        "$ref": "~/models/division.json#/Division"
+    },
+    "HRPerson": {
+        "$ref": "~/models/division.json#/HRPerson"
+    },
+    "DivisionDetail": {
+        "$ref": "~/models/division.json#/DivisionDetail"
+    },
+    "CompanySettings": {
+        "$ref": "~/models/company.json#/CompanySettings"
+    },
+    "CompanyIndexData": {
+        "$ref": "~/models/company.json#/CompanyIndexData"
+    },
+    "MeInfoCompany": {
+        "$ref": "~/models/company.json#/MeInfoCompany"
+    },
+    "TokensInfoCompany": {
+        "$ref": "~/models/company.json#/TokensInfoCompany"
+    },
+    "GetCompanyTokensStatsResponse": {
+        "$ref": "~/models/company.json#/GetCompanyTokensStatsResponse"
+    },
+    "GetCompanyInterviewHistoryResponse": {
+        "$ref": "~/models/company.json#/GetCompanyInterviewHistoryResponse"
+    },
+    "GetCompanyInterviewHistoryDetailParamHistoryIntId": {
+        "$ref": "~/models/company.json#/GetCompanyInterviewHistoryDetailParamHistoryIntId"
+    },
+    "GetCompanyInterviewHistoryDetailResponse": {
+        "$ref": "~/models/company.json#/GetCompanyInterviewHistoryDetailResponse"
+    },
+    "FormTemplatesObject": {
+        "$ref": "~/models/form.json#/FormTemplatesObject"
+    },
+    "FormTemplate": {
+        "$ref": "~/models/form.json#/FormTemplate"
+    },
+    "Mp3Array": {
+        "$ref": "~/models/fm.json#/Mp3Array"
+    },
+    "ImgArray": {
+        "$ref": "~/models/fm.json#/ImgArray"
+    },
+    "Mp4Array": {
+        "$ref": "~/models/fm.json#/Mp4Array"
+    },
+    "PublicInterviewResponse": {
+        "$ref": "~/models/hr.json#/PublicInterviewResponse"
+    },
+    "HrSettings": {
+        "$ref": "~/models/hr.json#/HrSettings"
+    },
+    "JobPositionForms": {
+        "$ref": "~/models/hr.json#/JobPositionForms"
+    },
+    "JobPositionForm": {
+        "$ref": "~/models/hr.json#/JobPositionForm"
+    },
+    "JobPositions": {
+        "$ref": "~/models/hr.json#/JobPositions"
+    },
+    "MeInfoHr": {
+        "$ref": "~/models/hr.json#/MeInfoHr"
+    },
+    "PreconfirmHr": {
+        "$ref": "~/models/hr.json#/PreconfirmHr"
+    },
+    "HrGetCalendarResponse": {
+        "$ref": "~/models/hr.json#/HrGetCalendarResponse"
+    },
+    "HrCanEditPersonParamPersonId": {
+        "$ref": "~/models/hr.json#/HrCanEditPersonParamPersonId"
+    },
+    "HrCanEditPersonResponse": {
+        "$ref": "~/models/hr.json#/HrCanEditPersonResponse"
+    },
+    "HrCanEditEmailParamEmailId": {
+        "$ref": "~/models/hr.json#/HrCanEditEmailParamEmailId"
+    },
+    "HrCanEditEmailResponse": {
+        "$ref": "~/models/hr.json#/HrCanEditEmailResponse"
+    },
+    "HrCanEditJobPositionParamPositionId": {
+        "$ref": "~/models/hr.json#/HrCanEditJobPositionParamPositionId"
+    },
+    "HrCanEditJobPositionResponse": {
+        "$ref": "~/models/hr.json#/HrCanEditJobPositionResponse"
+    },
+    "HrCanEditJobFormularParamPositionId": {
+        "$ref": "~/models/hr.json#/HrCanEditJobFormularParamPositionId"
+    },
+    "HrCanEditJobFormularParamFormId": {
+        "$ref": "~/models/hr.json#/HrCanEditJobFormularParamFormId"
+    },
+    "HrCanEditJobFormularResponse": {
+        "$ref": "~/models/hr.json#/HrCanEditJobFormularResponse"
+    },
+    "HrCanEditMp3ParamMp3Id": {
+        "$ref": "~/models/hr.json#/HrCanEditMp3ParamMp3Id"
+    },
+    "HrCanEditMp3Response": {
+        "$ref": "~/models/hr.json#/HrCanEditMp3Response"
+    },
+    "HrCanEditMp4ParamMp4Id": {
+        "$ref": "~/models/hr.json#/HrCanEditMp4ParamMp4Id"
+    },
+    "HrCanEditMp4Response": {
+        "$ref": "~/models/hr.json#/HrCanEditMp4Response"
+    },
+    "EditHrInterviewPrelogParamIntId": {
+        "$ref": "~/models/hr.json#/EditHrInterviewPrelogParamIntId"
+    },
+    "EditHrInterviewPrelogParamBody": {
+        "$ref": "~/models/hr.json#/EditHrInterviewPrelogParamBody"
+    },
+    "UpdateHrJobPositiomFormMedalsParamPositionId": {
+        "$ref": "~/models/hr.json#/UpdateHrJobPositiomFormMedalsParamPositionId"
+    },
+    "UpdateHrJobPositiomFormMedalsParamFormId": {
+        "$ref": "~/models/hr.json#/UpdateHrJobPositiomFormMedalsParamFormId"
+    },
+    "UpdateHrJobPositiomFormMedalsParamBody": {
+        "$ref": "~/models/hr.json#/UpdateHrJobPositiomFormMedalsParamBody"
+    },
+    "TestHrInterviewParamIntId": {
+        "$ref": "~/models/hr.json#/TestHrInterviewParamIntId"
+    },
+    "SetHrInterviewBackgroundColorParamIntId": {
+        "$ref": "~/models/hr.json#/SetHrInterviewBackgroundColorParamIntId"
+    },
+    "SetHrInterviewBackgroundColorParamBody": {
+        "$ref": "~/models/hr.json#/SetHrInterviewBackgroundColorParamBody"
+    },
+    "GetSharedVideoTutorialsResponse": {
+        "$ref": "~/models/hr.json#/GetSharedVideoTutorialsResponse"
+    },
+    "MailPlaceholderRes": {
+        "$ref": "~/models/hrMail.json#/MailPlaceholderRes"
+    },
+    "MailPlaceholder": {
+        "$ref": "~/models/hrMail.json#/MailPlaceholder"
+    },
+    "MailTypes": {
+        "$ref": "~/models/hrMail.json#/MailTypes"
+    },
+    "MailTypeArray": {
+        "$ref": "~/models/hrMail.json#/MailTypeArray"
+    },
+    "MailType": {
+        "$ref": "~/models/hrMail.json#/MailType"
+    },
+    "MailsResponse": {
+        "$ref": "~/models/hrMail.json#/MailsResponse"
+    },
+    "MailArray": {
+        "$ref": "~/models/hrMail.json#/MailArray"
+    },
+    "Mail": {
+        "$ref": "~/models/hrMail.json#/Mail"
+    },
+    "MailPreview": {
+        "$ref": "~/models/hrMail.json#/MailPreview"
+    },
+    "InterviewResultsData": {
+        "$ref": "~/models/hr_interview.json#/InterviewResultsData"
+    },
+    "InterviewSummary": {
+        "$ref": "~/models/hr_interview.json#/InterviewSummary"
+    },
+    "InterviewSummaryWarning": {
+        "$ref": "~/models/hr_interview.json#/InterviewSummaryWarning"
+    },
+    "InterviewSummaryEmail": {
+        "$ref": "~/models/hr_interview.json#/InterviewSummaryEmail"
+    },
+    "InterviewCandidatesData": {
+        "$ref": "~/models/hr_interview.json#/InterviewCandidatesData"
+    },
+    "InterviewCandidate": {
+        "$ref": "~/models/hr_interview.json#/InterviewCandidate"
+    },
+    "InterviewData": {
+        "$ref": "~/models/hr_interview.json#/InterviewData"
+    },
+    "InterviewAdvancedData": {
+        "$ref": "~/models/hr_interview.json#/InterviewAdvancedData"
+    },
+    "InterviewBasicData": {
+        "$ref": "~/models/hr_interview.json#/InterviewBasicData"
+    },
+    "InterviewSettings": {
+        "$ref": "~/models/hr_interview.json#/InterviewSettings"
+    },
+    "InterviewSettingsEmail": {
+        "$ref": "~/models/hr_interview.json#/InterviewSettingsEmail"
+    },
+    "InterviewSettingsEmailValue": {
+        "$ref": "~/models/hr_interview.json#/InterviewSettingsEmailValue"
+    },
+    "InterviewSettingsPosition": {
+        "$ref": "~/models/hr_interview.json#/InterviewSettingsPosition"
+    },
+    "InterviewSettingsForms": {
+        "$ref": "~/models/hr_interview.json#/InterviewSettingsForms"
+    },
+    "InterviewArray": {
+        "$ref": "~/models/hr_interview.json#/InterviewArray"
+    },
+    "Interview": {
+        "$ref": "~/models/hr_interview.json#/Interview"
+    },
+    "InterviewPeople": {
+        "$ref": "~/models/hr_interview.json#/InterviewPeople"
+    },
+    "ParseEmailPlaceholderResponse": {
+        "$ref": "~/models/internal.json#/ParseEmailPlaceholderResponse"
+    },
+    "InternalInterviewCandidateStatistics": {
+        "$ref": "~/models/internal.json#/InternalInterviewCandidateStatistics"
+    },
+    "InternalInterviewCandidate": {
+        "$ref": "~/models/internal.json#/InternalInterviewCandidate"
+    },
+    "InterviewEmojiObject": {
+        "$ref": "~/models/interview.json#/InterviewEmojiObject"
+    },
+    "InterviewEmoji": {
+        "$ref": "~/models/interview.json#/InterviewEmoji"
+    },
+    "UpdateInterviewMedalsParamIntId": {
+        "$ref": "~/models/interview.json#/UpdateInterviewMedalsParamIntId"
+    },
+    "SetHrInterviewColorParamIntId": {
+        "$ref": "~/models/interview.json#/SetHrInterviewColorParamIntId"
+    },
+    "SetHrInterviewColorParamBody": {
+        "$ref": "~/models/interview.json#/SetHrInterviewColorParamBody"
+    },
+    "SetHrInterviewImageParamIntId": {
+        "$ref": "~/models/interview.json#/SetHrInterviewImageParamIntId"
+    },
+    "SetHrInterviewImageParamBody": {
+        "$ref": "~/models/interview.json#/SetHrInterviewImageParamBody"
+    },
+    "GetHrInterviewImagesResponse": {
+        "$ref": "~/models/interview.json#/GetHrInterviewImagesResponse"
+    },
+    "UpdateInterviewNotesParamIntId": {
+        "$ref": "~/models/interview.json#/UpdateInterviewNotesParamIntId"
+    },
+    "UpdateInterviewNotesParamCanId": {
+        "$ref": "~/models/interview.json#/UpdateInterviewNotesParamCanId"
+    },
+    "UpdateInterviewNotesResponse": {
+        "$ref": "~/models/interview.json#/UpdateInterviewNotesResponse"
+    },
+    "ExportHrInterviewPdfParamIntId": {
+        "$ref": "~/models/interview.json#/ExportHrInterviewPdfParamIntId"
+    },
+    "BasicResponse": {
+        "$ref": "~/models/responses.json#/BasicResponse"
+    },
+    "LoginGlobalResponse": {
+        "$ref": "~/models/responses.json#/LoginGlobalResponse"
+    },
+    "PlansData": {
+        "$ref": "~/models/shared.json#/PlansData"
+    },
+    "FaqCompany": {
+        "$ref": "~/models/shared.json#/FaqCompany"
+    },
+    "IndexResponse": {
+        "$ref": "~/models/public.json#/IndexResponse"
+    },
+    "GetSupportedLanguagesResponse": {
+        "$ref": "~/models/public.json#/GetSupportedLanguagesResponse"
+    },
+    "GenerateInterviewZipParamBody": {
+        "$ref": "~/models/public.json#/GenerateInterviewZipParamBody"
+    }
+}

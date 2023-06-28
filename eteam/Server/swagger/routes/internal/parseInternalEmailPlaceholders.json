@@ -1,0 +1,63 @@
+{
+  "tags": ["Internal"],
+  "summary": "Get parsed email data",
+  "operationId": "parseInternalEmailPlaceholders",
+  "x-swagger-router-controller": "internalCtrl",
+  "security": [
+    {
+      "InternalAuth": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "body",
+      "in": "body",
+      "description": "Responses & user info",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": ["candidateId", "companyId", "divId", "intId", "mailId"],
+        "properties": {
+          "candidateId": {
+            "type": "number"
+          },
+          "companyId": {
+            "type": "number"
+          },
+          "divId": {
+            "type": "number"
+          },
+          "intId": {
+            "type": "number"
+          },
+          "mailId": {
+            "type": "number"
+          },
+          "customCanEmail": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/models/internal.json#/ParseEmailPlaceholderResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "401": {
+      "$ref": "~/defaults/errors.json#/401"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

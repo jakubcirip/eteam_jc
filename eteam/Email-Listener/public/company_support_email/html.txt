@@ -1,0 +1,10 @@
+Company ID: {{ companyId }} <br>
+HR ID: {{ hrId }} <br> <br>
+
+Name: {{ name }} <br>
+Email: {{ email }} <br>
+
+Subject: {{ subject }} <br> <br>
+
+Text: <br>
+{{ description }} <br>

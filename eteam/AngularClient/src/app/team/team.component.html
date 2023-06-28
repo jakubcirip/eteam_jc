@@ -1,0 +1,72 @@
+<!--Team Start-->
+<section class="text-center" id="team">
+  <div class="container">
+    <!--Row-->
+    <div class="row" id="team-aos-anchor">
+      <div class="col-md-12">
+        <div class="heading-area mx-570 mb-5">
+          <span
+            data-aos-anchor="#team-aos-anchor"
+            data-aos="fade-up"
+            class="sub-title"
+            >{{ 'team.preTitle' | translate }}</span
+          >
+          <h2
+            data-aos-anchor="#team-aos-anchor"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            class="title"
+          >
+            {{ 'team.title.before' | translate }}
+            <span class="alt-color js-rotating">{{
+              'team.title.words' | translate
+            }}</span>
+            {{ 'team.title.after' | translate }}
+          </h2>
+          <p
+            class="para"
+            data-aos-anchor="#team-aos-anchor"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
+            {{ 'team.description' | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--Row-->
+    <div class="row">
+      <div
+        [attr.data-aos]="i % 2 === 0 ? 'flip-right' : 'flip-left'"
+        data-aos-anchor="#team-aos-anchor"
+        data-aos-delay="1200"
+        class="col-md-4 mt-5"
+        *ngFor="let person of data.team; let i = index"
+      >
+        <div class="team-item">
+          <!--Team Image-->
+          <img
+            alt="image"
+            class="team-image"
+            style="width: 50%;"
+            [src]="person.imgUrl"
+          />
+          <!--Name-->
+          <div class="name">
+            <img alt="shape" [src]="person.colorUrl" />
+            <h6>{{ person.name }}</h6>
+          </div>
+          <!--Designation-->
+          <p class="designation mb-2">{{ person.position }}</p>
+          <!--Team Social-->
+          <div class="team-social social-icon-bg-hvr" *ngIf="person.linkedIn">
+            <a [href]="person.linkedInUrl" target="_blank"
+              ><i aria-hidden="true" class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Team End-->

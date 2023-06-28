@@ -1,0 +1,322 @@
+{
+	"about": {
+		"description": "Videli sme veľa platforiem založených na AI, ktoré sa snažia nahradiť HR špecialistu, ale zdá sa, že pre mnohé spoločnosti je to predražené riešenie. Namiesto nahradenia HR špecialistov sme sa rozhodli vytvoriť platformu, ktorá pomôže HR Specialistovi pomôcť mu rozhodnúť sa, ktorý kandidát je tým pravým pre prácu, ktorú hľadá.",
+		"modal": {
+			"text": "Pretože systém, ktorý ponúkame, je viac-menej jedinečný, naša konkurencia nie je taká početná, ako by ste očakávali. Existujú spoločnosti, ktoré sa snažia vytvoriť plne automatizovaný systém hľadania kandidátov, ktorý je čiastočne podobný našemu systému. Funguje na nasledujúcom príklade : Spoločnosť si vyberie pozíciu. Následne rozpošle linky a systém AI vyhodnotí odpovede a z nich vyberie najlepších kandidátov. To však nie je náš zámer. Tím Hiroo plne rešpektuje potrebu, aby osoba dobre posúdila a otestovala inú osobu. Výsledkom je, že sa v žiadnom prípade nesnažíme nahradiť manažéra HR. Platforma Hiroo slúži hlavne ako nástroj, ktorý pomáha a zjednodušuje prácu HR, a tak zjednodušuje proces zhromažďovania informácií o uchádzačoch. V konečnom dôsledku to znamená, že pred pozvaním kandidátov na pracovný pohovor použije HR všetky zozbierané informácie o uchádzačoch, ktorí sú na našej stránke na určitom mieste, aby určili, koho pozvať. Zaručujeme, že náš systém bude fungovať tak, ako by mal, a HR vyberie z týchto kritérií tých správnych ľudí. Nemajte obavy, že tento systém vyberie 1 zo 100 ľudí. Nevyberie. To sa nestane, pretože systém vyberie viacerých kandidátov, ktorí majú atribúty, ktoré sa vám budú páčiť. Hiroo je navrhnuté tak, aby vybralo približne 20 - 30 overených a kvalifikovaných kandidátov zo 100 zaregistrovaných účastníkov.",
+			"title": "Proces predbežného výberu"
+		},
+		"preTitle": "Naša platforma",
+		"title": {
+			"after": "ľahším, rýchlejším a spoľahlivejším.",
+			"before": "robí proces",
+			"words": "predbežného výberu, hľadania, rozhodovania"
+		}
+	},
+	"blog": {
+		"calc": {
+			"candidates": "TODO: Pluralitation",
+			"comparedToNormalMethod": "V POROVNANÍ S PRIEMERNOU CENOU BEŽNÉHO PROCESU SELEKCIE KANDIDÁTOV",
+			"howItWorks": "AKO TO FUNGUJE?",
+			"jobs": "TODO: Pluralitation",
+			"mathExplained": "finalna cena = cena za sekundu (0.0166€) * pocet sekund * pocet otazok * pocet kandidatov * pocet pracovnych pozicii",
+			"preTitle": "Ak chcete vidieť, ako to funguje, použite našu jednoduchú kalkulačku.",
+			"price": "CENA",
+			"questions": "TODO: Pluralitation",
+			"seconds": "TODO: Pluralitation",
+			"text1": "ZAUJÍMAVÝ FAKT: Väčšina interview má priemerne 5 otázok so 60 sekúndami na odpoveď.",
+			"text2": "Pri výbere rozhovoru si však môžete zvoliť dĺžku odpovede na otázku. Napríklad pre otázku 1 môžete prideliť 60 sekúnd a pre otázku 2 prideliť 90 sekúnd. Vaše minúty a sekundy sa vám odpočítajú, iba ak sa pozvánky odošlú kandidátom. Všetky nepoužité minúty sa vám prenášajú z mesiaca na mesiac.",
+			"text3": "Použite kalkulačku, pomocou ktorej získate všeobecnú predstavu o tom, koľko minút by ste si mali kúpiť.",
+			"title": {
+				"after": "vás bude interview stáť",
+				"before": "na vypočítanie ako veľa",
+				"words": "minút, peňazí"
+			},
+			"type": "",
+			"youHaveSaved": "UŠETRÍTE"
+		},
+		"lifetime": "navždy",
+		"perMinutePrice": "",
+		"plans": {
+			"plan1": {
+				"color": "#f033b5",
+				"points": "TODO: Point1;Point2;Point3;Point4;Point5;Point6;Point7;Point8;Point9;Point10;Point11",
+				"title": "ZADARMO"
+			},
+			"plan2": {
+				"color": "#f033b5",
+				"points": "TODO: Point1;Point2;Point3;Point4;Point5;Point6;Point7;Point8;Point9;Point10;Point11",
+				"title": "PRÉMIUM"
+			},
+			"plan3": {
+				"color": "#f033b5",
+				"points": "TODO: Point1;Point2;Point3;Point4;Point5;Point6;Point7;Point8;Point9;Point10;Point11",
+				"title": "PRE FIRMY"
+			}
+		},
+		"preTitle": "A ČO S PENIAZMI?",
+		"pricingAfterNore": "",
+		"title": {
+			"after": "ceny na trhu",
+			"before": "Máme tie",
+			"words": "najlacnejšie, najvyrovnanejšie"
+		}
+	},
+	"clients": {
+		"client1": {
+			"company": "TODO: Company 1",
+			"name": "TODO: Client 1",
+			"text": "TODO: Client 1 said..."
+		},
+		"client2": {
+			"company": "TODO: Company 2",
+			"name": "TODO: Client 2",
+			"text": "TODO: Client 2 said..."
+		},
+		"title": {
+			"after": "používateľov, klientov",
+			"before": "Niekoľko milých slov od",
+			"words": "zaujatých, očarených, výborných"
+		}
+	},
+	"contact": {
+		"form": {
+			"buttonText": "Pošlite správu",
+			"email": "E-Mail",
+			"message": "Správa",
+			"modalTitle": "Kontaktný formulár",
+			"name": "Meno",
+			"subject": "Predmet",
+			"title": "Napíšte nám prví!"
+		},
+		"info": {
+			"description": "Ak máte otázky týkajúce sa našeho projektu Hiroo, pýtajte sa!",
+			"title": "Kontakty"
+		}
+	},
+	"counters": {
+		"description": "Náš koncept je potvrdený číslami! Väčšina spoločností by uviedla niekoľko dôvodov, prečo sú najlepšie. Chceli by sme vám povedať, že súčasný systém hľadá zmenu. A táto zmena sme my.",
+		"items": {
+			"item1": {
+				"text": "za nájdenie toho pravého kandidáta",
+				"title": "hodiny obetované"
+			},
+			"item2": {
+				"text": "za neefektívny nábor a celý proces pohovorov",
+				"title": "Eurá minuté"
+			},
+			"item3": {
+				"text": "opustia firmu už počas prvého roka",
+				"title": "percent zamestnancov"
+			},
+			"item4": {
+				"text": "na telefóne s každým kandidátom",
+				"title": "minút strávených"
+			}
+		},
+		"preTitle": "čísla sú podstatné",
+		"title": {
+			"after": "v číslach",
+			"before": "Poďme sa pozrieť na",
+			"words": "prácu, nábor, pohovory"
+		}
+	},
+	"footer": {
+		"copyright": "© 2020 Hiroo. Vyrobené s láskou od",
+		"madeBy": "Hiroo Team"
+	},
+	"header": {
+		"form": {
+			"modalTitle": "Registračný Formulár"
+		},
+		"menu": {
+			"clients": "Klienti",
+			"features": "Nástroje",
+			"home": "Domov",
+			"ourTeam": "Náš Team",
+			"pricing": "Kalkulácia ceny",
+			"registerButton": "Registrácia",
+			"screenshots": "Obrázky"
+		},
+		"modal": {
+			"agreeText": "Chcete aby vám boli zasielané e-maily? Budú plné veľmi dobrých a použiteľných vecí.",
+			"buttonText": "Máte záujem?",
+			"placeholders": {
+				"city": "Mesto",
+				"companyName": "Názov firmy",
+				"email": "Kontaktný e-mail"
+			},
+			"preTitle": "Sme šťastní!",
+			"title": {
+				"after": "",
+				"before": "Ďakujeme za Váš záujem. Vyplňte formulár a po dokončení uzavretej verzie beta vás budeme kontaktovať.",
+				"words": ""
+			}
+		},
+		"personalContact": {
+			"title": "Osobný kontakt"
+		},
+		"title": "Hiroo."
+	},
+	"more": {
+		"feature1": {
+			"text": "Rovnako ako iné inovatívne platformy, aj my podporujeme mnoho jazykov. Samozrejme to zahŕňa anglický, francúzsky, nemecký, český a náš materinský jazyk, slovenský jazyk. Manažér ľudských zdrojov, spoločnosti a kandidáti ich budú môcť používať. Naše šablóny, otázky a formuláre na pohovory sú taktiež k dispozícii vo viacerých jazykoch, aby vyhovovali potrebám akéhokoľvek podnikania.",
+			"title": "Viacjazyčná podpora jazyka"
+		},
+		"feature2": {
+			"text": "Medzi naše ďalšie vymoženosti patrí onboarding. Nahradíme dlhý proces onboardingu kratším. Je to podobné ako pridať kandidátov na prijímacie pohovory do procesu predbežného výberu, namiesto toho tam umiestnite svojich zamestnancov. Potom im dáte test znalostí, po ktorom zistíte, ako sú vyškolení. Naša platforma udržiava vašich zamestnancov vyškolených.",
+			"title": "Onboarding"
+		}
+	},
+	"parralax": {
+		"feature1": {
+			"description": "Celý proces môže vyzerať zdĺhavý, ale nie je tomu tak. Po prvé, klient nám napíše o jeho potrebách a o tom, ako chce rozhovor vyzerať. Následne to urobíme! Je to také jednoduché! Klient dostane celý formulár žiadostí o pohovor vo veľmi krátkom čase. Áno, to znamená, že klient je pripravený hľadať kandidátov takmer okamžite.",
+			"modal": {
+				"text": "Poznáme veľa druhov rozhovorov, ktoré považujeme za bežné, ale my sa ich snažíme robiť inak. Zaručujeme vám, že všetky tieto bežné rozhovory zahŕňali zasielanie životopisov, skype alebo mobilné telefonáty a potom osobné stretnutie. Jednoduché, však? Áno, pre kandidáta je to pomerne jednoduchá a krátka cesta k úspešnej kariére. Ale premýšľali ste o tom, ako sa na to musí pripraviť manažér HR? Toto sú kroky, ktoré sa snažíme zjednodušiť. Tento proces začína, keď HR musí prečítať všetky životopisy a motivačné listy, aby si urobil názor a mienku o  kandidátovi. Ak robí túto zdĺhavú časť tohto ešte zdĺhavejšieho procesu, musí si vyhradiť čas na vybavenie a uskutočnenie  telefonátu s potenciálnym kandidátom. Ľahké, však? No ... keď máte 3 kandidátov, je to dosť rýchla vec. Ale keď ich je vyše 100, pravdepodobne to nie je také rýchle. Ak je táto časť ukonečná, je potrebné osobné stretnutie, pretože HR musí vidieť neverbálnu komunikáciu, ktorú nevidí pri telefonáte.Je to pravdepodobne najdôležitejšia časť osobného pohovoru. Platforma Hiroo vyrieši všetky uvedené problémy rýchlo, jednoducho a elegantne. Príklad: HR vytvorí pohovor, v ktorom si určí, dokedy by sa mal pohovor ukončiť a po dokončení si môže kedykoľvek zobraziť odpovede všetkých kandidátov.",
+				"title": "Automatizácia"
+			},
+			"preTitle": "Po prvé, máme riešenie pre",
+			"title": {
+				"after": "predvýberového procesu",
+				"before": "Automatizáciu",
+				"words": "dlhého, celého, nudného"
+			}
+		},
+		"feature2": {
+			"description": "Nie ste si istí, ktorú šablónu použiť? Nerobte si starosti, máme široký tím odborníkov, vďaka ktorým sa vám budú všetky páčiť. Po výbere si ju môžete prispôsobiť podľa vášho želania. Nič vám nebráni v tom, aby ste ju následne použili na pracovný pohovor. Nie je to oveľa jednoduchšie, ako si sám vytvoriť vlastnú prihlášku?",
+			"modal": {
+				"text": "Keď sme vytvorili náš jedinečný projekt Hiroo, mali sme na mysli plán. Zámerom bolo vytvoriť prispôsobiteľnú platformu, v ktorej manažér ľudských zdrojov môže vytvoriť úplne jedinečný rozhovor, do ktorého vloží otázky podľa svojich potrieb. Túto možnosť síce máme na našej platforme, ale vieme, že HR nechce tráviť dni tvorením jediného rozhovoru. A preto sme kontaktovali najväčších odborníkov v odbore, ktorí nám pomohli zostaviť šablóny pre konkrétne pracovné miesta. Vďaka týmto úžasným ľuďom si HR môže ľahko stiahnuť šablónu a prečítať ju. Najlepšie na týchto šablónach je, že sú upraviteľné. To znamená, že ak sa manažérovi HR niečo nepáči, môže si šablónu upraviť podľa svojich predstáv.",
+				"title": "Šablóny"
+			},
+			"preTitle": "Medzi ďalšie veci patria",
+			"title": {
+				"after": "upraviteľné šablóny všetkých druhov",
+				"before": "",
+				"words": "rôzne, viaceré"
+			}
+		},
+		"feature3": {
+			"description": "Myslíme si, že videokonferencie sú najlepším spôsobom rozhovoru online. Prečo? Vidíte emócie, spoznáte osobu vizuálne alebo akusticky. Môže byť použitý na vzdialené miesta na našej planéte a nestojí vás / kandidáta letenku a mnoho ďalších výdavkov.",
+			"modal": {
+				"text": "Keď sme pracovali na našom systéme, veľa ľudí, ktorí hodnotili našu platformu, pre nás malo otázku. Otázkou bolo, je táto doba pripravená na video-recruiting? Odpoveď bude o niečo dlhšia. Uvedomujeme si, že nie všetky podniky na trhu budú mať dôveru v používanie našej platformy. Preto sme sa zamerali na odvetvia, ktoré dokážu čo najlepšie využiť naše služby. Naše služby sa tiež prispôsobujú týmto odvetviam a stále budú. Jedným z týchto odvetví je helpdesk. Kandidáti na túto pozíciu sa zvyšujú a táto pozícia sa týka pomoci zákazníkom po telefóne každý deň. Je to práca, ktorá zahŕňa každodennú prácu s ľuďmi, a myslíme si, že by kandidát na danú pozíciu určite nemal problém s video-recruitingom. Všimli sme si, že žijeme v čase sociálnych sietí, a ľudia každú sekundu pridávajú neuveriteľné množstvo selfie a videí. Preto si myslíme, že títo ľudia by boli pred kamerou prirodzení a v porovnaní s osobným rozhovorom by boli v oveľa menšom strese.",
+				"title": "Video Recruiting"
+			},
+			"preTitle": "Taktiež ponúkame",
+			"title": {
+				"after": "video, audio nábor zamestnancov",
+				"before": "",
+				"words": "zaujímavý, úsporný"
+			}
+		},
+		"feature4": {
+			"description": "Z videozáznamov z pracovného pohovoru môže systém zoradiť kandidátov podľa mnohých atribútov. HR už určuje, čo je pre neho dôležité. Vďaka tomu je výber oveľa jednoduchší.",
+			"modal": {
+				"text": "Platforma Hiroo má systém, ktorý triedi kvalitu kandidátov na základe takzvaných medailí. Každá medaila má v našom systéme osobitné postavenie, napr. rýchlosť písania, rýchlosť odpovede alebo sebahodnotenie uchádzača. Každá takáto medaila má tri druhy: zlato, striebro a bronz. Následne systém urobí výber kandidátov na základe medailí, z ktorých si manažér HR môže vybrať. Je zrejmé, že každý človek môže urobiť niečo lepšie a niečo horšie, ale niektoré z našich medailí sa vôbec nemusia hodiť na určité pozície. Napr. rýchlosť písania pri niektorých pozíciách môže byt irrelevantná.Je to na výbere HR a pozícii, ktorú hľadá. Preto poskytujeme možnosť ignorovať a uprednostňovať medaily podľa potrieb HR. To znamená, že poradie kandidátov sa prispôsobí špecifickým požiadavkám HR na danú pozíciu.",
+				"title": "Analytici"
+			},
+			"preTitle": "Aby toho nebolo málo",
+			"title": {
+				"after": "technológie",
+				"before": "Analytici používajú tie",
+				"words": "najlepšie, najnovšie"
+			}
+		},
+		"feature5": {
+			"description": "Robíme prácu oveľa rýchlejšie a lacnejšie ako v iných spoločnostiach. V skutočnosti spoločnosti niekedy požadujú dvojnásobok sumy, ktorú vám ponúkame. Nikde inde vám taký dobrý tím nepomôže, ako tu.",
+			"modal": {
+				"text": "Máte obavy z toho, koľko budete platiť za naše služby? Nemusíte. Vďaka nám overeným spôsobom znížite náklady na prijatie jedného zamestnanca o stovky eur. Pýtate sa ako? Sme platforma, ktorej cieľom je nájsť tých správnych a najlepších ľudí. Hľadáme potenciálnych a zručných ľudí. Preto spoločnosti nemusia strácať veľa peňazí za zaúčanie nového zamestnanca, ktorý môže odísť po niekoľkých mesiacoch, čo nakoniec spoločnosti stojí peniaze navyše.",
+				"title": "Cena"
+			},
+			"preTitle": "Medzi naše výhody patrí aj to, že",
+			"title": {
+				"after": "a stojí to málo času",
+				"before": "Vaše výdavky",
+				"words": "znižujeme, robíme nezaťažiteľnými"
+			}
+		},
+		"feature6": {
+			"description": "Náš systém je veľmi jasný a ľahko použiteľný aj pre úplného laika. Či už ide o poštu, hovor alebo jednoduchý kalendár. Všetko je na jednom mieste. Máme širokú škálu nástrojov, ktoré nikde inde nenájdete.",
+			"modal": {
+				"text": "Priehľadnosť. Ďalší z mnohých atribútov, vďaka ktorým je náš projekt výnimočný. U nás sú všetky veci na jednom mieste a manažér HR nemusí použiť 10 rôznych stránok naraz, aby vytvoril to, čo potrebuje. Na našej platforme sú veci ako vytváranie formulárov, vytváranie rozhovorov, nastavovanie dátumov, vytváranie e-mailov, ktoré sa potom automaticky posielajú kandidátom, zoznam odpovedí kandidátov a v neposlednom rade systém riadenia životopisov spolu s automatizovaným procesom pridávania uchádzačov na pohovor, sú len zlomkom vecí, ktoré tu nájdete. Máte z čoho vyberať, ale aj naša stránka má svoje limity a niektoré platformy sa nedajú jednoducho nahradiť, a preto poskytujeme prepojenie našej aplikácie s najpoužívanejšími aplikáciami na trhu ako napr. Google Kalendár.",
+				"title": "Priehľadnosť"
+			},
+			"preTitle": "Na koniec vám ponúkame",
+			"title": {
+				"after": "HR divíziu",
+				"before": "Uživateľovi prístupnú a priehľadnú službu pre",
+				"words": "každú, jedinečnú"
+			}
+		}
+	},
+	"ping": "Pong.",
+	"portfolio": {
+		"categories": {
+			"all": "Všetko",
+			"companyPanel": "Panel firmy",
+			"hrPanel": "Panel manažéra HR",
+			"interview": "Interview"
+		},
+		"description": "Uviedli sme niekoľko snímok obrazovky, aby sme sa uistili, že ste si vedomí, ako vyzerá prostredie pred registráciou. Nezabudnite filtrovať pomocou kategórií na rozdelenie viacerých rozhraní.",
+		"fullscreen": {
+			"description": "na otvorenie v plnom okne",
+			"title": "Kliknite ľavým tlačidlom"
+		},
+		"preTitle": "Poďme sa pozrieť",
+		"title": {
+			"after": "snímok obrazovky pre vašu predstavu",
+			"before": "na pár",
+			"words": "skvelých, admin, pomocných"
+		}
+	},
+	"service": {
+		"steps": {
+			"step1": "Vyberte si šablónu pre interview",
+			"step2": "Upravte ju podľa svojich potrieb",
+			"step3": "Počkajte na odpovede od kandidátov",
+			"step4": "Prezrite si odpovede a vyberte si svojho HRDINU."
+		}
+	},
+	"shared": {
+		"contact": {
+			"email": "denis.sedlak@hiroo.eu",
+			"name": "Denis Sedlák",
+			"phoneNumber": "TODO: Cislo"
+		},
+		"currency": "€",
+		"languageShortcuts": {
+			"cz": "CZ",
+			"de": "DE",
+			"en": "EN",
+			"fr": "FR",
+			"sk": "SK"
+		},
+		"learnMore": "Viac informácii"
+	},
+	"slider": {
+		"description": "Nová platforma online rozhovorov, ktorá nielen šetrí váš čas, ale prináša aj nové technológie do procesu pohovoru a prijímania do zamestnania",
+		"modal": {
+			"text": "Hovory cez Skype, plánovanie, zdĺhavé pohovory po telefóne alebo v kancelárii. Tomu sa snažíme vyhnúť. Z našich rozsiahlych skúseností vieme, že sa to nehodí ani pre manažéra HR, ani pre kandidátov. Systém, ako je tento, sa nám zdá zastaraný, a preto máme riešenie. Naša novovytvorená platforma Hiroo pre vás vyrieši všetky vážne problémy s rozhovormi. Ponúkame veľa nových zaujímavých a užitočných možností, ktoré vám umožnia otestovať vášho kandidáta so ziskom a efektívne. Hiroo je priekopníkom v pracovnom pohovore.Pýtate sa ako? Za málo času a za ešte menej peňazí získate širokú škálu možností, ktoré ste predtým nevideli. Náš systém je automatizovaný, čo znamená, že šablóny, ktoré sú už v systéme nainštalované, sa dajú implementovať priamo do vášho projektu, takže ušetrí veľa času pre HR v procese predbežného výberu. Ďalšia vec, ktorú vám ponúkame, je široká škála otázok a odpovedí. Kvalita testov je s ňou úzko spojená. Máme analytikov, ktorí pri dokončení týchto testov analyzujú všetky faktory, ktoré vám pomôžu vybrať správneho kandidáta.",
+			"title": "Online Interview Platforma"
+		},
+		"scrollDown": "Posunúť nadol",
+		"subtitle": "Nájdite si svojho hrdinu.",
+		"title": "Hiroo."
+	},
+	"team": {
+		"denis": {
+			"position": "CEO of Hiroo"
+		},
+		"description": "Stretli sme sa počas startup víkendu a roky sme na tomto projekte pracovali.",
+		"linda": {
+			"position": "CEO of Concordia Agency"
+		},
+		"matej": {
+			"position": "Hiroo Lead Developer"
+		},
+		"preTitle": "Kto sme?",
+		"title": {
+			"after": "na tom, aby sme vám priniesli tú najlepšiu skúsenosť",
+			"before": "Pracujeme",
+			"words": "stále, spoločne, navždy"
+		}
+	}
+}

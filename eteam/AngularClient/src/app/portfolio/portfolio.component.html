@@ -1,0 +1,78 @@
+<!--Portfolio Start-->
+<!-- *TODO: AOS + citat z prenennych -->
+<section class="cube-portfolio1 text-center" id="screenshots">
+  <div class="container">
+    <!--Row-->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading-area mx-570 mb-lg-4 mb-3">
+          <span class="sub-title">
+            {{ 'portfolio.preTitle' | translate }}
+          </span>
+          <h2 class="title">
+            {{ 'portfolio.title.before' | translate }}
+            <span class="alt-color js-rotating">{{
+              'portfolio.title.words' | translate
+            }}</span>
+            {{ 'portfolio.title.after' | translate }}
+          </h2>
+          <!-- <p class="para">
+            {{ 'portfolio.description' | translate }}
+          </p> -->
+        </div>
+      </div>
+    </div>
+    <!--Row-->
+    <div class="row">
+      <div class="col-md-12">
+        <!--Portfolio Filters-->
+        <div class="cbp-l-filters-button" id="js-filters-mosaic-flat">
+          <div class="cbp-filter-item-active cbp-filter-item" data-filter="*">
+            {{ 'portfolio.categories.all' | translate }}
+          </div>
+          <span class="text-blue">/</span>
+          <div class="cbp-filter-item" data-filter=".hrpanel">
+            {{ 'portfolio.categories.hrPanel' | translate }}
+          </div>
+          <span class="text-blue"> / </span>
+          <div class="cbp-filter-item" data-filter=".interviewresults">
+            {{ 'portfolio.categories.interviewResults' | translate }}
+          </div>
+          <span class="text-blue"> / </span>
+          <div class="cbp-filter-item" data-filter=".interview">
+            {{ 'portfolio.categories.interview' | translate }}
+          </div>
+        </div>
+
+        <!--Portfolio Items-->
+        <div class="cbp cbp-l-grid-mosaic-flat" id="js-grid-mosaic-flat">
+          <div
+            class="cbp-item"
+            [ngClass]="sc.tags"
+            *ngFor="let sc of data.screenshots"
+            style="width: 50%"
+          >
+            <a class="cbp-caption cbp-lightbox" [href]="sc.src">
+              <div class="cbp-caption-defaultWrap">
+                <img alt="port-1" [src]="sc.src" />
+              </div>
+              <div class="cbp-caption-activeWrap"></div>
+              <div class="cbp-l-caption-alignCenter center-block">
+                <div class="cbp-l-caption-body">
+                  <div class="plus"></div>
+                  <h5 class="text-white mb-1">
+                    {{ 'portfolio.fullscreen.title' | translate }}
+                  </h5>
+                  <p class="text-white">
+                    {{ 'portfolio.fullscreen.description' | translate }}
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Portfolio End-->

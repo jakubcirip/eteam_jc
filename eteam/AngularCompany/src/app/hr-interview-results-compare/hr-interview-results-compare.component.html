@@ -1,0 +1,385 @@
+<div *ngIf="cans.length > 0">
+  <div class="page-hero page-container">
+    <div class="padding d-flex">
+      <div class="page-title">
+        <h2 class="text-md text-highlight">
+          <svg
+            style="cursor: pointer;"
+            (click)="goBack()"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#f54394"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-chevrons-left mx-2"
+          >
+            <polyline points="11 17 6 12 11 7"></polyline>
+            <polyline points="18 17 13 12 18 7"></polyline>
+          </svg>
+          Compare {{ cans.length }}
+          {{ cans.length == 1 ? 'Candidate' : 'Candidates' }}
+        </h2>
+        <small style="margin-left: 45px;" class="text-muted"
+          >Table view of candidate results</small
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-md-12">
+      <div class="card bg-primary text-white text-center p-3">
+        <blockquote class="blockquote mb-0">
+          <footer class="text-fade text-sm">
+            Category 1 of 4
+          </footer>
+          <p style="margin-bottom: 5px; margin-top: 0.5rem;">
+            Basic Information
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="row display-flex mt-1">
+    <div *ngFor="let can of cans" [ngClass]="['col-md-' + colWidth]">
+      <div class="card" style="height: 100%;">
+        <div class="px-4 py-4">
+          <div class="row mb-2">
+            <div class="col-6">
+              <small class="text-muted">Full Name</small>
+              <div class="my-2">{{ can.name }}</div>
+            </div>
+            <div class="col-6">
+              <small class="text-muted">E-Mail</small>
+              <div class="my-2">{{ can.email }}</div>
+            </div>
+          </div>
+          <div>
+            <small class="text-muted">Self Description</small>
+            <div class="my-2" style="margin-bottom: 30px !important;">
+              {{ can.answers.desc }}
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: 10px;
+            right: 0;
+            width: 100%;
+            margin-bottom: 10px;
+          "
+        >
+          <hr style="margin: 0; width: 100%;" />
+          <div class="card-body" style="margin-top: 0;">
+            <a
+              [href]="
+                mailuUrl +
+                '/?_task=mail&_uid=' +
+                can.mailId +
+                '&_mbox=INBOX&_action=show'
+              "
+              target="_blank"
+              style="float: right;"
+              class="text-primary card-link"
+              >Open Candidate Email</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row display-flex mt-1">
+    <div *ngFor="let can of cans" [ngClass]="['col-md-' + colWidth]">
+      <div
+        style="margin: 0;"
+        class="card card-small"
+        [ngClass]="[isOverallWinner(can) ? 'color-yes' : 'color-empty']"
+      >
+        <div class="card-header">
+          Overall Candidate Rating
+        </div>
+        <div class="card-body">
+          <h6>
+            <div style="display: flex;">
+              <div *ngFor="let i of [1, 2, 3, 4, 5]">
+                <svg
+                  *ngIf="can.overallRating >= i"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="none"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-primary feather feather-star"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  ></polygon>
+                </svg>
+
+                <svg
+                  *ngIf="can.overallRating < i"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="none"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-secondary feather feather-star"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row display-flex mt-1">
+    <div *ngFor="let can of cans" [ngClass]="['col-md-' + colWidth]">
+      <div
+        style="margin: 0;"
+        class="card card-small"
+        [ngClass]="[isSelfDescWinner(can) ? 'color-yes' : 'color-empty']"
+      >
+        <div class="card-header">
+          Self Description Length
+        </div>
+        <div class="card-body">
+          <h6>
+            {{ can.answers.desc.length }}
+            {{ can.answers.desc.length === 1 ? 'Character' : 'Characters' }}
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row display-flex mt-1">
+    <div *ngFor="let can of cans" [ngClass]="['col-md-' + colWidth]">
+      <div
+        style="margin: 0;"
+        class="card card-small"
+        [ngClass]="[isAnswerDateWinner(can) ? 'color-yes' : 'color-empty']"
+      >
+        <div class="card-header">
+          Answer Submit Date
+        </div>
+        <div class="card-body">
+          <h6>
+            {{ getDate(can.answers.date) | date: 'd.M.yyyy' }} |
+            {{ getDate(can.answers.date) | date: 'H:mm:ss' }}
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-md-12">
+      <div class="card bg-primary text-white text-center p-3">
+        <blockquote class="blockquote mb-0">
+          <footer class="text-fade text-sm">
+            Category 2 of 4
+          </footer>
+          <p style="margin-bottom: 5px; margin-top: 0.5rem;">
+            Medals Information
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="row display-flex mt-1" *ngFor="let medal of results.data.medals">
+    <div *ngFor="let can of cans" [ngClass]="['col-md-' + colWidth]">
+      <div
+        style="margin: 0;"
+        class="card card-small"
+        [ngClass]="[isMedalWinner(can, medal.id) ? 'color-yes' : 'color-empty']"
+      >
+        <div class="card-header">
+          {{ medal.title }}
+          <svg
+            (click)="onMedalInfo(medal.title, medal.description)"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="pointer text-primary feather feather-info"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h6>
+            <span
+              style="font-size: 12px;"
+              [ngClass]="[getMedalClass(medal.id, can)]"
+              class="badge text-uppercase"
+            >
+              {{ getMedalStr(medal.id, can) }}
+            </span>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-md-12">
+      <div class="card bg-primary text-white text-center p-3">
+        <blockquote class="blockquote mb-0">
+          <footer class="text-fade text-sm">
+            Category 3 of 4
+          </footer>
+          <p style="margin-bottom: 5px; margin-top: 0.5rem;">
+            Answers Information
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="row display-flex mt-1"
+    *ngFor="let question of results.data.questions; let qId = index"
+  >
+    <div *ngFor="let can of cans" [ngClass]="['col-md-' + colWidth]">
+      <div
+        style="margin: 0;"
+        class="card card-small"
+        [ngClass]="[isQuestionWinner(can, qId) ? 'color-yes' : 'color-empty']"
+      >
+        <div class="card-header">
+          {{ question }}
+        </div>
+        <div class="card-body">
+          <h6>
+            {{ can.answers[qId] }}
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-md-12">
+      <div class="card bg-primary text-white text-center p-3">
+        <blockquote class="blockquote mb-0">
+          <footer class="text-fade text-sm">
+            Category 4 of 4
+          </footer>
+          <p style="margin-bottom: 5px; margin-top: 0.5rem;">
+            Candidate Summary
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="row display-flex mt-1">
+    <div *ngFor="let can of cans" [ngClass]="['col-md-' + colWidth]">
+      <div
+        style="margin: 0;"
+        class="card card-small"
+        [ngClass]="[isTotalWinner(can) ? 'color-yes' : 'color-empty']"
+      >
+        <div class="card-header">
+          Total In-Comparison Winnings
+        </div>
+        <div class="card-body">
+          <h6>
+            <div style="display: flex;">
+              {{ getCandidateTotalWinner(can) }}
+            </div>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row display-flex mt-1">
+    <div *ngFor="let can of cans" [ngClass]="['col-md-' + colWidth]">
+      <div
+        style="margin: 0;"
+        class="card card-small"
+        [ngClass]="[isOverallWinner(can) ? 'color-yes' : 'color-empty']"
+      >
+        <div class="card-header">
+          Overall Candidate Rating
+        </div>
+        <div class="card-body">
+          <h6>
+            <div style="display: flex;">
+              <div *ngFor="let i of [1, 2, 3, 4, 5]">
+                <svg
+                  *ngIf="can.overallRating >= i"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="none"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-primary feather feather-star"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  ></polygon>
+                </svg>
+
+                <svg
+                  *ngIf="can.overallRating < i"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="none"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-secondary feather feather-star"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 500px;"></div>
+</div>

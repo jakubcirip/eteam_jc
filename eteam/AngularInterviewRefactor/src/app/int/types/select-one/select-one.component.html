@@ -1,0 +1,60 @@
+<app-assistent [title]="step.data.title"></app-assistent>
+
+<br />
+
+<p *ngIf="step.data.text">
+  {{ step.data.text }}
+</p>
+
+<form [attr.id]="step.id ? step.id : undefined">
+  <div class="step-box">
+    <div class="row">
+      <div
+        *ngFor="let option of step.data.options"
+        [ngClass]="
+          'col-md-' + calculateBootstrapWidth(step.data.options.length)
+        "
+      >
+        <label class="step-box-content bg-white text-center relative-position">
+          <!-- active: step box content -->
+          <span class="step-box-icon">
+            <i class="big-icon fa" [ngClass]="option.icon"></i>
+          </span>
+          <span class="step-box-text">
+            {{ option.text }}
+          </span>
+          <span class="service-check-option">
+            <span
+              ><input
+                (input)="onOptionChange($event)"
+                type="radio"
+                [attr.name]="option.id ? option.id : undefined"
+                [attr.checked]="option.selected ? '' : undefined"
+                [attr.value]="option.value ? option.value : undefined"
+                required
+            /></span>
+          </span>
+        </label>
+
+        <div *ngIf="option.recommended" class="recommended-box">
+          {{ 'wrapper.recommended' | translate }}
+        </div>
+      </div>
+    </div>
+
+    <label
+      [attr.for]="step.data.options[0].id ? step.data.options[0].id : undefined"
+      generated="true"
+      class="error"
+    ></label>
+  </div>
+</form>
+
+<a
+  *ngIf="step.data.terms.text && step.data.terms.url"
+  [href]="step.data.terms.url"
+  class="text-primary"
+  target="_blank"
+>
+  {{ step.data.terms.text }}
+</a>

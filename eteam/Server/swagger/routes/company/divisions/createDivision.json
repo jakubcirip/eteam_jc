@@ -1,0 +1,55 @@
+{
+  "tags": ["Division"],
+  "summary": "Create new division",
+  "operationId": "createDivision",
+  "x-swagger-router-controller": "divisionCtrl",
+  "security": [
+    {
+      "CompanyAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "divisionData",
+      "in": "body",
+      "description": "Data about division",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": ["name", "tag"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "tag": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          }
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "401": {
+      "$ref": "~/defaults/errors.json#/401"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

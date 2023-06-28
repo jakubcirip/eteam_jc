@@ -1,0 +1,627 @@
+{
+  "emailPlaceholders": {
+    "shared": {
+      "registrationDate": {
+        "title": "Registration date"
+      },
+      "startDate": {
+        "title": "Start date"
+      },
+      "remindDate": {
+        "title": "Remind date"
+      },
+      "submitDate": {
+        "title": "Submit date"
+      },
+      "enDate": {
+        "title": "End date"
+      },
+      "candidateInterviewUrl": {
+        "title": "Candidate Interview URL"
+      },
+      "candidateName": {
+        "title": "Candidate name"
+      },
+      "candidateTag": {
+        "title": "Candidate tag"
+      },
+      "candidateEmail": {
+        "title": "Candidate email"
+      },
+      "candidateType": {
+        "title": "Candidate type"
+      },
+      "companyName": {
+        "title": "Company name"
+      },
+      "companyIco": {
+        "title": "Company ICO"
+      },
+      "companyEmail": {
+        "title": "Company email"
+      },
+      "divisionName": {
+        "title": "Division name"
+      },
+      "divisionTag": {
+        "title": "Division tag"
+      },
+      "interviewName": {
+        "title": "Interview name"
+      },
+      "interviewTag": {
+        "title": "Intervew tag"
+      },
+      "positionName": {
+        "title": "Position name"
+      },
+      "positionFormName": {
+        "title": "Position form name"
+      },
+      "positionFormQuestionsAmount": {
+        "title": "Amount of questions"
+      },
+      "interviewCandidatesAmount": {
+        "title": "Amount of candidates"
+      },
+      "registrationFailDate": {
+        "title": "Registration fail date"
+      },
+      "nonstopAccept": {
+        "title": "Nonstop interview accept"
+      },
+      "nonstopReject": {
+        "title": "Nonstop interview reject"
+      }
+    }
+  },
+  "Utils": {
+    "interviewTagToData": {
+      "interviewRemoved": "Interview not found."
+    },
+    "shared": {
+      "companyNotFound": "Company not found."
+    },
+    "divToMany": {
+      "divisionRemoved": "Division not found."
+    },
+    "fromSwagger": {
+      "cantGetKeyFromSwagger": "Please provide {{key}}."
+    }
+  },
+  "Api": {
+    "Error400": "Invalid input.",
+    "Error500": "Unexpected server error."
+  },
+  "TokensPackage": {
+    "notSupportedPackage": "This package is not supported."
+  },
+  "PubicCtrl": {
+    "getPublicMp3": {
+      "interviewNotFound": "Interview not found."
+    },
+    "getPublicMp4": {
+      "interviewNotFound": "Intervuew not found."
+    },
+    "getPublicImg": {
+      "interviewNotFound": "PubicCtrl.getPublicImg.interviewNotFound"
+    }
+  },
+  "Errors": {
+    "Error500": "Unexpected server error.",
+    "Error403": "Please login first.",
+    "Error401": "Please login first.",
+    "Error401WrongInfo": "You have been logged out. Please login again.",
+    "Error400": "Invalid input."
+  },
+  "MailManager": {
+    "sendMail": {
+      "coundNotSend": "Mail cound not be sent."
+    }
+  },
+  "CatalogService": {
+    "importHrEmailCatalog": {
+      "catalogNotFound": "Catalog not found.",
+      "success": "Template successfully imported.",
+      "mailTotalLimitReached": "Total mail limit reached.",
+      "youNeedHigherPlan": "You need higher plan to use this template."
+    },
+    "likeHrEmailCatalog": {
+      "templateNotFound": "Template not found.",
+      "alreadyVoted": "You have already voted for this template.",
+      "success": "You have liked this template"
+    },
+    "getHrEmailCatalog": {
+      "coundNotFindPlan": "Could not find company plan."
+    },
+    "likeHrFormCatalog": {
+      "templateNotFound": "Template not found.",
+      "alreadyVoted": "You have already voted for this template.",
+      "success": "You have liked this template."
+    },
+    "importHrFormCatalog": {
+      "catalogNotFound": "Catalog not found.",
+      "youNeedHigherPlan": "You need higher plan to use this template.",
+      "formTotalLimitReached": "Total mail limit reached.",
+      "success": "Template successfully imported."
+    },
+    "getHrFormCatalog": {
+      "coundNotFindPlan": "Company plan not found."
+    },
+    "createFastInterview": {
+      "success": "Fast interview successfully created."
+    }
+  },
+  "CompanyService": {
+    "updateCompanyPassword": {
+      "passwordsDoesntMatch": "Passwords do not match.",
+      "newPassMustBeDifferent": "New password has to be different than current one.",
+      "wrongCurrentPass": "Wrong current password.",
+      "success": "Password successfully updated."
+    },
+    "activatePlan": {
+      "success": "Plan successfully activated."
+    },
+    "getTokensInfoCompany": {
+      "userNotFound": "User not found."
+    },
+    "sendCompanySupportEmail": {
+      "success": "Email successfully sent."
+    },
+    "getCompanyIndexData": {
+      "internalError": "Internal server error."
+    },
+    "getMeInfoCompany": {
+      "userNotFound": "User not found."
+    },
+    "activateCompany": {
+      "invalidLink": "Invalid activation link.",
+      "success": "Company successfully activated."
+    },
+    "resetCompanyPasswordValidate": {
+      "invalidLink": "Invalid reset password link.",
+      "success": "Password successfully set."
+    },
+    "resetCompanyPassword": {
+      "passwordsDoesntMatch": "Passwords do not match.",
+      "invalidLink": "Invalid reset password link.",
+      "success": "Password successfully set."
+    },
+    "requestResetCompanyPassword": {
+      "invalidLink": "Invalid reset password link.",
+      "companyWithThisMailDoesntExist": "Company with this mail does not exist.",
+      "passwordResetTimeLimit": "You can not request password reset so often.",
+      "success": "Reset email successfully sent."
+    },
+    "loginCompany": {
+      "invalidEmail": "Invalid company email.",
+      "domainNotFound": "Company domain not found.",
+      "wrongLoginData": "Incorect email or password.",
+      "registrationNotFinished": "You did not finish registration process yet. Check your email address.",
+      "success": "Successfully logged into company."
+    },
+    "purchaseTokens": {
+      "companyNotFound": "Company not found",
+      "success": "You have successfully purchased tokens."
+    },
+    "registerCompany": {
+      "success": "Company successfully registered. Please check your email inbox to continue registration process.",
+      "modelDoesntExist": "Plan type not found.",
+      "invalidEmail": "Invalid email address.",
+      "passwordsDoesntMatch": "Passwords do not match.",
+      "invalidIco": "ICO is not valid.",
+      "wrongDomainName": "Wrong domain name, use only letters and numbers please.",
+      "icoAlreadyUsed": "ICO already used by some company registered on hiroo.",
+      "emailAlreadyUsed": "Email already used by some company registered on hiroo.",
+      "companyDomainAlreadyUsed": "Domain name already used by some company registered on hiroo."
+    },
+    "getCompanyInterviewHistoryDetail": {
+      "historyIntewNotFound": "Interview not found."
+    },
+    "getCompanyTokensStats": {
+      "thisWeek": "This week",
+      "thisMonth": "This month",
+      "thisYear": "This year",
+      "overall": "Overall"
+    },
+    "authCheckCompany": {
+      "keyNotFound": "Key not found",
+      "success": "Successfully logged in"
+    }
+  },
+  "DivisionService": {
+    "addPerson": {
+      "emailInvalid": "Email address is not valid.",
+      "emailAlreadyUsed": "Email already used by some person in division.",
+      "notLoggedIn": "You are not logged in.",
+      "success": "Person successfully added."
+    },
+    "getDivision": {
+      "divisionNotFound": "Division not found."
+    },
+    "deletePerson": {
+      "youAreNotOwner": "You are not owner of this division.",
+      "success": "Person successfully deleted."
+    },
+    "getDivisionMailPassword": {
+      "divisionNoLongerExist": "Division not found.",
+      "success": "Division email password is: {{plainPass}}"
+    },
+    "deleteDivision": {
+      "success": "Division successfully deleted.",
+      "divisionNoLongerExists": "Division not found.",
+      "youAreNotOwner": "You are not owher of this division."
+    },
+    "changeDivisionMailPassword": {
+      "passwordsDoesntMatch": "Passwords do not match.",
+      "divisionNoLongerExists": "Division not found.",
+      "success": "Division email successfully changed.",
+      "couldNotRegisterEmail": "Unexpected server error when trying to connect to email server provider. Please try again later."
+    },
+    "updateDivision": {
+      "divisionNoLongerExists": "Division not found.",
+      "success": "Division successfully updated."
+    },
+    "createDivision": {
+      "wrongTag": "Tag is invalid. Please only use letters and numbers.",
+      "divisionNameAlreadyUsed": "Division name has already been used.",
+      "divisionTagAlreadyUsed": "Division tag has already been used.",
+      "success": "Division successfully created.",
+      "couldNotRegisterEmail": "Unexpected server error when trying to connect to email server provider. Please try again later."
+    }
+  },
+  "FmService": {
+    "shared": {
+      "fileUsedInInterview": "This file is used in an interview."
+    },
+    "deleteMp4": {
+      "fileNoLongerExists": "File not found.",
+      "success": "File successfully deleted."
+    },
+    "updateMp4": {
+      "fileNoLongerExists": "File not found.",
+      "success": "File successfully updated."
+    },
+    "deleteMp3": {
+      "fileNoLongerExists": "File not found.",
+      "success": "File successfully deleted."
+    },
+    "updateMp3": {
+      "fileNoLongerExists": "File not found.",
+      "success": "File successfully updated."
+    },
+    "uploadMp3": {
+      "cantGenerateId": "Could not generate random ID for file. Please try again.",
+      "success": "File successfully uploaded.",
+      "mp3SizeLimitReached": "Maximum MP3 file size limit reached.",
+      "mp3AmountLimitReached": "Maximum amount of MP3 files limit reached."
+    },
+    "uploadMp4": {
+      "cantGenerateId": "Could not generate random ID for file. Please try again.",
+      "success": "File successfully uploaded.",
+      "mp4SizeLimitReached": "Maximum MP4 file size limit reached.",
+      "mp4AmountLimitReached": "Maximum amount of MP4 files limit reached."
+    },
+    "deleteImg": {
+      "fileNoLongerExists": "FmService.deleteImg.fileNoLongerExists",
+      "success": "FmService.deleteImg.success"
+    },
+    "updateImg": {
+      "fileNoLongerExists": "FmService.updateImg.fileNoLongerExists",
+      "success": "FmService.updateImg.success"
+    },
+    "uploadImg": {
+      "cantGenerateId": "FmService.uploadImg.cantGenerateId",
+      "imgSizeLimitReached": "FmService.uploadImg.imgSizeLimitReached",
+      "imgAmountLimitReached": "FmService.uploadImg.imgAmountLimitReached",
+      "success": "FmService.uploadImg.success"
+    }
+  },
+  "HrService": {
+    "editInterviewPerson": {
+      "positionUsedByInterview": "This position is used by an interview.",
+      "emailNotValid": "Email address is not valid.",
+      "personNoLongerExist": "Candidate no longer exists.",
+      "personWithThisEmailAlreadyExist": "New email address is already used by some candidate.",
+      "success": "Candidate information successfully updated."
+    },
+    "deleteInterviewPerson": {
+      "positionUsedByInterview": "This position is used by an interview.",
+      "personNoLongerExist": "Candidate not found.",
+      "success": "Candidate successfully deleted."
+    },
+    "editJobPosition": {
+      "positionUsedByInterview": "This position is used by an interview.",
+      "jobPositionNoLongerExist": "Job position not found.",
+      "nameAlreadyUsed": "Name already used.",
+      "success": "Job position successfully updated."
+    },
+    "deleteJobPositionForm": {
+      "positionUsedByInterview": "This position is used by an interview.",
+      "success": "Job positiom form successfully deleted."
+    },
+    "deleteJobPosition": {
+      "positionUsedByInterview": "This position is used by an interview.",
+      "positionNoLongerExist": "Job position not found.",
+      "success": "Job position successfully deleted."
+    },
+    "editJobPositionForm": {
+      "positionUsedByInterview": "This position is used by an interview.",
+      "success": "Job positiom form successfully updated."
+    },
+    "editJobPositionFormData": {
+      "positionUsedByInterview": "This position is used by an interview.",
+      "templateNoLongerExist": "Job form not found.",
+      "success": "Job form saved."
+    },
+    "editHrEmailContent": {
+      "positionUsedByInterview": "This position is used by an interview.",
+      "success": "Email successfully saved."
+    },
+    "editHrInterviewPrelog": {
+      "interviewNoLongerExists": "Interview not found.",
+      "success": "Prelog successfully saved."
+    },
+    "addFormTemplates": {
+      "templateNotFound": "Template not found.",
+      "success": "Template successfully added."
+    },
+    "startHrInterview": {
+      "interviewNoLongerExists": "Interview not found.",
+      "couldNotLoadInterviewData": "Could not load interview data",
+      "thereAreWarnings": "There are some warnings. Fix them before starting an interview.",
+      "companyNotEnoughTokens": "You do not have enough tokens.",
+      "interviewNotSetupCorrectly": "Interview was not setup correctly. Please check errors.",
+      "success": "Interview successfully started.",
+      "activeInterviewTotalLimitReached": "You have reached limit of total active interviews."
+    },
+    "getHrInterviewSummaryInternal": {
+      "interviewNoLongerExists": "Interview not found.",
+      "interviewAlreadyStarted": "Interview already started.",
+      "needToWritePrelog": "You must define prelog.",
+      "needToAsignJobPosition": "You must assign job position.",
+      "needToAsignJobTemplate": "You must assign job position form.",
+      "needToAsignEmail": "You must assign email of type {{emailName}}",
+      "needToSetEmailDate": "You must set date for email of type {{emailName}}",
+      "emailConfigurationNotValid": "Configuration of email of type {{emailName}} is not vaid.",
+      "emailDateInPast": "Date of email of type {{emailName}} is in the past.",
+      "dateNotSpecified": "Date of email of type {{emailName}} must be defined.",
+      "emailNeedsSubject": "Email of type {{emailName}} must have defined subject.",
+      "jobPositionTemplateCantBeEmpty": "Job position form can not be empty.",
+      "noCandidatedJoinedYet": "No candidate joined your interview yet.",
+      "emailNeedsToBeEarlierThanOtherEmail": "Email of type {{emailName}} must be earlier than email of type {{earlierThanEmail}}.",
+      "success": "Interview is ready to be started.",
+      "templateNotSpecified": "Job position form not specified."
+    },
+    "confirmPerson": {
+      "success": "Person successfully confirmed.",
+      "passwordsDoesntMatch": "Passwords do not match.",
+      "linkNoLongerValid": "Link is no longer valid.",
+      "companyNoLongerExist": "Company not found."
+    },
+    "addHrEmail": {
+      "nameAlreadyUsed": "Name of HR already used.",
+      "defaultEmailText": "Default email text.",
+      "success": "Email successfully added.",
+      "mailTotalLimitReached": "You have reached limit of total HR added."
+    },
+    "getHrEmail": {
+      "emailNotFound": "Email not found."
+    },
+    "sendHrEmailPreview": {
+      "success": "Email preview successfully sent."
+    },
+    "getHrEmailPreview": {
+      "emailNotFound": "Email not found.",
+      "interviewNotFound": "Interview not found.",
+      "testCandidate": {
+        "email": "Test candidate email",
+        "name": "Test candidate name"
+      }
+    },
+    "deleteHrEmail": {
+      "success": "Email successfully deleted."
+    },
+    "editHrEmail": {
+      "nameAlreadyUsed": "Name of email is already used by some email.",
+      "success": "Email successfully updated."
+    },
+    "setHrInterviewBackgroundColor": {
+      "interviewNoLongerExists": "Interview not found.",
+      "success": "Background color successfully updated."
+    },
+    "testHrInterview": {
+      "couldNotLoadInterviewData": "Could not load interview data.",
+      "fixInterviewErrorsFirst": "Pelase fix interview errors before starting test interview. Warnings (orange ones) are allowed fore testing.",
+      "cantGetFormData": "Could not load job position form data.",
+      "success": "Test interview successfully prepared."
+    },
+    "updateHrJobPositiomFormMedals": {
+      "success": "Medal configuration successfully updated."
+    },
+    "createHrInterviewCandidate": {
+      "interviewNoLongerExists": "Interview not found.",
+      "personNoLongerExist": "Person not found.",
+      "candidateAlreadyExist": "Candidate already exist.",
+      "success": "Candidate successfully assigned to an interview."
+    },
+    "removeHrInterviewCandidate": {
+      "interviewNoLongerExist": "Interview not found.",
+      "success": "Candidate successfully removed from interview."
+    },
+    "getHrInterviewCandidates": {
+      "interviewNoLongerExists": "Interview not found."
+    },
+    "editHrInterviewDate": {
+      "interviewNoLongerExist": "Interview not found.",
+      "success": "Interview date successfully updated."
+    },
+    "editHrInterviewEmail": {
+      "interviewNoLongerExist": "Interview not found.",
+      "success": "Interview email successfully updated."
+    },
+    "editHrInterviewPosition": {
+      "interviewNoLongerExist": "Interview not found.",
+      "success": "Position successfully assigned to an interview."
+    },
+    "deleteHrInterview": {
+      "interviewNoLongerExist": "Interview not found.",
+      "success": "HrService.deleteHrInterview.success"
+    },
+    "addHrInterview": {
+      "interviewNameAlreadyUsed": "Interview name already used.",
+      "couldNotGenerateTag": "Could not generate tag for interview. Please try again.",
+      "idleInterviewTotalLimitReached": "You have reached total interview amount limit.",
+      "success": "Interview successfully created."
+    },
+    "editHrInterview": {
+      "interviewNoLongerExist": "Interview not found.",
+      "nameAleradyUsed": "New interview name already used.",
+      "success": "Interview successfully updated."
+    },
+    "addInterviewPerson": {
+      "personWithThisNameAlreadyExist": "Name already used.",
+      "personWithThisEmailAlreadyExist": "Email address already used.",
+      "success": "Candidate successfully created."
+    },
+    "getInterviewPeople": {
+      "InterviewNoLongerExist": "Interview not found.",
+      "templateNoLongerExist": "Job position form not found."
+    },
+    "updateHrPassword": {
+      "newPasswordsDoesntMatch": "Passwords do not match.",
+      "passwordSameAsBefore": "New password can not be same as last used one.",
+      "wrongCurrentPassword": "You have entered wrong current password.",
+      "success": "Password successfully updated."
+    },
+    "addJobPositionForm": {
+      "formsTotalLimitReached": "You have reached limit of total job position forms.",
+      "success": "Job position form successfully created."
+    },
+    "addJobPosition": {
+      "nameAlreadyUsed": "Job potision name already used.",
+      "positionTotalLimitReached": "You have reached limit of total job positions.",
+      "success": "Job position successfully created."
+    },
+    "getJobPositionForms": {
+      "positionNoLongerExist": "Job position not found."
+    },
+    "getJobPositionForm": {
+      "templateNoLongerExist": "Job position form not found."
+    },
+    "getHrInterview": {
+      "unnamedMedalCategory": "Unnamed medals category",
+      "globalMedalCategory": "Global medals category"
+    },
+    "getHrMailPass": {
+      "divisionNoLongerExist": "Division not found.",
+      "success": "The password is {{pass}}"
+    },
+    "loginSocketHr": {
+      "success": "Socket login success."
+    },
+    "getHrSettings": {
+      "divisionNoLongerExist": "Division not found."
+    },
+    "resetHrPasswordValidate": {
+      "linkNoLongerValid": "Link is not valid.",
+      "success": "Link is valid."
+    },
+    "resetHrPassword": {
+      "passwordsDoesntMatch": "Passwords do not match.",
+      "linkNoLongerValid": "Link is not valid.",
+      "success": "Password successfully changed."
+    },
+    "requestResetHrPassword": {
+      "emailNotValid": "Email address is not valid.",
+      "emailUsedByOtherHr": "This email is used by different HR specialist.",
+      "emailRquestLimitReached": "You can not request password resets so often.",
+      "success": "Email with instructions how to reset your password successfully sent."
+    },
+    "sendHrSupportEmail": {
+      "success": "Support email successfully sent."
+    },
+    "getMeInfoHr": {
+      "hrNotFound": "HR not found."
+    },
+    "authCheckHr": {
+      "hrNotFound": "HR not found.",
+      "success": "HR logged in."
+    },
+    "loginHr": {
+      "emailNotValid": "Email address is not valid.",
+      "domainNotFound": "Domain name not found.",
+      "wrongLoginInfo": "HR account with these information could not be found.",
+      "registrationNotFinished": "You have not yet finished the registration process. Please check your email.",
+      "success": "Successfully logged in."
+    },
+    "getPreconfirmPerson": {
+      "linkNoLongerValid": "Link is no longer valid"
+    }
+  },
+  "InternalService": {
+    "getInternalInterviewSummary": {
+      "interviewNotFound": "Interview not found."
+    },
+    "getInternalInterviewCandidateStatistics": {
+      "interviewNotFound": "Interview not found.",
+      "personNotFound": "Candidate not found."
+    },
+    "parseInternalEmailPlaceholders": {
+      "candidateNotFound": "Candidate not found.",
+      "mailNotFound": "Mail not found."
+    }
+  },
+  "QuestionType": {
+    "submitInterviewResponse": {
+      "noLongerValidLink": "Interview link is no longer valid.",
+      "success": "Interview results successfully submited.",
+      "submitAlready": "You have already submited interview results. Link is no longer valid.",
+      "couldNotLoadDataForEmail": "Email could not be send to candidate."
+    },
+    "validateInterviewUser": {
+      "noLongerValidLink": "Interview link is no longer valid.",
+      "success": "Interview link is valid."
+    },
+    "getInterviewForm": {
+      "noLongerValidLink": "Interview link is no longer valid.",
+      "interviewNotFound": "Interview not found."
+    }
+  },
+  "PublicService": {
+    "sendContactEmail": {
+      "success": "Contact email successfully sent."
+    },
+    "sendRegisterEmail": {
+      "success": "Register interest email successfully sent."
+    }
+  },
+  "PricingManager": {
+    "canUploadFile": {
+      "companyNotFound": "Company not found.",
+      "planNotFound": "Plan not found."
+    }
+  },
+  "InterviewService": {
+    "updateInterviewMedals": {
+      "success": "Interview medals successfully updated."
+    },
+    "setHrInterviewImage": {
+      "interviewNoLongerExists": "Interview not found.",
+      "success": "Interview image successfully updated."
+    },
+    "setHrInterviewColor": {
+      "interviewNoLongerExists": "Interview not found.",
+      "success": "Interview color successfully updated."
+    },
+    "updateInterviewNotes": {
+      "success": "Candidate notes successfully updated."
+    }
+  },
+  "GoogleManager": {
+    "prepareFormTTS": {
+      "cantGetFormData": "Could not get text to speech job position form data.",
+      "cantGetIntData": "Could not get text to speech interview data."
+    }
+  }
+}

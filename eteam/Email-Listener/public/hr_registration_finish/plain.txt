@@ -1,0 +1,2 @@
+Yeyy, finished.
+You can login here: {{companyUrl}}/hr-login?domain={{domain}}

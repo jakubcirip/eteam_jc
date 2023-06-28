@@ -1,0 +1,409 @@
+<!--Header Start-->
+<header class="cursor-light">
+  <!--Navigation-->
+  <nav
+    class="navbar navbar-top-default navbar-expand-lg navbar-gradient nav-icon alt-font"
+  >
+    <div class="container" style="margin-left: 100px !important">
+      <a
+        class="logo link scroll"
+        href="#home"
+        title="Logo"
+        style="font-size: 32px; font-weight: bold; color: white"
+      >
+        <!--Logo Default-->
+        {{ 'header.title' | translate }}
+      </a>
+
+      <!--Nav Links-->
+      <div
+        class="collapse navbar-collapse"
+        id="agency"
+        style="margin-right: 0px; margin-left: 50px"
+      >
+        <div class="navbar-nav ml-auto" style="margin-left: 0 !important">
+          <a class="nav-link link scroll active" href="#home">{{
+            'header.menu.home' | translate
+          }}</a>
+          <a class="nav-link link scroll" href="#clients">{{
+            'header.menu.clients' | translate
+          }}</a>
+          <a class="nav-link link scroll" href="#features">{{
+            'header.menu.features' | translate
+          }}</a>
+          <a class="nav-link link scroll" href="#pricing">{{
+            'header.menu.pricing' | translate
+          }}</a>
+          <a class="nav-link link scroll" href="#screenshots">{{
+            'header.menu.screenshots' | translate
+          }}</a>
+          <!-- <a class="nav-link link scroll" href="#team">{{
+            'header.menu.ourTeam' | translate
+          }}</a> -->
+          <span class="menu-line"
+            ><i aria-hidden="true" class="fa fa-angle-down"></i
+          ></span>
+        </div>
+        <!-- <a
+          class="btn btn-medium btn-rounded btn-transparent-white btn-hvr-white ml-3"
+          data-animation-duration="500"
+          data-toggle="modal"
+          data-target="#headerModal"
+          href="javascript:void(0);"
+          >{{ 'header.menu.registerButton' | translate }}
+          <div class="btn-hvr-setting">
+            <ul class="btn-hvr-setting-inner">
+              <li class="btn-hvr-effect"></li>
+              <li class="btn-hvr-effect"></li>
+              <li class="btn-hvr-effect"></li>
+              <li class="btn-hvr-effect"></li>
+            </ul>
+          </div>
+        </a> -->
+
+        <a
+          class="btn btn-medium btn-rounded btn-transparent-white btn-hvr-white ml-3"
+          data-animation-duration="500"
+          [href]="registerUrl"
+          >{{ 'header.menu.registerButton' | translate }}
+          <div class="btn-hvr-setting">
+            <ul class="btn-hvr-setting-inner">
+              <li class="btn-hvr-effect"></li>
+              <li class="btn-hvr-effect"></li>
+              <li class="btn-hvr-effect"></li>
+              <li class="btn-hvr-effect"></li>
+            </ul>
+          </div>
+        </a>
+      </div>
+
+      <!--Menu Button-->
+      <button class="fullnav-toggler link" id="full-menu-1" type="button">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+
+      <!--Slider Social-->
+      <!-- <div class="slider-social">
+        <ul class="list-unstyled">
+          <li class="animated-wrap" (click)="onSetLang('sk')">
+            <a
+              [ngClass]="lang.currentLang === 'sk' ? ['active'] : []"
+              class="lang-item animated-element"
+              href="javascript:void(0);"
+              >{{ 'shared.languageShortcuts.sk' | translate }}</a
+            >
+          </li>
+          <li class="animated-wrap" (click)="onSetLang('en')">
+            <a
+              [ngClass]="lang.currentLang === 'en' ? ['active'] : []"
+              class="lang-item animated-element"
+              href="javascript:void(0);"
+              >{{ 'shared.languageShortcuts.en' | translate }}</a
+            >
+          </li>
+          <li class="animated-wrap" (click)="onSetLang('cs')">
+            <a
+              [ngClass]="lang.currentLang === 'cs' ? ['active'] : []"
+              class="lang-item animated-element"
+              href="javascript:void(0);"
+              >{{ 'shared.languageShortcuts.cz' | translate }}</a
+            >
+          </li>
+          <li class="animated-wrap" (click)="onSetLang('de')">
+            <a
+              [ngClass]="lang.currentLang === 'de' ? ['active'] : []"
+              class="lang-item animated-element"
+              href="javascript:void(0);"
+              >{{ 'shared.languageShortcuts.de' | translate }}</a
+            >
+          </li>
+          <li class="lang-item animated-wrap" (click)="onSetLang('fr')">
+            <a
+              [ngClass]="lang.currentLang === 'fr' ? ['active'] : []"
+              class="animated-element"
+              href="javascript:void(0);"
+              >{{ 'shared.languageShortcuts.fr' | translate }}</a
+            >
+          </li>
+        </ul>
+      </div> -->
+    </div>
+  </nav>
+
+  <!--Full menu-->
+  <div class="nav-holder main style-2 alt-font">
+    <!--Menu Button-->
+    <button class="fullnav-close link" type="button">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+
+    <div class="container">
+      <div class="shape-left">
+        <nav class="navbar full-menu-navigation left">
+          <ul class="list-unstyled">
+            <li>
+              <a class="link scroll" href="#home">
+                <span class="anchor-circle"></span>
+                <span class="anchor-text">{{
+                  'header.menu.home' | translate
+                }}</span>
+              </a>
+            </li>
+            <li>
+              <a class="link scroll" href="#clients">
+                <span class="anchor-circle"></span>
+                <span class="anchor-text">{{
+                  'header.menu.clients' | translate
+                }}</span>
+              </a>
+            </li>
+            <li>
+              <a class="link scroll" href="#features">
+                <span class="anchor-circle"></span>
+                <span class="anchor-text">{{
+                  'header.menu.features' | translate
+                }}</span>
+              </a>
+            </li>
+            <li>
+              <a class="link scroll" href="#pricing">
+                <span class="anchor-circle"></span>
+                <span class="anchor-text">{{
+                  'header.menu.pricing' | translate
+                }}</span>
+              </a>
+            </li>
+            <li>
+              <a class="link scroll" href="#screenshots">
+                <span class="anchor-circle"></span>
+                <span class="anchor-text">{{
+                  'header.menu.screenshots' | translate
+                }}</span>
+              </a>
+            </li>
+            <!-- <li>
+              <a class="link scroll" href="#team">
+                <span class="anchor-circle"></span>
+                <span class="anchor-text">{{
+                  'header.menu.ourTeam' | translate
+                }}</span>
+              </a>
+            </li> -->
+          </ul>
+          <span class="full-menu-dot" style="transform: scale(0)"></span>
+        </nav>
+
+        <div
+          class="d-none d-sm-block d-md-none"
+          style="
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <span
+            (click)="onSetLang('sk')"
+            style="margin: 0 10px; font-weight: bolder"
+          >
+            {{ 'shared.languageShortcuts.sk' | translate }}
+          </span>
+          <span
+            (click)="onSetLang('en')"
+            style="margin: 0 10px; font-weight: bolder"
+            >{{ 'shared.languageShortcuts.en' | translate }}</span
+          >
+          <span
+            (click)="onSetLang('cs')"
+            style="margin: 0 10px; font-weight: bolder"
+            >{{ 'shared.languageShortcuts.cz' | translate }}</span
+          >
+          <span
+            (click)="onSetLang('de')"
+            style="margin: 0 10px; font-weight: bolder"
+            >{{ 'shared.languageShortcuts.de' | translate }}</span
+          >
+          <span
+            (click)="onSetLang('fr')"
+            style="margin: 0 10px; font-weight: bolder"
+            >{{ 'shared.languageShortcuts.fr' | translate }}</span
+          >
+        </div>
+        <img alt="shape" src="/assets/agency/img/shape-8.png" />
+      </div>
+      <div class="shape-right">
+        <div class="full-menu-detail hide-cursor">
+          <h6 class="title">
+            {{ 'header.personalContact.title' | translate }}
+          </h6>
+          <p>
+            <i class="fas fa-user-alt"></i
+            >{{ 'shared.contact.name' | translate }}
+          </p>
+          <p>
+            <i class="fas fa-mobile-alt"></i
+            >{{ 'shared.contact.phoneNumber' | translate }}
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i
+            >{{ 'shared.contact.email' | translate }}
+          </p>
+        </div>
+        <img alt="shape" src="/assets/agency/img/shape-7.png" />
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="headerModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">
+            {{ 'header.menu.registerButton' | translate }}
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div
+            class="heading-area pb-2 mx-570"
+            style="width: 100%; text-align: center; max-width: 100%"
+          >
+            <span class="sub-title">{{
+              'header.modal.preTitle' | translate
+            }}</span>
+            <h2 class="title mt-2">
+              {{ 'header.modal.title.before' | translate }}
+              <span class="alt-color js-rotating">{{
+                'header.modal.title.words' | translate
+              }}</span>
+              {{ 'header.modal.title.after' | translate }}
+            </h2>
+            <hr />
+          </div>
+
+          <!--Contact Form-->
+          <form class="contact-form">
+            <div class="row">
+              <!--Result-->
+
+              <!--Left Column-->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    id="quote_name"
+                    name="quote_name"
+                    #companyInput
+                    placeholder="{{
+                      'header.modal.placeholders.companyName' | translate
+                    }}"
+                    required=""
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <!--Right Column-->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    id="quote_address"
+                    name="quote_address"
+                    #cityInput
+                    placeholder="{{
+                      'header.modal.placeholders.city' | translate
+                    }}"
+                    required=""
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    id="quote_email"
+                    name="quote_email"
+                    #emailInput
+                    placeholder="{{
+                      'header.modal.placeholders.email' | translate
+                    }}"
+                    required=""
+                    type="email"
+                  />
+                </div>
+              </div>
+
+              <!--Button-->
+              <div class="col-md-12">
+                <div class="form-check">
+                  <label class="checkbox-lable"
+                    >{{ 'header.modal.agreeText' | translate }}
+                    <input #canContactInput type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+
+                <div
+                  style="
+                    margin-top: 20px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                  "
+                >
+                  <a
+                    class="btn btn-large btn-rounded btn-blue btn-hvr-pink"
+                    href="javascript:void(0);"
+                    id="quote_submit_btn"
+                    (click)="
+                      onRegister(
+                        companyInput.value,
+                        cityInput.value,
+                        emailInput.value,
+                        canContactInput.checked
+                      )
+                    "
+                    >{{ 'header.modal.buttonText' | translate }}
+                    <div class="btn-hvr-setting">
+                      <ul class="btn-hvr-setting-inner">
+                        <li class="btn-hvr-effect"></li>
+                        <li class="btn-hvr-effect"></li>
+                        <li class="btn-hvr-effect"></li>
+                        <li class="btn-hvr-effect"></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</header>
+<!--Header End-->

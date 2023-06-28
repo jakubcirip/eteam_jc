@@ -1,0 +1,64 @@
+<app-assistent [title]="step.data.title"></app-assistent>
+
+<br />
+
+<img
+  *ngIf="int.randomData.imgSrc"
+  [src]="int.randomData.imgSrc"
+  alt="Image Of Question"
+  style="max-width: 100%; margin-top: 15px; margin-bottom: 15px"
+/>
+
+<p *ngIf="step.data.text">
+  {{ step.data.text }}
+</p>
+
+<a
+  *ngIf="step.data.terms.text && step.data.terms.url"
+  [href]="step.data.terms.url"
+  class="text-primary"
+  target="_blank"
+>
+  {{ step.data.terms.text }}
+</a>
+
+<br />
+
+<div *ngIf="int.interviewState === InterviewState.ANSWER_TYPE_STEP1">
+  <h3>{{ 'interview.answers.willEnableSoon' | translate }}</h3>
+  <h3>
+    {{ 'interview.answers.timeLeft' | translate }}:
+    {{
+      'interview.answers.time' | translate: { time: int.randomData.timeLeft }
+    }}
+    ({{ 'interview.answers.paused' | translate }})
+  </h3>
+
+  <div class="comment-box">
+    <p><i class="fas fa-comments"></i> {{ int.randomData.currentQuestion }}</p>
+    <textarea
+      name="full_comments"
+      placeholder="{{ 'interview.answers.textarePlaceholder' | translate }}"
+      disabled
+    ></textarea>
+  </div>
+</div>
+
+<div *ngIf="int.interviewState === InterviewState.ANSWER_TYPE_STEP2">
+  <h3>&nbsp;</h3>
+  <h3>
+    {{ 'interview.answers.timeLeft' | translate }}:
+    {{
+      'interview.answers.time' | translate: { time: int.randomData.timeLeft }
+    }}
+  </h3>
+
+  <div class="comment-box">
+    <p><i class="fas fa-comments"></i> {{ int.randomData.currentQuestion }}</p>
+    <textarea
+      (input)="onChange($event)"
+      name="full_comments"
+      placeholder="{{ 'interview.answers.textarePlaceholder' | translate }}"
+    ></textarea>
+  </div>
+</div>

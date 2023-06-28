@@ -1,0 +1,38 @@
+{
+  "tags": ["Catalog"],
+  "summary": "Create fast interview (import mail, import form, configure interview)",
+  "operationId": "createFastInterview",
+  "x-swagger-router-controller": "catalogCtrl",
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "in": "body",
+      "name": "body",
+      "required": true,
+      "schema": {
+        "$ref": "~/models/catalog.json#/CreateFastInterviewParamBody"
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/models/responses.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

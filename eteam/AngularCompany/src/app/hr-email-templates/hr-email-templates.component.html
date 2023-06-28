@@ -1,0 +1,351 @@
+<div>
+  <div class="page-hero page-container" *ngIf="!isImported">
+    <div class="padding d-flex">
+      <svg
+        style="cursor: pointer;"
+        (click)="goBack()"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#f54394"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-chevrons-left mx-2"
+      >
+        <polyline points="11 17 6 12 11 7"></polyline>
+        <polyline points="18 17 13 12 18 7"></polyline>
+      </svg>
+      <h2 class="text-md text-highlight white">
+        Email Templates
+      </h2>
+      <div class="flex"></div>
+    </div>
+  </div>
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card" style="padding-bottom: 15px;">
+            <input
+              #searchQuery
+              type="text"
+              class="form-control"
+              placeholder="What are you looking for?"
+            />
+            <button
+              (click)="onSearch(searchQuery.value)"
+              type="button"
+              class="btn btn-primary"
+            >
+              Search
+            </button>
+          </div>
+
+          <div class="card" style="padding-bottom: 15px;">
+            <div class="p-3 text-muted">
+              <span class="text-hybrid"> 1. </span> Select Category:
+            </div>
+            <ul class="nav flex-column">
+              <li
+                class="nav-item"
+                [ngClass]="[filters.cats.includes(cat.id) ? 'text-active' : '']"
+                (click)="onSelectCat(cat.id)"
+                *ngFor="let cat of categories; let catI = index"
+              >
+                <a class="nav-link" (click)="onLoadCat(catI)"
+                  ><i [ngClass]="cat.classes" class="fa fa-folder mx-1"></i>
+                  <span class="nav-text">{{ cat.text }}</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding-bottom: 15px;">
+            <div class="p-3 text-muted">
+              <span class="text-hybrid"> 2. </span> Select Plan:
+            </div>
+            <ul class="nav flex-column">
+              <li
+                class="nav-item"
+                (click)="onSelectPlan(plan.id)"
+                [ngClass]="[
+                  filters.plans.includes(plan.id) ? 'text-active' : ''
+                ]"
+                *ngFor="let plan of plans; let planI = index"
+              >
+                <a class="nav-link"
+                  ><i [ngClass]="plan.classes" class="fa fa-usd mx-1"></i>
+                  <span class="nav-text">{{ plan.text }}</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding-bottom: 15px;">
+            <div class="p-3 text-muted">
+              <span class="text-hybrid"> 3. </span> Select Sorting Method:
+            </div>
+            <hr />
+            <ul class="nav flex-column">
+              <li
+                class="nav-item"
+                (click)="onSelectSorter(sorter.id)"
+                [ngClass]="[filters.sorter === sorter.id ? 'text-active' : '']"
+                *ngFor="let sorter of sorters; let sortI = index"
+              >
+                <a class="nav-link"
+                  ><i [ngClass]="sorter.classes" class="fa fa-filter mx-1"></i>
+                  <span class="nav-text">{{ sorter.name }}</span></a
+                >
+              </li>
+            </ul>
+            <hr />
+            <ul class="nav flex-column">
+              <li
+                class="nav-item"
+                (click)="onSelectSorterDir(dir.id)"
+                [ngClass]="[filters.sorterDir === dir.id ? 'text-active' : '']"
+                *ngFor="let dir of sortDirs; let dirI = index"
+              >
+                <a class="nav-link"
+                  ><i [ngClass]="dir.classes" class="fa fa-sort mx-1"></i>
+                  <span class="nav-text">{{ dir.text }}</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-9" *ngIf="templates === null">
+          <p>
+            Loading ...
+          </p>
+        </div>
+
+        <div class="col-md-9" *ngIf="templates !== null">
+          <div class="row">
+            <div class="col-md-12" *ngIf="filters.cats.length <= 0">
+              <div class="alert alert-info" role="alert">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-info"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12" y2="8"></line>
+                </svg>
+                <span class="mx-2">Please select at least one category</span>
+              </div>
+            </div>
+            <div class="col-md-12" *ngIf="filters.plans.length <= 0">
+              <div class="alert alert-info" role="alert">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-info"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12" y2="8"></line>
+                </svg>
+                <span class="mx-2">Please select at least one plan</span>
+              </div>
+            </div>
+            <div
+              class="col-md-12"
+              *ngFor="
+                let t of templates
+                  | emailTemplate
+                    : {
+                        plans: filters.plans,
+                        categories: filters.cats,
+                        sorter: filters.sorter,
+                        sorterDir: filters.sorterDir,
+                        search: filters.search
+                      };
+                let i = index
+              "
+            >
+              <div [id]="'qp-' + i" class="card qp-animated">
+                <div class="card-header">
+                  {{ t.name }}
+
+                  <div
+                    class="float-right"
+                    style="
+                      padding-left: 15px;
+                      border-left: 1px solid rgba(255, 255, 255, 0.3);
+                    "
+                  >
+                    <div
+                      aria-label="Expand / Collapse Details"
+                      data-balloon-pos="up"
+                    >
+                      <i
+                        style="
+                          font-size: 24px;
+                          color: #448bff;
+                          cursor: pointer;
+                        "
+                        class="fa fa-angle-down"
+                        (click)="onExpand(i)"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                  </div>
+
+                  <div
+                    class="float-right"
+                    style="padding-right: 15px; display: flex;"
+                  >
+                    <div
+                      [attr.aria-label]="
+                        'Category: ' + _getCatClassAttr(t.catId, 'text')
+                      "
+                      data-balloon-pos="up"
+                    >
+                      <i
+                        style="padding: 0 5px;"
+                        [ngClass]="_getCatClassAttr(t.catId, 'classes')"
+                        class="fa fa-folder mx-1"
+                      ></i>
+                    </div>
+
+                    <div
+                      [attr.aria-label]="
+                        'Plan: ' + _getPlanClassAttr(t.planId, 'text')
+                      "
+                      data-balloon-pos="up"
+                    >
+                      <i
+                        style="padding: 0 5px;"
+                        [ngClass]="_getPlanClassAttr(t.planId, 'classes')"
+                        class="fa fa-usd mx-1"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style="display: none;"
+                  class="card-body"
+                  [ngClass]="['qp-' + i]"
+                >
+                  <small> Description: </small><br />
+                  <small class="text-hybrid"> {{ t.desc }} </small><br /><br />
+
+                  <small> Downloads: </small><br />
+                  <small class="text-hybrid"> {{ t.downloads }} </small
+                  ><br /><br />
+
+                  <small> Likes: </small><br />
+                  <small class="text-hybrid"> {{ t.likes }} </small><br /><br />
+                  <small> Create Date: </small><br />
+                  <small class="text-hybrid">
+                    {{ getDate(t.createdAt) | date: 'd.M.yyyy' }} |
+                    {{ getDate(t.createdAt) | date: 'H:mm:ss' }} </small
+                  ><br />
+                  <div
+                    class="b-b b-theme nav-active-theme mb-3"
+                    style="margin-top: 15px;"
+                  >
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li
+                        class="nav-item"
+                        *ngFor="let g of t.groups; let gId = index"
+                      >
+                        <a
+                          class="nav-link {{ gId === 0 ? 'active' : '' }}"
+                          data-toggle="tab"
+                          [attr.href]="'#' + 't-' + t.id + '-g-' + g.id"
+                          role="tab"
+                          >{{ g.title }}</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab-content mb-4">
+                    <div
+                      class="tab-pane fade  {{
+                        gId === 0 ? 'active show' : ''
+                      }}"
+                      *ngFor="let g of t.groups; let gId = index"
+                      [attr.id]="'t-' + t.id + '-g-' + g.id"
+                      role="tabpanel"
+                    >
+                      <div style="display: flex; align-items: flex-end;">
+                        <small style="margin-right: 10px;"> Subject: </small>
+                        <p
+                          class="text-hybrid"
+                          style="font-size: 16px; font-weight: bold;"
+                        >
+                          {{ g.subject }}
+                        </p>
+                      </div>
+                      <div *ngIf="g.attachments.length > 0">
+                        <small>Attachments: </small>
+                        <p
+                          style="margin-bottom: 0; font-weight: bolder;"
+                          class="text-hybrid"
+                          *ngFor="let att of g.attachments"
+                        >
+                          <a target="_blank" [href]="att">- {{ att }}</a>
+                        </p>
+                      </div>
+                      <small>Preview: </small>
+                      <iframe
+                        #frametest
+                        style="
+                          width: 100%;
+                          height: 300px;
+                          background-color: #f5f5f6;
+                          border-radius: 5px;
+                          margin-top: 5px;
+                          max-height: 300px;
+                        "
+                        [attr.srcdoc]="g.html"
+                        frameborder="0"
+                      ></iframe>
+
+                      <button
+                        class="float-right btn btn-primary"
+                        (click)="onImport(t.id)"
+                      >
+                        {{ importText }}
+                      </button>
+
+                      <button
+                        style="margin-right: 15px;"
+                        class="float-right btn btn-success"
+                        (click)="onLike(t.id)"
+                      >
+                        Like this template
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

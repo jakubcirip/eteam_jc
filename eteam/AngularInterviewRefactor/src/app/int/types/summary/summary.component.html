@@ -1,0 +1,16 @@
+<app-assistent [title]="step.data.title"></app-assistent>
+
+<br />
+
+<p>{{ 'summaryPage.description' | translate }}:</p>
+
+<div class="step-content-area form-inner-area" style="padding-top: 0;">
+  <div class="budget-area" *ngFor="let line of lines">
+    <p>
+      <i [ngClass]="[line.icon]" class="fas"></i>
+      {{ line.title }}
+    </p>
+
+    <input type="text" [value]="line.value" disabled />
+  </div>
+</div>

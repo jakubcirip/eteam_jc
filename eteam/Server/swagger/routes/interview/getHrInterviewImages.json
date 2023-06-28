@@ -1,0 +1,28 @@
+{
+  "tags": ["Interview"],
+  "summary": "Get list of all default images",
+  "operationId": "getHrInterviewImages",
+  "x-swagger-router-controller": "interviewCtrl",
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/models/interview.json#/GetHrInterviewImagesResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

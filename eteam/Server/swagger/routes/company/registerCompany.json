@@ -1,0 +1,72 @@
+{
+  "tags": ["Company"],
+  "summary": "Register new company",
+  "operationId": "registerCompany",
+  "x-swagger-router-controller": "companyCtrl",
+  "parameters": [
+    {
+      "name": "registerData",
+      "in": "body",
+      "description": "Data to register with",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "name",
+          "email",
+          "password",
+          "passwordConfirm",
+          "subModel",
+          "domain"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "domain": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "email": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "password": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "passwordConfirm": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "subModel": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

@@ -1,0 +1,930 @@
+<div *ngIf="data !== null">
+  <div class="page-hero page-container">
+    <div class="padding d-flex">
+      <svg
+        style="cursor: pointer"
+        (click)="goBack()"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#f54394"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-chevrons-left mx-2"
+      >
+        <polyline points="11 17 6 12 11 7"></polyline>
+        <polyline points="18 17 13 12 18 7"></polyline>
+      </svg>
+      <h2 class="text-md text-highlight white">{{ name }} - Editor</h2>
+      <div class="flex"></div>
+      <div (click)="save()" class="newbtn white" style="margin-right: 30px">
+        <a
+          class="btn btn-md text-muted"
+          [ngClass]="{ 'btn-secondary': !didChange, 'btn-success': didChange }"
+        >
+          <span class="d-sm-inline mx-1 addbtn" style="color: white !important">
+            {{ saveText !== null ? saveText : didChange ? 'Save' : 'Saved' }}
+          </span>
+        </a>
+      </div>
+
+      <div
+        (click)="newPair()"
+        class="newbtn white"
+        style="background-color: #448bff"
+      >
+        <a class="btn btn-md text-muted">
+          <span class="d-sm-inline mx-1 addbtn" style="color: white !important"
+            >Add new question pair</span
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+      <div class="col-sm-12">
+        <div *ngIf="data.pairs.length === 0" style="margin-bottom: 30px">
+          <h3>No question pairs found. Add one to start configuring.</h3>
+        </div>
+
+        <div
+          [id]="'qp-' + i"
+          class="card qp-animated"
+          *ngFor="let qp of data.pairs; let i = index"
+        >
+          <div class="card-header">
+            {{ qp.name }}
+
+            <div
+              class="float-right"
+              style="
+                padding-left: 15px;
+                border-left: 1px solid rgba(255, 255, 255, 0.3);
+              "
+            >
+              <div
+                aria-label="Expand / Collapse Question Pair"
+                data-balloon-pos="up"
+              >
+                <i
+                  style="font-size: 24px; color: #448bff; cursor: pointer"
+                  class="fa fa-angle-down"
+                  (click)="onExpand(i)"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </div>
+
+            <div
+              class="float-left tooltip-white"
+              style="margin-right: 10px; cursor: pointer"
+              (click)="editQuestionPairName(qp)"
+              aria-label="Edit Question Pair Name"
+              data-balloon-pos="up"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#31c971"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-edit-3"
+              >
+                <path d="M12 20h9"></path>
+                <path
+                  d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                ></path>
+              </svg>
+            </div>
+
+            <div
+              class="float-right tooltip-white"
+              style="cursor: pointer; margin: 0px 10px"
+              (click)="moveUp(i)"
+              aria-label="Move Question Pair Up"
+              data-balloon-pos="up"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#f4c414"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevrons-up"
+              >
+                <polyline points="17 11 12 6 7 11"></polyline>
+                <polyline points="17 18 12 13 7 18"></polyline>
+              </svg>
+            </div>
+
+            <div
+              class="float-right tooltip-white"
+              style="cursor: pointer; margin: 0px 10px"
+              (click)="removeQuestionPair(i)"
+              aria-label="Delete Question Pair"
+              data-balloon-pos="up"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#f54394"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-trash"
+              >
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path
+                  d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                ></path>
+              </svg>
+            </div>
+
+            <div
+              class="tooltip-white float-right"
+              aria-label="Move Question Pair Down"
+              data-balloon-pos="up"
+              style="cursor: pointer; margin: 0px 10px"
+              (click)="moveDown(i)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#f4c414"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevrons-down"
+              >
+                <polyline points="7 13 12 18 17 13"></polyline>
+                <polyline points="7 6 12 11 17 6"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div style="display: none" class="card-body" [ngClass]="['qp-' + i]">
+            <h5 class="card-title">Basic</h5>
+
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row" style="width: 300px">Answer Time</th>
+                  <td>
+                    <div
+                      class="float-left tooltip-white"
+                      style="margin-right: 10px; cursor: pointer"
+                      (click)="editBasicTime(qp, 'answerTime')"
+                      aria-label="Edit Answer Time"
+                      data-balloon-pos="up"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#31c971"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-edit-3"
+                      >
+                        <path d="M12 20h9"></path>
+                        <path
+                          d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                        ></path>
+                      </svg>
+                    </div>
+
+                    {{ qp.answerTime }}
+                    {{ qp.answerTime === 1 ? 'second' : 'seconds' }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h5 class="card-title">Question</h5>
+
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row" style="width: 300px">Type</th>
+                  <td>
+                    <div
+                      class="float-left tooltip-white"
+                      style="margin-right: 10px; cursor: pointer"
+                      (click)="editQuestionType(qp)"
+                      aria-label="Edit Question Type"
+                      data-balloon-pos="up"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#31c971"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-edit-3"
+                      >
+                        <path d="M12 20h9"></path>
+                        <path
+                          d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                        ></path>
+                      </svg>
+                    </div>
+                    {{ qp.q.type.verboseName }}
+                  </td>
+                </tr>
+                <tr
+                  *ngFor="let qData of qp.q.data"
+                  style="border-bottom: 1px solid rgba(160, 175, 185, 0.15)"
+                >
+                  <th scope="row" style="width: 300px">
+                    {{ qData.title }}
+                  </th>
+                  <td>
+                    <div
+                      class="float-left tooltip-white"
+                      style="margin-right: 10px; cursor: pointer"
+                      (click)="editQuestionData(qData)"
+                      [attr.aria-label]="'Edit ' + qData.title"
+                      data-balloon-pos="up"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#31c971"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-edit-3"
+                      >
+                        <path d="M12 20h9"></path>
+                        <path
+                          d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                        ></path>
+                      </svg>
+                    </div>
+
+                    <div
+                      *ngIf="qData.data && qData.data.nullable"
+                      class="float-left tooltip-white"
+                      style="margin-right: 10px; cursor: pointer"
+                      (click)="setToNullQuestionData(qData)"
+                      [attr.aria-label]="'Disable ' + qData.title"
+                      data-balloon-pos="up"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#f54394"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-trash-2"
+                      >
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path
+                          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                        ></path>
+                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                      </svg>
+                    </div>
+
+                    <span class="float-left">{{ qData.displayValue }}</span>
+
+                    <div
+                      *ngIf="
+                        qData.type === QuestionDataType.MP3_INPUT && qData.isSet
+                      "
+                      class="float-left tooltip-white"
+                      style="margin-left: 10px; cursor: pointer"
+                      aria-label="Open MP3 File"
+                      data-balloon-pos="up"
+                    >
+                      <a
+                        [href]="
+                          apiUrl +
+                          '/hr/fm/mp3/' +
+                          (qData.isTemplate ? 'T_' : '') +
+                          qData.value +
+                          ''
+                        "
+                        target="_blank"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="#f4c414"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-share"
+                        >
+                          <path
+                            d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"
+                          ></path>
+                          <polyline points="16 6 12 2 8 6"></polyline>
+                          <line x1="12" y1="2" x2="12" y2="15"></line>
+                        </svg>
+                      </a>
+                    </div>
+
+                    <div
+                      *ngIf="
+                        qData.type === QuestionDataType.IMAGE_INPUT &&
+                        qData.isSet
+                      "
+                      class="float-left tooltip-white"
+                      style="margin-left: 10px; cursor: pointer"
+                      aria-label="Open Image File"
+                      data-balloon-pos="up"
+                    >
+                      <a
+                        [href]="
+                          apiUrl +
+                          '/hr/fm/png/' +
+                          (qData.isTemplate ? 'T_' : '') +
+                          qData.value +
+                          ''
+                        "
+                        target="_blank"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="#f4c414"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-share"
+                        >
+                          <path
+                            d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"
+                          ></path>
+                          <polyline points="16 6 12 2 8 6"></polyline>
+                          <line x1="12" y1="2" x2="12" y2="15"></line>
+                        </svg>
+                      </a>
+                    </div>
+
+                    <div
+                      *ngIf="
+                        qData.type === QuestionDataType.MP4_INPUT && qData.isSet
+                      "
+                      class="float-left tooltip-white"
+                      style="margin-left: 10px; cursor: pointer"
+                      aria-label="Open MP4 File"
+                      data-balloon-pos="up"
+                    >
+                      <a
+                        [href]="
+                          apiUrl +
+                          '/hr/fm/mp4/' +
+                          (qData.isTemplate ? 'T_' : '') +
+                          qData.value +
+                          ''
+                        "
+                        target="_blank"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="#f4c414"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-share"
+                        >
+                          <path
+                            d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"
+                          ></path>
+                          <polyline points="16 6 12 2 8 6"></polyline>
+                          <line x1="12" y1="2" x2="12" y2="15"></line>
+                        </svg>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h5 class="card-title">Answer</h5>
+
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row" style="width: 300px">Type</th>
+                  <td>
+                    <div
+                      class="float-left tooltip-white"
+                      style="margin-right: 10px; cursor: pointer"
+                      (click)="editAnswerType(qp)"
+                      aria-label="Edit Answer Type"
+                      data-balloon-pos="up"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#31c971"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-edit-3"
+                      >
+                        <path d="M12 20h9"></path>
+                        <path
+                          d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                        ></path>
+                      </svg>
+                    </div>
+
+                    {{ qp.a.type.verboseName }}
+                  </td>
+                </tr>
+
+                <tr
+                  *ngFor="let aData of qp.a.data; let aIndex = index"
+                  style="border-bottom: 1px solid rgba(160, 175, 185, 0.15)"
+                >
+                  <th scope="row" style="width: 300px">
+                    {{ aData.title }}
+                  </th>
+                  <td>
+                    <div [ngSwitch]="aData.type">
+                      <div *ngSwitchDefault>
+                        <div
+                          class="float-left tooltip-white"
+                          style="margin-right: 10px; cursor: pointer"
+                          (click)="editQuestionData(aData)"
+                          [attr.aria-label]="'Edit ' + aData.title"
+                          data-balloon-pos="up"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#31c971"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-edit-3"
+                          >
+                            <path d="M12 20h9"></path>
+                            <path
+                              d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div *ngSwitchCase="QuestionDataType.TEXT_ARRAY_INPUT">
+                        <div
+                          class="float-left tooltip-white"
+                          style="margin-right: 10px; cursor: pointer !important"
+                          data-toggle="modal"
+                          [attr.data-target]="
+                            '#answer-' + i + '-textarray-' + aIndex
+                          "
+                          [attr.aria-label]="'Edit ' + aData.title"
+                          data-balloon-pos="up"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#31c971"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-edit-3"
+                          >
+                            <path d="M12 20h9"></path>
+                            <path
+                              d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div *ngSwitchCase="QuestionDataType.SELECT_MANY_INPUT">
+                        <div
+                          class="float-left tooltip-white"
+                          style="margin-right: 10px; cursor: pointer !important"
+                          data-toggle="modal"
+                          [attr.data-target]="
+                            '#answer-' + i + '-selectmany-' + aIndex
+                          "
+                          [attr.aria-label]="'Edit ' + aData.title"
+                          data-balloon-pos="up"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#31c971"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-edit-3"
+                          >
+                            <path d="M12 20h9"></path>
+                            <path
+                              d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    {{ aData.displayValue }}
+
+                    <div
+                      *ngIf="aData.type === QuestionDataType.TEXT_ARRAY_INPUT"
+                      [id]="'answer-' + i + '-textarray-' + aIndex"
+                      class="modal fade"
+                      data-backdrop="true"
+                      style="display: none"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <div class="modal-title text-md">
+                              Edit {{ aData.title }}
+                            </div>
+                            <button class="close" data-dismiss="modal">
+                              ×
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div>
+                              <p>
+                                You can add, remove and edit values for
+                                {{ aData.title }}
+                              </p>
+
+                              <div class="list list-row">
+                                <div
+                                  *ngFor="
+                                    let aVal of aData.value;
+                                    let aValIndex = index
+                                  "
+                                  class="list-item"
+                                  style="padding: 5px 0"
+                                >
+                                  <div
+                                    style="padding-left: 0; padding-right: 0"
+                                  >
+                                    <a
+                                      (click)="
+                                        onMoveFromArray(
+                                          aData,
+                                          aData.value,
+                                          aValIndex,
+                                          -1
+                                        )
+                                      "
+                                      class="ml-1"
+                                      aria-label="Move Option Up"
+                                      data-balloon-pos="up"
+                                      style="margin-right: 5px"
+                                      ><i
+                                        style="color: black; font-size: 16px"
+                                        class="fa fa-angle-double-up"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </a>
+
+                                    <a
+                                      (click)="
+                                        onMoveFromArray(
+                                          aData,
+                                          aData.value,
+                                          aValIndex,
+                                          1
+                                        )
+                                      "
+                                      class="ml-1"
+                                      aria-label="Move Option Down"
+                                      data-balloon-pos="up"
+                                      style="margin-right: 10px"
+                                      ><i
+                                        style="color: black; font-size: 16px"
+                                        class="fa fa-angle-double-down"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </a>
+
+                                    <a
+                                      class="btn btn-icon btn-rounded btn-success ml-1"
+                                      aria-label="Edit Option"
+                                      (click)="
+                                        onEditFromArray(
+                                          aData,
+                                          'answer-' +
+                                            i +
+                                            '-textarray-' +
+                                            aIndex +
+                                            '-' +
+                                            aValIndex
+                                        )
+                                      "
+                                      data-balloon-pos="up"
+                                      ><i
+                                        style="color: white"
+                                        class="fa fa-pencil"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </a>
+
+                                    <a
+                                      class="btn btn-icon btn-rounded btn-danger ml-1"
+                                      aria-label="Delete Option"
+                                      data-balloon-pos="up"
+                                      (click)="
+                                        onRemoveFromArray(
+                                          aData,
+                                          aData.value,
+                                          aValIndex
+                                        )
+                                      "
+                                      ><i
+                                        style="color: white"
+                                        class="fa fa-times"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </a>
+                                  </div>
+                                  <div class="flex" style="align-items: center">
+                                    <div
+                                      *ngIf="
+                                        modalEditing.includes(
+                                          'answer-' +
+                                            i +
+                                            '-textarray-' +
+                                            aIndex +
+                                            '-' +
+                                            aValIndex
+                                        )
+                                      "
+                                    >
+                                      <form
+                                        (submit)="
+                                          onAnswerArraySave(
+                                            $event,
+                                            aData,
+                                            aData.value,
+                                            aValIndex,
+                                            aValNewInput.value,
+                                            'answer-' +
+                                              i +
+                                              '-textarray-' +
+                                              aIndex +
+                                              '-' +
+                                              aValIndex
+                                          )
+                                        "
+                                        class="input-group"
+                                      >
+                                        <input
+                                          [id]="
+                                            'answer-' +
+                                            i +
+                                            '-textarray-' +
+                                            aIndex +
+                                            '-' +
+                                            aValIndex +
+                                            '-input'
+                                          "
+                                          type="text"
+                                          class="form-control"
+                                          placeholder="Option Value ..."
+                                          [value]="aVal"
+                                          #aValNewInput
+                                        />
+                                        <div class="input-group-append">
+                                          <button
+                                            type="submit"
+                                            style="cursor: pointer"
+                                            class="input-group-text text-primary"
+                                          >
+                                            Save
+                                          </button>
+                                        </div>
+                                      </form>
+                                    </div>
+
+                                    <a
+                                      *ngIf="
+                                        !modalEditing.includes(
+                                          'answer-' +
+                                            i +
+                                            '-textarray-' +
+                                            aIndex +
+                                            '-' +
+                                            aValIndex
+                                        )
+                                      "
+                                      class="item-author text-color"
+                                      >{{ aVal }}</a
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+
+                              <a
+                                class="btn btn-icon btn-rounded btn-primary ml-1"
+                                aria-label="Add New Option"
+                                data-balloon-pos="up"
+                                (click)="
+                                  onAddFromArray(
+                                    aData,
+                                    'answer-' + i + '-textarray-' + aIndex,
+                                    aData.value
+                                  )
+                                "
+                              >
+                                <i
+                                  style="color: white"
+                                  class="fa fa-plus"
+                                  aria-hidden="true"
+                                ></i>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <small
+                              class="text-primary"
+                              style="font-weight: bold"
+                            >
+                              Changes apply automatically
+                            </small>
+                            <button
+                              type="button"
+                              class="btn btn-light"
+                              data-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                        <!-- /.modal-content -->
+                      </div>
+                    </div>
+
+                    <div
+                      *ngIf="aData.type === QuestionDataType.SELECT_MANY_INPUT"
+                      [id]="'answer-' + i + '-selectmany-' + aIndex"
+                      class="modal fade"
+                      data-backdrop="true"
+                      style="display: none"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <div class="modal-title text-md">
+                              Edit {{ aData.title }}
+                            </div>
+                            <button class="close" data-dismiss="modal">
+                              ×
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div>
+                              <p>
+                                You can select values for
+                                {{ aData.title }}
+                              </p>
+
+                              <div
+                                class="list list-row"
+                                style="padding-left: 10px"
+                              >
+                                <div
+                                  *ngFor="
+                                    let aVal of aData.data.options;
+                                    let aValIndex = index
+                                  "
+                                  class="list-item"
+                                  style="padding: 5px 0"
+                                >
+                                  <div class="form-check">
+                                    <input
+                                      type="checkbox"
+                                      class="form-check-input"
+                                      #selectManyCheckbox
+                                      (click)="
+                                        onSelectManyCheckbox(
+                                          selectManyCheckbox,
+                                          aVal,
+                                          aData
+                                        )
+                                      "
+                                      [checked]="aData.value.includes(aVal)"
+                                    />
+                                    <label class="form-check-label">
+                                      {{ aVal }}
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <small
+                              class="text-primary"
+                              style="font-weight: bold"
+                            >
+                              Changes apply automatically
+                            </small>
+                            <button
+                              type="button"
+                              class="btn btn-light"
+                              data-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                        <!-- /.modal-content -->
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div
+        *ngIf="data.pairs && data.pairs.length > 0"
+        class="col-sm-12"
+        style="padding-bottom: 120px; padding-right: 0"
+      >
+        <div (click)="save()" class="newbtn white" style="float: right">
+          <a
+            class="btn btn-md text-muted"
+            [ngClass]="{
+              'btn-secondary': !didChange,
+              'btn-success': didChange
+            }"
+          >
+            <span
+              class="d-sm-inline mx-1 addbtn"
+              style="color: white !important"
+            >
+              {{ saveText !== null ? saveText : didChange ? 'Save' : 'Saved' }}
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,211 @@
+<router-outlet></router-outlet>
+
+<div class="wrapper" *ngIf="steps.length > 0">
+  <div class="steps-area steps-area-fixed">
+    <div class="image-holder custom-img"></div>
+    <div
+      class="steps clearfix animate-transform"
+      [ngStyle]="{
+        transform: 'translateY(-' + currentPage * 125 + 'px)'
+      }"
+    >
+      <ul class="tablist multisteps-form__progress progress-items-holder">
+        <li
+          *ngFor="let step of steps; let i = index"
+          class="multisteps-form__progress-btn"
+        >
+          <span> {{ i + 1 }} </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="multisteps-form__form">
+    <div class="form-area position-relative">
+      <div
+        *ngFor="let step of steps; let i = index"
+        class="multisteps-form__panel"
+        [id]="'isJsActive' + i"
+        data-animation="slideHorz"
+      >
+        <div class="wizard-forms">
+          <div class="inner pb-100 clearfix">
+            <div class="form-content pera-content" style="width: 100%">
+              <div class="step-inner-content">
+                <span class="step-no bottom-line"
+                  >{{ 'wrapper.step.title' | translate: { stepNumber: i + 1 } }}
+                </span>
+                <div class="step-progress float-right">
+                  <span>
+                    {{
+                      'wrapper.step.description'
+                        | translate
+                          : { stepNumber: i + 1, totalSteps: steps.length }
+                    }}</span
+                  >
+                  <div class="step-progress-bar">
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        [ngStyle]="{
+                          width:
+                            getProgressPercentage(i, steps.length - 1) + '%'
+                        }"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <app-text
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.TEXT"
+                ></app-text>
+
+                <app-input
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.INPUT"
+                ></app-input>
+
+                <app-select-one
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.SELECT_ONE"
+                ></app-select-one>
+
+                <app-hardware-test
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.HARDWARE_TEXT"
+                ></app-hardware-test>
+
+                <app-summary
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.SUMMARY"
+                ></app-summary>
+
+                <app-answer-text
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.INTERVIEW_ANSWER_TEXT"
+                ></app-answer-text>
+
+                <app-answer-speak
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.INTERVIEW_ANSWER_SPEAK"
+                ></app-answer-speak>
+
+                <app-answer-select-one
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.INTERVIEW_ANSWER_SELECT_ONE"
+                ></app-answer-select-one>
+
+                <app-answer-select-many
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.INTERVIEW_ANSWER_SELECT_MANY"
+                ></app-answer-select-many>
+
+                <app-self-review
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.SELF_REVIEW"
+                ></app-self-review>
+
+                <app-question-mp3
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.INTERVIEW_QUESTION_MP3"
+                ></app-question-mp3>
+
+                <app-question-mp4
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.INTERVIEW_QUESTION_MP4"
+                ></app-question-mp4>
+
+                <app-question-img
+                  [step]="step"
+                  *ngIf="step.type === stepTypes.INTERVIEW_QUESTION_IMAGE"
+                ></app-question-img>
+              </div>
+            </div>
+          </div>
+          <!-- /.inner -->
+          <div class="actions" style="margin-bottom: 30px">
+            <ul>
+              <li *ngIf="int.showButtonPrevious">
+                <span
+                  class="js-btn-prev"
+                  title="{{ 'wrapper.back' | translate }}"
+                  ><i class="fa fa-arrow-left"></i>
+                  {{ 'wrapper.back' | translate }}
+                </span>
+              </li>
+              <li *ngIf="int.showButtonNext">
+                <span
+                  class="js-btn-next"
+                  title="{{ 'wrapper.next' | translate }}"
+                >
+                  {{ 'wrapper.next' | translate }}
+                  <i class="fa fa-arrow-right"></i
+                ></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div
+  (click)="onToggleStickyPreview(true)"
+  class="bg-theme"
+  style="
+    cursor: pointer !important;
+    z-index: 88888;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  "
+  *ngIf="int.isHardwareWorking && !int.stickyHardwarePreview"
+>
+  <i class="fa fa-camera"></i>
+</div>
+
+<div
+  style="
+    z-index: 88888;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: auto;
+  "
+  *ngIf="int.isHardwareWorking && int.stickyHardwarePreview"
+>
+  <div
+    (click)="onToggleStickyPreview(false)"
+    class="bg-theme"
+    style="
+      padding-bottom: 3px;
+      cursor: pointer !important;
+      z-index: 99999;
+      border-radius: 20px;
+      width: 20px;
+      height: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: white;
+    "
+  >
+    &times;
+  </div>
+
+  <div style="width: 100%; z-index: 99998;" class="camera-review"></div>
+</div> -->

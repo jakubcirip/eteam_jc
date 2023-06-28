@@ -1,0 +1,560 @@
+<div>
+  <div class="page-hero page-container">
+    <div class="padding d-flex">
+      <h2 class="text-md text-highlight white">
+        Interviews
+      </h2>
+      <div class="flex"></div>
+      <div
+        (click)="newInterview()"
+        class="newbtn white"
+        style="background-color: #448bff;"
+      >
+        <a class="btn btn-md text-muted">
+          <span class="d-sm-inline mx-1 addbtn" style="color: white !important;"
+            >Add new interview</span
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+      <div class="col-sm-12" *ngIf="created !== null">
+        <h4>Created Interviews</h4>
+        <p *ngIf="!created || created.length <= 0">
+          No interview created yet.
+        </p>
+        <table
+          *ngIf="created && created.length > 0"
+          id="datatable"
+          class="table table-theme table-row v-middle dataTable no-footer"
+          role="grid"
+          aria-describedby="datatable_info"
+        >
+          <thead>
+            <tr role="row">
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 26px;"
+              >
+                <span class="text-muted">ID</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: auto;"
+              >
+                <span class="text-muted">Name</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 50px;"
+              >
+                <span class="text-muted">Tag</span>
+              </th>
+
+              <th
+                class="sorting_disabled"
+                rowspan="1"
+                colspan="1"
+                style="width: 100px;"
+              >
+                <span class="text-muted d-sm-block">Start Interview</span>
+              </th>
+
+              <th
+                class="sorting_disabled"
+                rowspan="1"
+                colspan="1"
+                style="width: 100px;"
+              >
+                <span class="text-muted d-sm-block">Operations</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                rowspan="1"
+                colspan="1"
+                aria-label="Finish"
+                style="width: 30px;"
+              >
+                <span class="text-muted d-sm-block"></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table">
+            <tr
+              class="odd"
+              data-id="1"
+              role="row"
+              *ngFor="let interview of created"
+            >
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">{{
+                  interview.id
+                }}</span>
+              </td>
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm white">{{
+                  interview.name
+                }}</span>
+              </td>
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">{{
+                  interview.tag
+                }}</span>
+              </td>
+
+              <td class="sorting_2">
+                <span
+                  class="item-amount d-sm-block text-sm"
+                  style="display: flex !important; justify-content: center;"
+                >
+                  <div
+                    class="tooltip-white"
+                    aria-label="Review And Start Interview"
+                    data-balloon-pos="up"
+                  >
+                    <svg
+                      (click)="moveIntoSummary(interview.id)"
+                      style="cursor: pointer; margin-left: 10px;"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#f44336"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-share"
+                    >
+                      <path
+                        d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"
+                      ></path>
+                      <polyline points="16 6 12 2 8 6"></polyline>
+                      <line x1="12" y1="2" x2="12" y2="15"></line>
+                    </svg>
+                  </div>
+                </span>
+              </td>
+
+              <td class="sorting_2">
+                <span
+                  class="item-amount d-sm-block text-sm"
+                  style="display: flex !important;"
+                >
+                  <div
+                    class="tooltip-white"
+                    aria-label="Edit Interview Basic Information"
+                    data-balloon-pos="up"
+                  >
+                    <svg
+                      style="cursor: pointer;"
+                      (click)="editInt(interview.id, interview.name)"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#31c971"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-edit mx-2"
+                    >
+                      <path
+                        d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"
+                      ></path>
+                      <polygon
+                        points="18 2 22 6 12 16 8 16 8 12 18 2"
+                      ></polygon>
+                    </svg>
+                  </div>
+
+                  <div
+                    class="tooltip-white"
+                    aria-label="Delete Interview"
+                    data-balloon-pos="up"
+                  >
+                    <svg
+                      style="cursor: pointer;"
+                      (click)="deleteInt(interview.id)"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#f54394"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-delete mx-2"
+                    >
+                      <path
+                        d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"
+                      ></path>
+                      <line x1="18" y1="9" x2="12" y2="15"></line>
+                      <line x1="12" y1="9" x2="18" y2="15"></line>
+                    </svg>
+                  </div>
+                </span>
+              </td>
+              <td class="sorting_2" style="display: flex !important;">
+                <div
+                  class="tooltip-white"
+                  aria-label="Enter Interview Candidates Panel"
+                  data-balloon-pos="up"
+                >
+                  <svg
+                    style="cursor: pointer;"
+                    (click)="moveIntoPeople(interview.id)"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#f4c414"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-users"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+
+                <div
+                  class="tooltip-white"
+                  aria-label="Enter Interview Editor"
+                  data-balloon-pos="up"
+                >
+                  <svg
+                    style="cursor: pointer;"
+                    (click)="moveIntoInt(interview.id)"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#448bff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    strokecolor="white"
+                    class="feather feather-chevrons-right mx-2"
+                  >
+                    <polyline points="13 17 18 12 13 7"></polyline>
+                    <polyline points="6 17 11 12 6 7"></polyline>
+                  </svg>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-sm-12" *ngIf="pending !== null">
+        <h4>Pending (Started) Interviews</h4>
+        <p *ngIf="!pending || pending.length <= 0">No interview pending yet.</p>
+        <table
+          *ngIf="pending && pending.length > 0"
+          id="datatable"
+          class="table table-theme table-row v-middle dataTable no-footer"
+          role="grid"
+          aria-describedby="datatable_info"
+        >
+          <thead>
+            <tr role="row">
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 26px;"
+              >
+                <span class="text-muted">ID</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: auto;"
+              >
+                <span class="text-muted">Name</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 50px;"
+              >
+                <span class="text-muted">Tag</span>
+              </th>
+
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 200px;"
+              >
+                <span class="text-muted">Started At</span>
+              </th>
+
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 200px;"
+              >
+                <span class="text-muted">Will Finish At</span>
+              </th>
+
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 60px;"
+              >
+                <span class="text-muted">Options</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table">
+            <tr
+              class="odd"
+              data-id="1"
+              role="row"
+              *ngFor="let interview of pending"
+            >
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">{{
+                  interview.id
+                }}</span>
+              </td>
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm white">{{
+                  interview.name
+                }}</span>
+              </td>
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">{{
+                  interview.tag
+                }}</span>
+              </td>
+
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">
+                  {{ getDate(interview.startAt) | date: 'd.M.yyyy' }} |
+                  {{ getDate(interview.startAt) | date: 'H:mm:ss' }}
+                </span>
+              </td>
+
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">
+                  {{ getDate(interview.finishAt) | date: 'd.M.yyyy' }} |
+                  {{ getDate(interview.finishAt) | date: 'H:mm:ss' }}
+                </span>
+              </td>
+
+              <td class="sorting_2">
+                <span
+                  class="item-amount d-sm-block text-sm"
+                  style="display: flex !important;"
+                >
+                  <div
+                    class="tooltip-white"
+                    aria-label="Edit Question Pair Name"
+                    data-balloon-pos="up"
+                  >
+                    <svg
+                      (click)="goToResults(interview.id)"
+                      style="cursor: pointer;"
+                      stroke="#31c971"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-database"
+                    >
+                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                    </svg>
+                  </div>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-sm-12" *ngIf="finished !== null">
+        <h4>Finished Interviews</h4>
+
+        <p *ngIf="!finished || finished.length <= 0">
+          No interview finished yet.
+        </p>
+        <table
+          *ngIf="finished && finished.length > 0"
+          id="datatable"
+          class="table table-theme table-row v-middle dataTable no-footer"
+          role="grid"
+          aria-describedby="datatable_info"
+        >
+          <thead>
+            <tr role="row">
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 26px;"
+              >
+                <span class="text-muted">ID</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: auto;"
+              >
+                <span class="text-muted">Name</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 50px;"
+              >
+                <span class="text-muted">Tag</span>
+              </th>
+
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 200px;"
+              >
+                <span class="text-muted">Started At</span>
+              </th>
+
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 200px;"
+              >
+                <span class="text-muted">Finished At</span>
+              </th>
+
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 60px;"
+              >
+                <span class="text-muted">Options</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table">
+            <tr
+              class="odd"
+              data-id="1"
+              role="row"
+              *ngFor="let interview of finished"
+            >
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">{{
+                  interview.id
+                }}</span>
+              </td>
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm white">{{
+                  interview.name
+                }}</span>
+              </td>
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">{{
+                  interview.tag
+                }}</span>
+              </td>
+
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">
+                  {{ getDate(interview.startAt) | date: 'd.M.yyyy' }} |
+                  {{ getDate(interview.startAt) | date: 'H:mm:ss' }}
+                </span>
+              </td>
+
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">
+                  {{ getDate(interview.finishAt) | date: 'd.M.yyyy' }} |
+                  {{ getDate(interview.finishAt) | date: 'H:mm:ss' }}
+                </span>
+              </td>
+
+              <td class="sorting_2">
+                <span
+                  class="item-amount d-sm-block text-sm"
+                  style="display: flex !important;"
+                >
+                  <div
+                    class="tooltip-white"
+                    aria-label="Enter Interview Results"
+                    data-balloon-pos="up"
+                  >
+                    <svg
+                      (click)="goToResults(interview.id)"
+                      style="cursor: pointer;"
+                      stroke="#31c971"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-database"
+                    >
+                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                    </svg>
+                  </div>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

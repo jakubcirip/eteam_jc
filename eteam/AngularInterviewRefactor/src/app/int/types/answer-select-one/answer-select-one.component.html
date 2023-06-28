@@ -1,0 +1,98 @@
+<app-assistent [title]="step.data.title"></app-assistent>
+
+<br />
+
+<img
+  *ngIf="int.randomData.imgSrc"
+  [src]="int.randomData.imgSrc"
+  alt="Image Of Question"
+  style="max-width: 100%; margin-top: 15px; margin-bottom: 15px"
+/>
+
+<p *ngIf="step.data.text">
+  {{ step.data.text }}
+</p>
+
+<a
+  *ngIf="step.data.terms.text && step.data.terms.url"
+  [href]="step.data.terms.url"
+  class="text-primary"
+  target="_blank"
+>
+  {{ step.data.terms.text }}
+</a>
+
+<br />
+
+<div *ngIf="int.interviewState === InterviewState.ANSWER_SELECT_ONE_STEP1">
+  <h3>{{ 'interview.answers.willEnableSoon' | translate }}</h3>
+  <h3>
+    {{ 'interview.answers.timeLeft' | translate }}:
+    {{
+      'interview.answers.time' | translate: { time: int.randomData.timeLeft }
+    }}
+    ({{ 'interview.answers.paused' | translate }})
+  </h3>
+
+  <div class="comment-box">
+    <p><i class="fas fa-comments"></i> {{ int.randomData.currentQuestion }}</p>
+
+    <!-- TU -->
+    <div class="services-select-option" style="opacity: 0.5">
+      <ul>
+        <li class="bg-white" *ngFor="let option of int.randomData.options">
+          <label
+            >{{ option }}
+            <input type="radio" [name]="name" [value]="option" disabled
+          /></label>
+        </li>
+      </ul>
+    </div>
+    <!-- TU KONIEC -->
+  </div>
+</div>
+
+<div *ngIf="int.interviewState === InterviewState.ANSWER_SELECT_ONE_STEP2">
+  <h3>&nbsp;</h3>
+  <h3>
+    {{ 'interview.answers.timeLeft' | translate }}:
+    {{
+      'interview.answers.time' | translate: { time: int.randomData.timeLeft }
+    }}
+  </h3>
+
+  <div class="comment-box">
+    <p><i class="fas fa-comments"></i> {{ int.randomData.currentQuestion }}</p>
+
+    <!-- TU -->
+    <div class="services-select-option">
+      <ul>
+        <li
+          class="clickable bg-white"
+          *ngFor="let option of int.randomData.options"
+        >
+          <label
+            >{{ option }}
+            <input
+              (change)="onChange($event)"
+              type="radio"
+              [name]="name"
+              [value]="option"
+          /></label>
+        </li>
+      </ul>
+    </div>
+    <!-- TU KONIEC -->
+  </div>
+</div>
+
+<br />
+
+<div
+  (click)="onNext()"
+  *ngIf="didAnswer"
+  style="color: white; width: 50%; margin-left: 50%"
+  class="basic-button bg-theme"
+>
+  {{ 'wrapper.continue' | translate }} <i class="fa fa-arrow-right"></i>
+</div>

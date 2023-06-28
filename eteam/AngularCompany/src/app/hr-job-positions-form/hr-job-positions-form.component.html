@@ -1,0 +1,248 @@
+<div>
+  <div class="page-hero page-container">
+    <div class="padding d-flex">
+      <!-- <svg
+        style="cursor: pointer;"
+        (click)="goBack()"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#f54394"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-chevrons-left mx-2"
+      >
+        <polyline points="11 17 6 12 11 7"></polyline>
+        <polyline points="18 17 13 12 18 7"></polyline>
+      </svg> -->
+      <h2 class="text-md text-highlight white">
+        {{ data ? data.name : '...' }} - Templates
+      </h2>
+      <div class="flex"></div>
+      <div
+        [routerLink]="['/hr', 'jobs', 'templates']"
+        class="newbtn white"
+        style="background-color: #31c971; margin-right: 30px;"
+      >
+        <a class="btn btn-md text-muted">
+          <span class="d-sm-inline mx-1 addbtn" style="color: white !important;"
+            >Import from our templates
+          </span>
+        </a>
+      </div>
+
+      <div
+        (click)="newForm()"
+        class="newbtn white"
+        style="background-color: #448bff;"
+      >
+        <a class="btn btn-md text-muted">
+          <span class="d-sm-inline mx-1 addbtn" style="color: white !important;"
+            >Add new template</span
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+      <div class="col-sm-12">
+        <table
+          *ngIf="data"
+          id="datatable"
+          class="table table-theme table-row v-middle dataTable no-footer"
+          role="grid"
+          aria-describedby="datatable_info"
+        >
+          <thead>
+            <tr role="row">
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 26px;"
+              >
+                <span class="text-muted">ID</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: auto;"
+              >
+                <span class="text-muted">Name</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 250px;"
+              >
+                <span class="text-muted">Language</span>
+              </th>
+
+              <th
+                class="sorting_disabled"
+                tabindex="0"
+                rowspan="1"
+                colspan="1"
+                style="width: 50px;"
+              >
+                <span class="text-muted">Default Questions</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                rowspan="1"
+                colspan="1"
+                style="width: 100px;"
+              >
+                <span class="text-muted d-sm-block">Operations</span>
+              </th>
+              <th
+                class="sorting_disabled"
+                rowspan="1"
+                colspan="1"
+                aria-label="Finish"
+                style="width: 30px;"
+              >
+                <span class="text-muted d-sm-block"></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table">
+            <tr
+              class="odd"
+              data-id="1"
+              role="row"
+              *ngFor="let form of data.forms"
+            >
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">{{
+                  form.id
+                }}</span>
+              </td>
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm white">{{
+                  form.name
+                }}</span>
+              </td>
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">
+                  {{ getLanguageVerbose(form.defaultLanguage) }}
+                </span>
+              </td>
+
+              <td class="sorting_2">
+                <span class="item-amount d-sm-block text-sm">
+                  {{ form.questions }}
+                </span>
+              </td>
+              <td class="sorting_2">
+                <span
+                  class="item-amount d-sm-block text-sm"
+                  style="display: flex !important;"
+                >
+                  <div
+                    class="tooltip-white"
+                    aria-label="Edit Template Basic Information"
+                    data-balloon-pos="up"
+                  >
+                    <svg
+                      style="cursor: pointer;"
+                      (click)="beforeEditForm(form.id, form.name, form.defaultLanguage)"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#31c971"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-edit mx-2"
+                    >
+                      <path
+                        d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"
+                      ></path>
+                      <polygon
+                        points="18 2 22 6 12 16 8 16 8 12 18 2"
+                      ></polygon>
+                    </svg>
+                  </div>
+
+                  <div
+                    class="tooltip-white"
+                    aria-label="Delete Template"
+                    data-balloon-pos="up"
+                  >
+                    <svg
+                      style="cursor: pointer;"
+                      (click)="beforeDeleteForm(form.id)"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#f54394"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-delete mx-2"
+                    >
+                      <path
+                        d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"
+                      ></path>
+                      <line x1="18" y1="9" x2="12" y2="15"></line>
+                      <line x1="12" y1="9" x2="18" y2="15"></line>
+                    </svg>
+                  </div>
+                </span>
+              </td>
+              <td class="sorting_2" style="display: flex !important;">
+                <div
+                  class="tooltip-white"
+                  aria-label="Enter Medal Weight Editor"
+                  data-balloon-pos="up"
+                  (click)="beforeMoveIntoMedal(form.id)"
+                >
+                  <i class="fa fa-star text-primary" aria-hidden="true"></i>
+                </div>
+
+                <div
+                  class="tooltip-white"
+                  aria-label="Enter Template Editor"
+                  (click)="beforeMoveIntoForm(form.id)"
+                  data-balloon-pos="up"
+                >
+                  <svg
+                    style="cursor: pointer;"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#448bff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    strokecolor="white"
+                    class="feather feather-chevrons-right mx-2"
+                  >
+                    <polyline points="13 17 18 12 13 7"></polyline>
+                    <polyline points="6 17 11 12 6 7"></polyline>
+                  </svg>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

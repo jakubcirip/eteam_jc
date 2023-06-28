@@ -1,0 +1,39 @@
+{
+  "tags": ["Hr"],
+  "summary": "Get list of all job position forms for specific job position",
+  "operationId": "getJobPositionForms",
+  "x-swagger-router-controller": "hrCtrl",
+  "parameters": [
+    {
+      "name": "positionId",
+      "in": "path",
+      "type": "number",
+      "required": true
+    }
+  ],
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/models/hr.json#/JobPositionForms"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "401": {
+      "$ref": "~/defaults/errors.json#/401"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

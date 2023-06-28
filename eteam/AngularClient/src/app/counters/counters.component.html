@@ -1,0 +1,64 @@
+<!--Counters Start-->
+<section class="gradient-bg2" id="counters">
+  <div class="container">
+    <div class="row" id="counters-aos-anchor">
+      <div class="col-lg-12 pl-lg-4 order-lg-2">
+        <div class="heading-area" style="text-align: center;">
+          <span
+            data-aos-anchor="#counters-aos-anchor"
+            data-aos="fade-up"
+            class="sub-title text-white"
+            >{{ 'counters.preTitle' | translate }}</span
+          >
+          <h2
+            data-aos-anchor="#counters-aos-anchor"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            class="title text-white"
+          >
+            {{ 'counters.title.before' | translate }}
+            <span class="js-rotating" style="margin-right: 10px;">{{
+              'counters.title.words' | translate
+            }}</span
+            >{{ 'counters.title.after' | translate }}
+          </h2>
+          <p
+            data-aos-anchor="#counters-aos-anchor"
+            data-aos="fade-up"
+            data-aos-delay="800"
+            class="para text-white"
+          >
+            {{ 'counters.description' | translate }}
+          </p>
+        </div>
+        <ul class="counter-list list-unstyled">
+          <li
+            class="counter-item"
+            *ngFor="let item of data.counters; let i = index"
+            [attr.data-aos]="i % 2 === 0 ? 'flip-right' : 'flip-left'"
+            data-aos-delay="1200"
+            data-aos-anchor="#counters-aos-anchor"
+          >
+            <i
+              aria-hidden="true"
+              [ngClass]="item.classes"
+              class="text-white"
+            ></i>
+            <h6
+              data-aos-anchor="#counters-aos-anchor"
+              class="counter-number text-white"
+            >
+              <span class="count">{{ item.number }}</span
+              ><br />
+              {{ item.title }}
+            </h6>
+            <p class="sub-title text-white">
+              {{ item.text }}
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Counters End-->

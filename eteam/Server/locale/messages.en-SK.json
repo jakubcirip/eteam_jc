@@ -1,0 +1,20 @@
+{
+  "@@locale": "en-SK",
+  "so921UA": "Hello World2!",
+  "@so921UA": {
+    "description": "api - startup",
+    "x-locations": [
+      {
+        "file": "src/api/api.ts",
+        "start": {
+          "line": 43,
+          "column": 16
+        },
+        "end": {
+          "line": 43,
+          "column": 65
+        }
+      }
+    ]
+  }
+}

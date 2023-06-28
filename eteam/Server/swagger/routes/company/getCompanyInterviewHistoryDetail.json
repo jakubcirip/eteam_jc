@@ -1,0 +1,40 @@
+{
+  "tags": [
+    "Company"
+  ],
+  "summary": "Get detail info about one interview from history",
+  "operationId": "getCompanyInterviewHistoryDetail",
+  "x-swagger-router-controller": "companyCtrl",
+  "security": [
+    {
+      "CompanyAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "in": "path",
+      "name": "historyIntId",
+      "required": true,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2147483647
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/models/company.json#/GetCompanyInterviewHistoryDetailResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

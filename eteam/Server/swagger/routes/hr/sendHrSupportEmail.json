@@ -1,0 +1,62 @@
+{
+  "tags": ["Hr"],
+  "summary": "Send email to support",
+  "operationId": "sendHrSupportEmail",
+  "x-swagger-router-controller": "hrCtrl",
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "emailData",
+      "in": "body",
+      "description": "Email data",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": ["name", "email", "subject", "description"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "email": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "description": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          }
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

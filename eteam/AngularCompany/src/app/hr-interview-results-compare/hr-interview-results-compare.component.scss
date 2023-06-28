@@ -1,0 +1,16 @@
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.display-flex > [class*='col-'] {
+  flex-grow: 1;
+}
+
+.card-small,
+.card-big {
+  height: 100% !important;
+  .card-body,
+  .card-header {
+    padding: 10px;
+  }
+}

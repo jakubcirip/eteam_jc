@@ -1,0 +1,59 @@
+{
+  "tags": ["Hr"],
+  "summary": "Create form from template",
+  "operationId": "addFormTemplates",
+  "x-swagger-router-controller": "hrCtrl",
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "positionId",
+      "in": "path",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "body",
+      "in": "body",
+      "description": "Job position form data",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": ["name", "templateId"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 128
+          },
+          "templateId": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/defaults/definitions.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "401": {
+      "$ref": "~/defaults/errors.json#/401"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

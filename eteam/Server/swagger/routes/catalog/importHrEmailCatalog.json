@@ -1,0 +1,40 @@
+{
+  "tags": [
+    "Catalog"
+  ],
+  "summary": "Import all Emails from template",
+  "operationId": "importHrEmailCatalog",
+  "x-swagger-router-controller": "catalogCtrl",
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "in": "body",
+      "name": "body",
+      "required": true,
+      "schema": {
+        "$ref": "~/models/catalog.json#/ImportHrEmailCatalogParamBody"
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/models/responses.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

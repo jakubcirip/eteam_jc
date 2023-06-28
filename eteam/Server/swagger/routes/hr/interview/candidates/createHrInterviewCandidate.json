@@ -1,0 +1,55 @@
+{
+  "tags": ["Interview"],
+  "summary": "Add person into hr interview (assign as candidate)",
+  "operationId": "createHrInterviewCandidate",
+  "x-swagger-router-controller": "hrCtrl",
+  "security": [
+    {
+      "HrAuthGuard": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "intId",
+      "in": "path",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "required": true
+    },
+    {
+      "name": "body",
+      "in": "body",
+      "description": "Data about candidate",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "required": ["personId"],
+        "properties": {
+          "personId": {
+            "type": "number",
+            "minLength": 5,
+            "maxLength": 128
+          }
+        }
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Success",
+      "schema": {
+        "$ref": "~/models/responses.json#/BasicResponse"
+      }
+    },
+    "400": {
+      "$ref": "~/defaults/errors.json#/400"
+    },
+    "500": {
+      "$ref": "~/defaults/errors.json#/500"
+    },
+    "default": {
+      "$ref": "~/defaults/errors.json#/default"
+    }
+  }
+}

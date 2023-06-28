@@ -1,0 +1,123 @@
+{
+  "PlansData": {
+    "type": "object",
+    "required": ["plans", "isCompany"],
+    "properties": {
+      "isCompany": {
+        "type": "boolean"
+      },
+      "plans": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "name",
+            "color",
+            "colorHex",
+            "price",
+            "points",
+            "pointsNo",
+            "pointsAnalysis",
+            "pointsAnalysisNo",
+            "pointsLimits",
+            "active",
+            "upgrade",
+            "recommended"
+          ],
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "color": {
+              "type": "string"
+            },
+            "colorHex": {
+              "type": "string"
+            },
+            "price": {
+              "type": "string"
+            },
+            "points": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pointsNo": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+
+            "pointsAnalysis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pointsAnalysisNo": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+
+            "pointsLimits": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "active": {
+              "type": "boolean"
+            },
+            "upgrade": {
+              "type": "boolean"
+            },
+            "recommended": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  },
+  "FaqCompany": {
+    "type": "object",
+    "required": ["categories"],
+    "properties": {
+      "categories": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["name", "questions"],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "questions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["question", "answer"],
+                "properties": {
+                  "question": {
+                    "type": "string"
+                  },
+                  "answer": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
